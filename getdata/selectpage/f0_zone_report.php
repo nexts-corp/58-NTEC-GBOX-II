@@ -184,7 +184,7 @@ error_reporting(0);
                             <span style="color: red; font-weight: bold;">
                                 <?php
                                 if (($over_index=="") or ($over_index=="0")) {$over_index=601;}
-                                $title = "Zone Over No.";
+                                $title = "Zone Over Index : ";
                                 echo "$title $over_index";
                                 ?>
                             </span>
@@ -209,7 +209,7 @@ error_reporting(0);
                     </td>
                     <td style="text-align: center; background-color: rgb(153, 255, 153); width: 16%;">
                         <span>
-                            <span style="font-weight: bold;">Speed. : </span>
+                            <span style="font-weight: bold;">Speed max. : </span>
                             <span>
                                 <?php
                                 $SMax = round($SpeedMax[$gg],2);
@@ -264,7 +264,7 @@ error_reporting(0);
                     </td>
                     <td style="background-color: rgb(193, 255, 193); text-align: center; width: 16%;">
                         <span>
-                            <span style="font-weight: bold;">Time : </span>
+                            <span style="font-weight: bold;">Time Index : </span>
                             <span>
                                 <?php
                                 if ($over_index>=600) {
