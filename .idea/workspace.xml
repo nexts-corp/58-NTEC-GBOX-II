@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="554ad9fb-b949-45fa-9901-c6937c08f900" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getdata/selectpage/f0_acc_report.php" afterPath="$PROJECT_DIR$/getdata/selectpage/f0_acc_report.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getdata/selectpage/f0_turn_report.php" afterPath="$PROJECT_DIR$/getdata/selectpage/f0_turn_report.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gbox_ph2.iws" />
@@ -24,11 +24,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="f0_acc_report.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="f0_turn_report.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/getdata/selectpage/f0_turn_report.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5335277">
+              <caret line="204" column="74" selection-start-line="204" selection-start-column="74" selection-end-line="204" selection-end-column="74" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="f0_acc_report.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/getdata/selectpage/f0_acc_report.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.88046646">
-              <caret line="220" column="63" selection-start-line="220" selection-start-column="63" selection-end-line="220" selection-end-column="63" />
+            <state vertical-scroll-proportion="-2.8653846">
+              <caret line="211" column="55" selection-start-line="211" selection-start-column="55" selection-end-line="211" selection-end-column="55" />
               <folding>
                 <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#span#0;n#td#2;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -86,10 +96,10 @@
         <option value="$PROJECT_DIR$/getdata/selectpage/f2_accInt_chart.php" />
         <option value="$PROJECT_DIR$/getdata/selectpage/f0_Dscore.php" />
         <option value="$PROJECT_DIR$/getdata/selectpage/f1_integrate.php" />
-        <option value="$PROJECT_DIR$/getdata/selectpage/f0_turn_report.php" />
         <option value="$PROJECT_DIR$/getdata/selectpage/f0_zone_report.php" />
         <option value="$PROJECT_DIR$/getdata/selectpage/f0_speed_report.php" />
         <option value="$PROJECT_DIR$/getdata/selectpage/f0_acc_report.php" />
+        <option value="$PROJECT_DIR$/getdata/selectpage/f0_turn_report.php" />
       </list>
     </option>
   </component>
@@ -659,14 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getdata/selectpage/f0_turn_report.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.346153">
-          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/getdata/selectpage/f0_speed_report.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7773913">
@@ -681,13 +683,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/getdata/selectpage/f0_acc_report.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.88046646">
-          <caret line="220" column="63" selection-start-line="220" selection-start-column="63" selection-end-line="220" selection-end-column="63" />
+        <state vertical-scroll-proportion="-2.8653846">
+          <caret line="211" column="55" selection-start-line="211" selection-start-column="55" selection-end-line="211" selection-end-column="55" />
           <folding>
             <element signature="n#style#0;n#td#2;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#span#0;n#td#2;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#table#2;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getdata/selectpage/f0_turn_report.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5335277">
+          <caret line="204" column="74" selection-start-line="204" selection-start-column="74" selection-end-line="204" selection-end-column="74" />
+          <folding />
         </state>
       </provider>
     </entry>

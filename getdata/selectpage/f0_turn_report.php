@@ -202,7 +202,7 @@ error_reporting(0);
                     </td>
                     <td style="background-color: rgb(153, 255, 153); text-align: center; width: 16%;">
                         <span>
-                            <span style="font-weight: bold;">Turn Number :</span>
+                            <span style="font-weight: bold;">Turn Index : </span>
                             <span>
                                 <?php
                                 if (($over_index=="") OR ($over_index=="0")) {$over_index=401;}
