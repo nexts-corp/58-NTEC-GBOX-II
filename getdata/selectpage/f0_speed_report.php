@@ -217,17 +217,17 @@ error_reporting(0);
                                     $over_index = 1;
                                 }
                                 if (($over_index>=100) AND ($over_index<200)) {
-                                    $title = "Un Control No.";
+                                    $title = "Un Control Index";
                                     $jk = $over_index-100;
                                     echo "$title $jk";
                                 }
                                 elseif ($over_index>800) {
                                     $jk = $over_index-800;
-                                    $title = "Zero No.";
+                                    $title = "Zero Index";
                                     echo "$title $over_index";
                                 }
                                 elseif ($over_index<100) {
-                                    $title = "Speed Over No.";
+                                    $title = "Speed Over Index";
                                     echo "$title $over_index";
                                 }
                                 ?>

@@ -4,7 +4,7 @@ error_reporting(0);
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>TATANAD GPS Supervisory Program </title>
+    <title>TATANAD GPS Supervisory Program</title>
 </head>
 <body style="font-family: Arial;">
     <table style="width: 100%; height: 17px; text-align: left; margin-left: auto; margin-right: auto;">
