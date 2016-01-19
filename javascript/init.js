@@ -109,6 +109,8 @@ function changeInput(){
         getStyle();
     }else if(index == 'Integrate'){
         getIntegrate();
+    }else if(index == 'GBox'){
+        importGBox();
     }else if(index == 'DG'){
         importDG200();
     }else if(index == 'DLT'){

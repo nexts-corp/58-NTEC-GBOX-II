@@ -174,6 +174,13 @@ if($_COOKIE["gbox"]["role"] == ADMINISTRATOR){
             </li>
 
             <li style="text-align: left;">
+                <a class="tooltip-tip ajax-load tooltipster-disable" href="#GBox">
+                    <i class="icon-camera"></i>
+                    <span style="display: inline-block; float: none;">Mini GBox</span>
+                </a>
+            </li>
+
+            <li style="text-align: left;">
                 <a class="tooltip-tip ajax-load tooltipster-disable" href="#DG">
                     <i class="icon-camera"></i>
                     <span style="display: inline-block; float: none;">DG 200</span>

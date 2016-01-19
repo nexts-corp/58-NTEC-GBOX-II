@@ -16,6 +16,7 @@ if($_COOKIE["gbox"]["codeAdmin"] == 1){
     echo file_get_contents("user.js").";";
     echo file_get_contents("userRoles.js").";";
     echo file_get_contents("selectPage.js").";";
+    echo file_get_contents("importGBox.js").";";
     echo file_get_contents("importDG200.js").";";
     echo file_get_contents("importDLT.js").";";
     echo file_get_contents("importRV3D.js").";";
