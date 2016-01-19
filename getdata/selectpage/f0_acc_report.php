@@ -118,7 +118,7 @@ error_reporting(0);
                                 ?>
                             </span>
                             <span>
-                                <span style="font-weight: bold;">Total Ack. : </span>
+                                <span style="font-weight: bold;">Total Acc. : </span>
                                 <span>
                                     <?php
                                     echo "$acc_num_2 ครั้ง";
@@ -217,16 +217,16 @@ error_reporting(0);
                                     elseif ($del_a[$jk]>=0) {
                                         $typeS="Acc";
                                     }
-                                    $title = "Over Acc. No.";
-                                    echo "Sudden $typeS No. $over_index";
+                                    $title = "Over Acc. Index : ";
+                                    echo "Sudden $typeS Index : $over_index";
                                 }
                                 elseif (($over_index>=100) AND ($over_index<300)) {
-                                    $title = "Un Control No.";
+                                    $title = "Un Control Index : ";
                                     $jk=$over_index-100;
                                     echo "$title $jk";
                                 }
                                 elseif ($over_index<100) {
-                                    $title = "Speed Over No.";
+                                    $title = "Speed Over Index : ";
                                     echo "$title $over_index";
                                 }
                                 ?>
