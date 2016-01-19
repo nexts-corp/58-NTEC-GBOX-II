@@ -200,7 +200,7 @@ error_reporting(0);
                             </span>
                         </span>
                     </td>
-                    <td style="background-color: rgb(153, 255, 153); text-align: center; width: 16%;">
+                    <td style="background-color: rgb(153, 255, 153); text-align: center; width: 16%; color: red;">
                         <span>
                             <span style="font-weight: bold;">Turn Index : </span>
                             <span>
