@@ -211,23 +211,23 @@ error_reporting(0);
                     </td>
                     <td style="background-color: rgb(153, 255, 153); text-align: center; width: 16%;">
                         <span>
-                            <span style="font-weight: bold;">
+                            <span style="font-weight: bold; color: red;">
                                 <?php
                                 if ($over_index=="") {
                                     $over_index = 1;
                                 }
                                 if (($over_index>=100) AND ($over_index<200)) {
-                                    $title = "Un Control Index";
+                                    $title = "Un Control Index : ";
                                     $jk = $over_index-100;
                                     echo "$title $jk";
                                 }
                                 elseif ($over_index>800) {
                                     $jk = $over_index-800;
-                                    $title = "Zero Index";
+                                    $title = "Zero Index : ";
                                     echo "$title $over_index";
                                 }
                                 elseif ($over_index<100) {
-                                    $title = "Speed Over Index";
+                                    $title = "Speed Over Index : ";
                                     echo "$title $over_index";
                                 }
                                 ?>
