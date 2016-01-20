@@ -675,24 +675,66 @@ error_reporting(0);
                                         ?>
                                     </td>
                                 </tr>
-                                <tr>
-                                <td style="background-color: rgb(204, 204, 204); text-align: right; font-weight: bold; width: 195px;" valign="undefined">
-                                <div style="text-align: center;"><small><span style="font-family: Arial;">&#3588;&#3632;&#3649;&#3609;&#3609;&#3619;&#3623;&#3617;&#3585;&#3634;&#3619;&#3621;&#3632;&#3648;&#3617;&#3636;&#3604;</span></small><br>
-                                <small><span style="font-family: Arial;"></span></small></div>
-                                <div style="text-align: center;"><small><span style="font-family: Arial;"><span style="color: red;">&#3648;&#3626;&#3657;&#3609;&#3607;&#3634;&#3591;
-                                </span><?php echo "<font face='Arial' size='2' color='#FF0066'> $tripdir1 <br> "; echo "<font face='Arial' size='1' color='#FF0066'> Begine : $latB1 - $lonB1 <br>"; echo "<font face='Arial' size='1' color='#FF0066'> End : $latB2 - $lonB2"; ?></span></small><small><span style="font-family: Arial;"></span></small></div>
-                                </td>
-                                <td style="background-color: white; font-weight: bold; text-align: center; width: 9px;" valign="undefined"><?php if (($TimeBegin>="06:00:00") AND ($TimeEnd<="18:30:00")) { $dayfont = "&#9788"; $daycolor = "#FF4000"; $daylight = "sun.png"; } else { $dayfont = "&#9789"; $daycolor = "#FFFF00"; $daylight = "moon.png";} echo "<img src='$daylight' width='22' height='22'/>";?></td>
-                                <td style="background-color: white; text-align: center; width: 64px;" valign="undefined"><?php $totlescore = $sc1+$sc2+$sc3+$sc4+ $totalL2+ $slope1 + $LaneC_over +$LaneC2_over;
-                                if ($totlescore<=10) { $star_i = 3;}
-                                elseif ((10<$totlescore) AND ($totlescore<=20)) { $star_i = 2; }
-                                elseif ((20<$totlescore) AND ($totlescore<=30)) { $star_i = 1;;}
-                                elseif ($totlescore>30) { $star_i = 0;}
-                                for ($j=1; $j<=$star_i; $j++) { echo "<img src='bus.png' width='30' height='30'/>"; }?><br>
-                                </td>
-                                <td style="width: 36px; text-align: center; background-color: rgb(204, 204, 204); vertical-align: middle;"><?php if ($totlescore<=10) { $GYR = "light0.png";} elseif ((10<$totlescore) AND ($totlescore<=20)) { $GYR = "light1.png";} elseif ((20<$totlescore) AND ($totlescore<=30)) { $GYR = "light2.png";} elseif ($totlescore>30) { $GYR = "light3.png";} echo "<font face='Arial' size='2'> <b> $totlescore </b>"; echo "<img src='$GYR' width='20' height='20'/>";?>
-                                <br>
-                                </td>
+                                <tr style="font-family: Arial;">
+                                    <td style="background-color: rgb(204, 204, 204); text-align: center; font-weight: bold; width: 195px;">
+                                        <span style="font-size: small;">คะแนนรวมการละเมิด</span><br>
+                                        <span style="font-size: small; color: red;">เส้นทาง&nbsp;
+                                            <?php
+                                            echo " $tripdir1 ";
+                                            ?>
+                                        </span><br>
+                                        <span style="font-size: x-small; color: #FF0066;">
+                                            <?php
+                                            echo " Begine : $latB1 - $lonB1 ";
+                                            ?>
+                                        </span><br>
+                                        <span style="font-size: x-small; color: #FF0066;">
+                                            <?php
+                                            echo " End : $latB2 - $lonB2";
+                                            ?>
+                                        </span>
+                                    </td>
+                                    <td style="background-color: white; font-weight: bold; text-align: center; width: 9px;">
+                                        <?php
+                                        if (($TimeBegin>="06:00:00") AND ($TimeEnd<="18:30:00")) {
+                                            $dayfont = "&#9788";
+                                            $daycolor = "#FF4000";
+                                            $daylight = "sun.png";
+                                        } else {
+                                            $dayfont = "&#9789";
+                                            $daycolor = "#FFFF00";
+                                            $daylight = "moon.png";
+                                        }
+                                        echo "<img src='$daylight' width='22' height='22'/>";
+                                        ?>
+                                    </td>
+                                    <td style="background-color: white; text-align: center; width: 64px;">
+                                        <?php
+                                        $totlescore = $sc1+$sc2+$sc3+$sc4+ $totalL2+ $slope1 + $LaneC_over +$LaneC2_over;
+                                        if ($totlescore<=10) { $star_i = 3;}
+                                        elseif ((10<$totlescore) AND ($totlescore<=20)) { $star_i = 2; }
+                                        elseif ((20<$totlescore) AND ($totlescore<=30)) { $star_i = 1;;}
+                                        elseif ($totlescore>30) { $star_i = 0;}
+                                        for ($j=1; $j<=$star_i; $j++) {
+                                            echo "<img src='bus.png' width='30' height='30'/>";
+                                        }
+                                        ?>
+                                    </td>
+                                    <td style="width: 36px; text-align: center; background-color: rgb(204, 204, 204); vertical-align: middle;">
+                                        <?php
+                                        if ($totlescore<=10) {
+                                            $GYR = "light0.png";
+                                        } elseif ((10<$totlescore) AND ($totlescore<=20)) {
+                                            $GYR = "light1.png";
+                                        } elseif ((20<$totlescore) AND ($totlescore<=30)) {
+                                            $GYR = "light2.png";
+                                        } elseif ($totlescore>30) {
+                                            $GYR = "light3.png";
+                                        }
+                                        echo "<b> $totlescore </b>";
+                                        echo "<img src='$GYR' width='20' height='20'/>";
+                                        ?>
+                                    </td>
                                 </tr>
 </tbody>
 </table>
