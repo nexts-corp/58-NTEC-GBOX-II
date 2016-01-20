@@ -637,6 +637,9 @@ error_reporting(0);
                                 <tr style="font-family: Arial; font-size: small; background-color: rgb(255, 255, 201);">
                                     <td style="width: 195px;">
                                         <span>5.การประพฤติในทางลาดชัน</span>
+                                        <?php
+                                        include ("f2_slope_function.php");
+                                        ?>
                                     </td>
                                     <td style="width: 9px;"></td>
                                     <td style="width: 64px;"></td>
