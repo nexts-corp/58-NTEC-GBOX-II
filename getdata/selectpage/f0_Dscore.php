@@ -740,7 +740,7 @@ error_reporting(0);
                         </table>
                     </td>
                     <td style="text-align: center; width: 55%; vertical-align: top; height: 542px;">
-                        <table style="background-color: white; font-family: Arial; font-size: small; width: 100%; text-align: left; margin-left: auto; margin-right: 0px;" border="0" cellpadding="2" cellspacing="2">
+                        <table style="font-family: Arial; font-size: small; width: 100%; text-align: left; margin-left: auto; margin-right: 0px;" border="0" cellpadding="2" cellspacing="2">
                             <tbody>
                                 <tr>
                                     <th colspan="6" rowspan="1" style="background-color: rgb(51, 204, 255);">
@@ -847,75 +847,252 @@ error_reporting(0);
                                         ?>
                                     </td>
                                 </tr>
-<tr>
-<td align="undefined" valign="undefined"></td>
-<td style="text-align: center;"><?php if ($spdMax!=0) {$spd_2 = ($score2/$spdMax)*100;} else {$spd_2 = 0;} $spd_2j = 100-$spd_2; $spd_2 = round($spd_2,2); for ($i=1; $i<=9; $i++) { $jk2 = $i*10; $jk1 = $jk2-10; if ($spd_2j<$jk2) {echo "<img src='a2.png'/><br>"; } else {echo "<img src='a1.png'/><br>";} } $speed_2 = $spd_2;?></td>
-<td style="text-align: center;"><?php if ($accMax!=0) {$spd_2 = ($acc_num_1/$accMax)*100;} else {$spd_2 = 0;} $spd_2j = 100-$spd_2; $spd_2 = round($spd_2,2); for ($i=1; $i<=9; $i++) { $jk2 = $i*10; $jk1 = $jk2-10; if ($spd_2j<$jk2) {echo "<img src='a2.png'/><br>"; } else {echo "<img src='a1.png'/><br>";} } $acc_2 = $spd_2;?></td>
-<td style="text-align: center;"><?php if ($turnMax!=0) {$spd_2 = ($totalL/$turnMax)*100;} else {$spd_2 = 0;} $spd_2j = 100-$spd_2; $spd_2 = round($spd_2,2); for ($i=1; $i<=9; $i++) { $jk2 = $i*10; $jk1 = $jk2-10; if ($spd_2j<$jk2) {echo "<img src='a2.png'/><br>"; } else {echo "<img src='a1.png'/><br>";} } $turn_2 = $spd_2;?></td>
-<td style="text-align: center;"><?php if ($zoneMax!=0) {$spd_2 = ($totalL2/$zoneMax)*100;} else {$spd_2 = 0;} $spd_2j = 100-$spd_2; $spd_2 = round($spd_2,2); for ($i=1; $i<=9; $i++) { $jk2 = $i*10; $jk1 = $jk2-10; if ($spd_2j<$jk2) {echo "<img src='a2.png'/><br>"; } else {echo "<img src='a1.png'/><br>";} } $zone_2 = $spd_2;?></td>
-<td style="text-align: center;"><?php if ($totlescore>=60) {$ty = 60;} else {$ty = $totlescore;} $spd_2 = ($ty/60)*100; $spd_2j = 100-$spd_2; $spd_2 = round($spd_2,2); if ($ty>=40) {echo "<img src='a4.png'/><br>"; } else {echo "<img src='a3.png'/><br>"; } if (($ty>=30) AND ($ty<40)) {echo "<img src='a4.png'/><br>"; } else {echo "<img src='a3.png'/><br>"; } if (($ty<30) AND ($ty>=27.5)) {echo "<img src='a5.png'/><br>"; } else {echo "<img src='a6.png'/><br>"; } if (($ty<27.5) AND ($ty>=25)) {echo "<img src='a5.png'/><br>"; } else {echo "<img src='a6.png'/><br>"; } if (($ty<25) AND ($ty>=22.5)) {echo "<img src='a5.png'/><br>"; } else {echo "<img src='a6.png'/><br>"; } if (($ty<22.5) AND ($ty>=20)) {echo "<img src='a5.png'/><br>"; } else {echo "<img src='a6.png'/><br>"; } if (($ty<20) AND ($ty>=16.67)) {echo "<img src='a2.png'/><br>"; } else {echo "<img src='a1.png'/><br>"; } if (($ty<16.67) AND ($ty>=13.33)) {echo "<img src='a2.png'/><br>"; } else {echo "<img src='a1.png'/><br>"; } if (($ty<13.33) AND ($ty>=10)) {echo "<img src='a2.png'/><br>"; } else {echo "<img src='a1.png'/><br>"; } ?></td>
-</tr>
-<tr>
-<td align="undefined" valign="undefined"></td>
-<td style="text-align: center; font-family: Arial; font-weight: bold;" valign="undefined"><small><small>Speed<br>
-<?php echo "<font face='Arial' size='1'>($speed_2%)";?><br>
-</small></small></td>
-<td style="text-align: center; font-family: Arial; font-weight: bold;" valign="undefined"><small><small>Acc<br>
-<?php echo " <font face='Arial' size='1'> ($acc_2%)";?></small></small></td>
-<td style="text-align: center; font-family: Arial; font-weight: bold;" valign="undefined"><small><small>&nbsp;Turn<br>
-<?php echo " <font face='Arial' size='1'>($turn_2%)";?></small></small></td>
-<td style="text-align: center; font-family: Arial; font-weight: bold;" valign="undefined"><small><small>Zone<br>
-<?php echo " <font face='Arial' size='1'> ($zone_2%)"; ?></small></small></td>
-<td style="text-align: center; font-family: Arial; font-weight: bold;" valign="undefined"><small><small>Total<br>
-<?php echo "$deviceD";?></small></small></td>
-</tr>
-<tr align="center">
-<td style="text-align: center;" colspan="6" rowspan="1"><small><small><span style="font-family: Arial;"></span></small></small>&nbsp;&nbsp;<?php /* include ("f2_map_function.php"); */
-/*include ("f2_int_speedG1_function.php");*/
-echo "<font face='Arial' size='120' color='#0489B1'> <b> Score $totlescore </b>";
-$A = $acc_num_1;
-$S = $osp1 + $osp2 + $osp3 + $osp4 ;
-$T = $total2 + $total3;
-$Z = $spd_zone_cnt + $cross_cnt3 + $stop_cnt2 + $tstop_cnt2 + $nstop_cnt2;
-if (($S<=25) AND ($A<=3) AND ($T<=6) AND ($Z<41) ) {$Dtype = "T2_lion.png"; $Lion01 = $Lion01+1;} elseif (($S>=20) AND ($A>=3) AND ($T>=8) AND ($Z>=35)) {$Dtype = "rhino.jpg"; $Rhnio01 = $Rhnio01+1;}
-elseif (($S>=14) AND ($A>=4) AND ($T>=4) AND ($Z<37) ) {$Dtype = "bull01.jpg"; $Bull01 = $Bull01+1;}
-elseif ((($S>=14) AND ($T>=4)) OR ($S>=30) ) {$Dtype = "tiger01.jpg"; $Tiger01 = $Tiger01+1;}
-echo "<img src='$Dtype' width='30' height='30'/> <br>";
-?>
-&nbsp;<?php if ($totlescore<=10) { $GYR = "light0.png";}
-elseif ((10<$totlescore) AND ($totlescore<=20)) { $GYR = "light1.png";}
-elseif ((20<$totlescore) AND ($totlescore<=30)) { $GYR = "light2.png";}
-elseif ($totlescore>30) { $GYR = "light3.png";}
-if (($timeStp>="06:00:00") AND ($timeStp<="18:30:00")) {
-$dayfont = "&#9788"; $daycolor = "#FF4000"; $daylight = "sun.png";
-}
-else {
-$dayfont = "&#9789"; $daycolor = "#FFFF00"; $daylight = "moon.png";}
-/* Write Total Score to Database/File */
-$score_pack1 = array($sc1,$sc2,$sc2_1,$sc2_2,$sc2_3,$sc2_4,$sc3,$sc4,$sc5,$sc6,$sc7,$sc8,$sc9,$totlescore);
-$score_pk1 = implode(":" , $score_pack1);
-$score_pack2 = array($count1,$count2,$count3,$count4,$count5,$count6,$count7_1,$count7_2,$count8,$count9,$count10,$count11,$count12);
-$score_pk2 = implode(":" , $score_pack2);
-/* $db = mysql_connect("53476f055e81994c02000008-nectec.clouddd.in.th:38096","adminlYkzegJ","MaLQvrNyPEpn"); */
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center;">
+                                        <?php
+                                        if ($spdMax!=0) {
+                                            $spd_2 = ($score2/$spdMax)*100;
+                                        } else {
+                                            $spd_2 = 0;
+                                        }
+                                        $spd_2j = 100-$spd_2;
+                                        $spd_2 = round($spd_2,2);
+                                        for ($i=1; $i<=9; $i++) {
+                                            $jk2 = $i*10;
+                                            $jk1 = $jk2-10;
+                                            if ($spd_2j<$jk2) {
+                                                echo "<img src='a2.png'/><br>";
+                                            } else {
+                                                echo "<img src='a1.png'/><br>";
+                                            }
+                                        }
+                                        $speed_2 = $spd_2;
+                                        ?>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <?php
+                                        if ($accMax!=0) {
+                                            $spd_2 = ($acc_num_1/$accMax)*100;
+                                        } else {
+                                            $spd_2 = 0;
+                                        }
+                                        $spd_2j = 100-$spd_2;
+                                        $spd_2 = round($spd_2,2);
+                                        for ($i=1; $i<=9; $i++) {
+                                            $jk2 = $i*10;
+                                            $jk1 = $jk2-10;
+                                            if ($spd_2j<$jk2) {
+                                                echo "<img src='a2.png'/><br>";
+                                            } else {
+                                                echo "<img src='a1.png'/><br>";
+                                            }
+                                        }
+                                        $acc_2 = $spd_2;
+                                        ?>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <?php
+                                        if ($turnMax!=0) {
+                                            $spd_2 = ($totalL/$turnMax)*100;
+                                        } else {
+                                            $spd_2 = 0;
+                                        }
+                                        $spd_2j = 100-$spd_2;
+                                        $spd_2 = round($spd_2,2);
+                                        for ($i=1; $i<=9; $i++) {
+                                            $jk2 = $i*10;
+                                            $jk1 = $jk2-10;
+                                            if ($spd_2j<$jk2) {
+                                                echo "<img src='a2.png'/><br>";
+                                            } else {
+                                                echo "<img src='a1.png'/><br>";
+                                            }
+                                        }
+                                        $turn_2 = $spd_2;
+                                        ?>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <?php
+                                        if ($zoneMax != 0) {
+                                            $spd_2 = ($totalL2 / $zoneMax) * 100;
+                                        } else {
+                                            $spd_2 = 0;
+                                        }
+                                        $spd_2j = 100 - $spd_2;
+                                        $spd_2 = round($spd_2, 2);
+                                        for ($i = 1; $i <= 9; $i++) {
+                                            $jk2 = $i * 10;
+                                            $jk1 = $jk2 - 10;
+                                            if ($spd_2j < $jk2) {
+                                                echo "<img src='a2.png'/><br>";
+                                            } else {
+                                                echo "<img src='a1.png'/><br>";
+                                            }
+                                        }
+                                        $zone_2 = $spd_2;
+                                        ?>
+                                    </td>
+                                    <td style="text-align: center;">
+                                        <?php
+                                        if ($totlescore >= 60) {
+                                            $ty = 60;
+                                        } else {
+                                            $ty = $totlescore;
+                                        }
+                                        $spd_2 = ($ty / 60) * 100;
+                                        $spd_2j = 100 - $spd_2;
+                                        $spd_2 = round($spd_2, 2);
+                                        if ($ty >= 40) {
+                                            echo "<img src='a4.png'/><br>";
+                                        } else {
+                                            echo "<img src='a3.png'/><br>";
+                                        }
+                                        if (($ty >= 30) AND ($ty < 40)) {
+                                            echo "<img src='a4.png'/><br>";
+                                        } else {
+                                            echo "<img src='a3.png'/><br>";
+                                        }
+                                        if (($ty < 30) AND ($ty >= 27.5)) {
+                                            echo "<img src='a5.png'/><br>";
+                                        } else {
+                                            echo "<img src='a6.png'/><br>";
+                                        }
+                                        if (($ty < 27.5) AND ($ty >= 25)) {
+                                            echo "<img src='a5.png'/><br>";
+                                        } else {
+                                            echo "<img src='a6.png'/><br>";
+                                        }
+                                        if (($ty < 25) AND ($ty >= 22.5)) {
+                                            echo "<img src='a5.png'/><br>";
+                                        } else {
+                                            echo "<img src='a6.png'/><br>";
+                                        }
+                                        if (($ty < 22.5) AND ($ty >= 20)) {
+                                            echo "<img src='a5.png'/><br>";
+                                        } else {
+                                            echo "<img src='a6.png'/><br>";
+                                        }
+                                        if (($ty < 20) AND ($ty >= 16.67)) {
+                                            echo "<img src='a2.png'/><br>";
+                                        } else {
+                                            echo "<img src='a1.png'/><br>";
+                                        }
+                                        if (($ty < 16.67) AND ($ty >= 13.33)) {
+                                            echo "<img src='a2.png'/><br>";
+                                        } else {
+                                            echo "<img src='a1.png'/><br>";
+                                        }
+                                        if (($ty < 13.33) AND ($ty >= 10)) {
+                                            echo "<img src='a2.png'/><br>";
+                                        } else {
+                                            echo "<img src='a1.png'/><br>";
+                                        }
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr style="text-align: center; font-family: Arial; font-weight: bold;">
+                                    <td></td>
+                                    <td>
+                                        Speed<br>
+                                        <?php
+                                        echo "($speed_2%)";
+                                        ?>
+                                    </td>
+                                    <td>
+                                        Acc<br>
+                                        <?php
+                                        echo "($acc_2%)";
+                                        ?>
+                                    </td>
+                                    <td>
+                                        Turn<br>
+                                        <?php
+                                        echo "($turn_2%)";
+                                        ?>
+                                    </td>
+                                    <td>
+                                        Zone<br>
+                                        <?php
+                                        echo "($zone_2%)";
+                                        ?>
+                                    </td>
+                                    <td>
+                                        Total<br>
+                                        <?php
+                                        echo "$deviceD";
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr style="font-family: Arial; text-align: center;">
+                                    <td colspan="6" rowspan="1">
+                                        <?php
+                                        /* include ("f2_map_function.php"); */
+                                        /*include ("f2_int_speedG1_function.php");*/
+                                        echo "<font size='120' color='#0489B1'> <b> Score $totlescore </b>";
+                                        $A = $acc_num_1;
+                                        $S = $osp1 + $osp2 + $osp3 + $osp4;
+                                        $T = $total2 + $total3;
+                                        $Z = $spd_zone_cnt + $cross_cnt3 + $stop_cnt2 + $tstop_cnt2 + $nstop_cnt2;
+                                        if (($S <= 25) AND ($A <= 3) AND ($T <= 6) AND ($Z < 41)) {
+                                            $Dtype = "T2_lion.png";
+                                            $Lion01 = $Lion01 + 1;
+                                        } elseif (($S >= 20) AND ($A >= 3) AND ($T >= 8) AND ($Z >= 35)) {
+                                            $Dtype = "rhino.jpg";
+                                            $Rhnio01 = $Rhnio01 + 1;
+                                        } elseif (($S >= 14) AND ($A >= 4) AND ($T >= 4) AND ($Z < 37)) {
+                                            $Dtype = "bull01.jpg";
+                                            $Bull01 = $Bull01 + 1;
+                                        } elseif ((($S >= 14) AND ($T >= 4)) OR ($S >= 30)) {
+                                            $Dtype = "tiger01.jpg";
+                                            $Tiger01 = $Tiger01 + 1;
+                                        }
+                                        echo "<img src='$Dtype' width='30' height='30'/> <br>";
+                                        ?>
+                                        &nbsp;<?php if ($totlescore <= 10) {
+                                            $GYR = "light0.png";
+                                        } elseif ((10 < $totlescore) AND ($totlescore <= 20)) {
+                                            $GYR = "light1.png";
+                                        } elseif ((20 < $totlescore) AND ($totlescore <= 30)) {
+                                            $GYR = "light2.png";
+                                        } elseif ($totlescore > 30) {
+                                            $GYR = "light3.png";
+                                        }
+                                        if (($timeStp >= "06:00:00") AND ($timeStp <= "18:30:00")) {
+                                            $dayfont = "&#9788";
+                                            $daycolor = "#FF4000";
+                                            $daylight = "sun.png";
+                                        } else {
+                                            $dayfont = "&#9789";
+                                            $daycolor = "#FFFF00";
+                                            $daylight = "moon.png";
+                                        }
+                                        /* Write Total Score to Database/File */
+                                        $score_pack1 = array($sc1, $sc2, $sc2_1, $sc2_2, $sc2_3, $sc2_4, $sc3, $sc4, $sc5, $sc6, $sc7, $sc8, $sc9, $totlescore);
+                                        $score_pk1 = implode(":", $score_pack1);
+                                        $score_pack2 = array($count1, $count2, $count3, $count4, $count5, $count6, $count7_1, $count7_2, $count8, $count9, $count10, $count11, $count12);
+                                        $score_pk2 = implode(":", $score_pack2);
+                                        /* $db = mysql_connect("53476f055e81994c02000008-nectec.clouddd.in.th:38096","adminlYkzegJ","MaLQvrNyPEpn"); */
 
-$objConnect = mysql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
-$objDB = mysql_select_db(DB_NAME);
+                                        $objConnect = mysql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
+                                        $objDB = mysql_select_db(DB_NAME);
 
-$delsql = " DELETE FROM `selectscore` WHERE (`device` = '$id') AND (`date`= '$DateBegin') AND (`time1`= '$Time1'); ";
-$objQuery = mysql_query($delsql);
+                                        $delsql = " DELETE FROM `selectscore` WHERE (`device` = '$id') AND (`date`= '$DateBegin') AND (`time1`= '$Time1'); ";
+                                        $objQuery = mysql_query($delsql);
 
-$strSQL = "INSERT INTO `selectscore` (`timestmp`,`index`,`device`,`date`,`time1`,`time2`,`pack1`,`pack2`,`tripdir`,`daylight`,`speedavg`,`distanceavg`,`timeavg` )
-VALUES ( NOW( ), '3', '$id','$DateBegin','$Time1','$Time2','$score_pk1','$score_pk2','$tripdir1','$daylight','$speed_avg3','$dis_sum_km','$deltaT');;";
-$objQuery = mysql_query($strSQL);
-mysql_close($objConnect);
-?> </td>
-</tr>
-</tbody>
-</table>
-
-&nbsp;</td>
-</tr>
-</tbody>
-</table>
-</form>
-</body></html>
+                                        $strSQL = "INSERT INTO `selectscore` (`timestmp`,`index`,`device`,`date`,`time1`,`time2`,`pack1`,`pack2`,`tripdir`,`daylight`,`speedavg`,`distanceavg`,`timeavg` )
+                                        VALUES ( NOW( ), '3', '$id','$DateBegin','$Time1','$Time2','$score_pk1','$score_pk2','$tripdir1','$daylight','$speed_avg3','$dis_sum_km','$deltaT');;";
+                                        $objQuery = mysql_query($strSQL);
+                                        mysql_close($objConnect);
+                                        ?>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+</html>
