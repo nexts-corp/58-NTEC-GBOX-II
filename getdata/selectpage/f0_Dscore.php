@@ -739,11 +739,11 @@ error_reporting(0);
                             </tbody>
                         </table>
                     </td>
-                    <td style="background-color: white; text-align: center; width: 55%; vertical-align: top; height: 542px;">
-                        <table style="font-family: Arial; width: 100%; text-align: left; margin-left: auto; margin-right: 0px;" border="0" cellpadding="2" cellspacing="2">
+                    <td style="text-align: center; width: 55%; vertical-align: top; height: 542px;">
+                        <table style="background-color: white; font-family: Arial; width: 100%; text-align: left; margin-left: auto; margin-right: 0px;" border="0" cellpadding="2" cellspacing="2">
                             <tbody>
                                 <tr>
-                                    <th colspan="6" rowspan="1" style="background-color: rgb(51, 204, 255);">
+                                    <th colspan="6" rowspan="1" style="background-color: rgb(51, 204, 255); font-size: small;">
                                         ระดับคะแนนที่ได้เปรียบเทียบ
                                         <span style="font-style: italic;"> คะแนนเฉลี่ย </span>
                                         (NORM) ของเส้นทาง
