@@ -3,7 +3,7 @@
     <TITLE> Driving Style function </TITLE>
 </HEAD>
 <BODY>
-<?
+<?php
 
 $totalL2 = ($spd_zone_cnt + $cross_cnt3 + $stop_cnt2 + $tstop_cnt2 + $nstop_cnt2) /10;  /* zone score */
 
