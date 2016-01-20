@@ -434,17 +434,23 @@ error_reporting(0);
                                     <td style="text-align: center; width: 36px;">
                                         <?php
                                         $speed_over = $osp1+ $osp2+$osp3 +$osp4;
-                                        echo "<font face='Arial' size='2'> <b> $score2 </b>";
+                                        echo "<b> $score2 </b>";
                                         $count2 = $speed_over;
                                         ?>
                                     </td>
                                 </tr>
-<tr>
-    <td style="background-color: rgb(255, 255, 153); width: 195px; color: rgb(153, 153, 153);"><small><span style="font-family: Arial; font-size: small; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 153); display: inline ! important; float: none;">&nbsp; 2.1 &#3648;&#3585;&#3636;&#3609;
-81-88 &#3585;&#3617;./&#3594;&#3617; &nbsp;</small></font></small></td>
-<td style="background-color: rgb(255, 255, 153); width: 9px; color: rgb(153, 153, 153);"></td>
-<td style="background-color: rgb(255, 255, 153); text-align: center; width: 36px; color: rgb(153, 153, 153);"><?php echo "<font face='Arial' size='2' color='gray'> $osp1"; $count3 = $osp1;?></td>
-</tr>
+                                <tr style="font-family: Arial; font-size: small; background-color: rgb(255, 255, 153); color: rgb(153, 153, 153);">
+                                    <td style="width: 195px;">
+                                        <span style="margin-left: 5px;"> 2.1  เกิน 81-88 กม./ชม </span>
+                                    </td>
+                                    <td style="width: 9px;"></td>
+                                    <td style="text-align: center; width: 36px;">
+                                        <?php
+                                        echo "$osp1";
+                                        $count3 = $osp1;
+                                        ?>
+                                    </td>
+                                </tr>
 <tr>
 <td style="background-color: rgb(255, 255, 153); width: 195px; color: rgb(153, 153, 153);"><small><span style="font-family: Arial; font-size: small; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 153); display: inline ! important; float: none;">&nbsp;
 2.2
