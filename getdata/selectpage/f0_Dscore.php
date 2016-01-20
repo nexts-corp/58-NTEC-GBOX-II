@@ -611,6 +611,7 @@ error_reporting(0);
                                     <td style="width: 195px;">
                                         <span style="margin-left: 10px;">4.4 จอดอย่างปลอดภัยใกล้ทางรถไฟ</span>
                                     </td>
+                                    <td style="width: 9px;"></td>
                                     <td style="text-align: center; width: 36px;">
                                         <?php
                                         echo "<b> $tstop_cnt2 </b>";
