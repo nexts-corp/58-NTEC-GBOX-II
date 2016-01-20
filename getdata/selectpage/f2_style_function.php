@@ -471,6 +471,7 @@ elseif ( ($speed_scr > $turn_scr) AND ($speed_scr > $acc_scr) ) {
 
 $db = mysql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
 $objDB = mysql_select_db(DB_NAME);
+mysql_query("SET NAMES 'utf8'");
 
 $strSQL = "DELETE FROM  `drivername` WHERE  `name` = '$DName' AND  `route`  =  '$tripdir' AND  `date` =  '$Date1'
              AND  `time1` =  '$TimeBegin'  ;  ";
