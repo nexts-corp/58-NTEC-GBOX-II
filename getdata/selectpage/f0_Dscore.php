@@ -740,10 +740,10 @@ error_reporting(0);
                         </table>
                     </td>
                     <td style="text-align: center; width: 55%; vertical-align: top; height: 542px;">
-                        <table style="background-color: white; font-family: Arial; width: 100%; text-align: left; margin-left: auto; margin-right: 0px;" border="0" cellpadding="2" cellspacing="2">
+                        <table style="background-color: white; font-family: Arial; font-size: small; width: 100%; text-align: left; margin-left: auto; margin-right: 0px;" border="0" cellpadding="2" cellspacing="2">
                             <tbody>
                                 <tr>
-                                    <th colspan="6" rowspan="1" style="background-color: rgb(51, 204, 255); font-size: small;">
+                                    <th colspan="6" rowspan="1" style="background-color: rgb(51, 204, 255);">
                                         ระดับคะแนนที่ได้เปรียบเทียบ
                                         <span style="font-style: italic;"> คะแนนเฉลี่ย </span>
                                         (NORM) ของเส้นทาง
@@ -752,14 +752,14 @@ error_reporting(0);
                                         ?>
                                     </th>
                                 </tr>
-<tr>
-<td align="undefined" valign="undefined"></td>
-<td style="text-align: center; font-family: Arial;" valign="undefined"><small><small>Speed</small></small></td>
-<td style="text-align: center; font-family: Arial;" valign="undefined"><small><small>Acc</small></small></td>
-<td style="text-align: center;" valign="undefined"><small><small style="font-family: Arial;">Turn</small></small></td>
-<td style="font-family: Arial; text-align: center;" valign="undefined"><small><small>Zone</small></small></td>
-<td style="font-family: Arial; text-align: center;" valign="undefined"><small><small>Total</small></small></td>
-</tr>
+                                <tr>
+                                    <td></td>
+                                    <td style="text-align: center;">Speed</td>
+                                    <td style="text-align: center;">Acc</td>
+                                    <td style="text-align: center;">Turn</td>
+                                    <td style="text-align: center;">Zone</td>
+                                    <td style="text-align: center;">Total</td>
+                                </tr>
 <tr>
 <td style="background-color: rgb(204, 255, 255); text-align: center;"><small><small style="font-family: Arial;">max.</small></small></td>
 <td style="text-align: center; background-color: rgb(204, 255, 255);"><?php echo "<font face='Arial' size='1'> $spdMax";?></td>
