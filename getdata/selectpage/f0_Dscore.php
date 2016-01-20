@@ -752,38 +752,101 @@ error_reporting(0);
                                         ?>
                                     </th>
                                 </tr>
-                                <tr>
+                                <tr style="text-align: center;">
                                     <td></td>
-                                    <td style="text-align: center;">Speed</td>
-                                    <td style="text-align: center;">Acc</td>
-                                    <td style="text-align: center;">Turn</td>
-                                    <td style="text-align: center;">Zone</td>
-                                    <td style="text-align: center;">Total</td>
+                                    <td>Speed</td>
+                                    <td>Acc</td>
+                                    <td>Turn</td>
+                                    <td>Zone</td>
+                                    <td>Total</td>
                                 </tr>
-<tr>
-<td style="background-color: rgb(204, 255, 255); text-align: center;"><small><small style="font-family: Arial;">max.</small></small></td>
-<td style="text-align: center; background-color: rgb(204, 255, 255);"><?php echo "<font face='Arial' size='1'> $spdMax";?></td>
-<td style="text-align: center; background-color: rgb(204, 255, 255);"><?php echo "<font face='Arial' size='1'> $accMax";?></td>
-<td style="text-align: center; background-color: rgb(204, 255, 255);"><?php echo "<font face='Arial' size='1'> $turnMax ";?></td>
-<td style="text-align: center; background-color: rgb(204, 255, 255);"><?php echo "<font face='Arial' size='1'> $spdMax ";?></td>
-<td style="text-align: center; background-color: rgb(204, 255, 255);"><?php echo "<font face='Arial' size='1'> $scoreMax ";?></td>
-</tr>
-<tr>
-<td style="text-align: center; background-color: rgb(204, 255, 255);"><small><small style="font-family: Arial;">avg.</small></small></td>
-<td style="background-color: rgb(204, 255, 255); text-align: center;"><?php echo "<font face='Arial' size='1'> $spd_SA ";?></td>
-<td style="background-color: rgb(204, 255, 255); text-align: center;"><?php echo "<font face='Arial' size='1'> $acc_SA ";?></td>
-<td style="background-color: rgb(204, 255, 255); text-align: center;"><?php echo "<font face='Arial' size='1'> $turn_SA";?></td>
-<td style="background-color: rgb(204, 255, 255); text-align: center;"><?php echo "<font face='Arial' size='1'> $zone_SA ";?></td>
-<td style="background-color: rgb(204, 255, 255); text-align: center;"><?php echo "<font face='Arial' size='1'> $score_SA ";?></td>
-</tr>
-<tr>
-<td style="text-align: center; background-color: rgb(204, 255, 255);"><small><small style="font-family: Arial;">scr.</small></small></td>
-<td style="background-color: rgb(204, 255, 255); text-align: center;"><?php echo "<font face='Arial' size='1'> $score2";?></td>
-<td style="background-color: rgb(204, 255, 255); text-align: center;"><?php echo "<font face='Arial' size='1'> $acc_num_1";?></td>
-<td style="background-color: rgb(204, 255, 255); text-align: center;"><?php echo "<font face='Arial' size='1'> $totalL ";?></td>
-<td style="background-color: rgb(204, 255, 255); text-align: center;"><?php echo "<font face='Arial' size='1'> $totalL2 ";?></td>
-<td style="background-color: rgb(204, 255, 255); text-align: center;"><?php echo "<font face='Arial' size='1'> $totlescore "; if ($totlescore<=10) { $GYR = "light0.png";} elseif ((10<$totlescore) AND ($totlescore<=20)) { $GYR = "light1.png";} elseif ((20<$totlescore) AND ($totlescore<=30)) { $GYR = "light2.png";} elseif ($totlescore>30) { $GYR = "light3.png";} echo "<img src='$GYR' width='12' height='12'/>";?></td>
-</tr>
+                                <tr style="background-color: rgb(204, 255, 255); text-align: center;">
+                                    <td>max.</td>
+                                    <td>
+                                        <?php
+                                        echo "$spdMax";
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        echo "$accMax";
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        echo "$turnMax";
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        echo "$spdMax";
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        echo "$scoreMax";
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr style="text-align: center; background-color: rgb(204, 255, 255);">
+                                    <td>avg.</td>
+                                    <td>
+                                        <?php
+                                        echo "$spd_SA";
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        echo "$acc_SA";
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        echo "$turn_SA";?></td>
+                                    <td>
+                                        <?php
+                                        echo "$zone_SA";
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        echo "$score_SA";
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr style="text-align: center; background-color: rgb(204, 255, 255);">
+                                    <td>scr.</td>
+                                    <td>
+                                        <?php
+                                        echo "$score2";
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        echo "$acc_num_1";
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        echo "$totalL";
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        echo "$totalL2";
+                                        ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        echo "$totlescore ";
+                                        if ($totlescore<=10) { $GYR = "light0.png";}
+                                        elseif ((10<$totlescore) AND ($totlescore<=20)) { $GYR = "light1.png";}
+                                        elseif ((20<$totlescore) AND ($totlescore<=30)) { $GYR = "light2.png";}
+                                        elseif ($totlescore>30) { $GYR = "light3.png";}
+                                        echo "<img src='$GYR' width='12' height='12'/>";
+                                        ?>
+                                    </td>
+                                </tr>
 <tr>
 <td align="undefined" valign="undefined"></td>
 <td style="text-align: center;"><?php if ($spdMax!=0) {$spd_2 = ($score2/$spdMax)*100;} else {$spd_2 = 0;} $spd_2j = 100-$spd_2; $spd_2 = round($spd_2,2); for ($i=1; $i<=9; $i++) { $jk2 = $i*10; $jk1 = $jk2-10; if ($spd_2j<$jk2) {echo "<img src='a2.png'/><br>"; } else {echo "<img src='a1.png'/><br>";} } $speed_2 = $spd_2;?></td>
