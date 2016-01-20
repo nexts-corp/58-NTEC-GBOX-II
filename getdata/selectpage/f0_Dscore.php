@@ -634,49 +634,66 @@ error_reporting(0);
                                         ?>
                                     </td>
                                 </tr>
-<tr>
-<td style="background-color: rgb(255, 255, 204);"><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: small; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; display: inline ! important; float: none;">5.&#3585;&#3634;&#3619;&#3611;&#3619;&#3632;&#3614;&#3620;&#3605;&#3636;&#3651;&#3609;&#3607;&#3634;&#3591;&#3621;&#3634;&#3604;&#3594;&#3633;&#3609;&nbsp;<?php //include ("f2_slope_function.php"); ?></span></td>
-<td align="undefined" valign="undefined"></td>
-<td align="undefined" valign="undefined"></td>
-<td style="text-align: center;" valign="undefined"><small><?php /* for ($i=1; $i<=$stp_point_cnt; $i++) {
-if ($delDis[$i]!=0) {$gradeH[$i] = (($AccSlope[$i] / $delDis[$i])*100);}
-$gradeH[$i] = round($gradeH[$i],2);
-if ((abs($gradeH[$i])>=4)) {$slope1 = $slope1+1;}
-}*/
-echo "$slope_dan";?></small></td>
-</tr>
-<tr>
-<td><small>6. &#3585;&#3634;&#3619;&#3648;&#3611;&#3621;&#3637;&#3656;&#3618;&#3609;&#3594;&#3656;&#3629;&#3591;&#3592;&#3619;&#3634;&#3592;&#3619;</small></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"><small><?php echo "$LaneC_over ($LaneC)";?></small></td>
-</tr>
-<tr>
-<td><small>7. &#3585;&#3634;&#3619;&#3649;&#3595;&#3591;</small></td>
-<td></td>
-<td></td>
-<td style="text-align: center;"><?php echo "$LaneC2_over";
-?></td>
-</tr>
-<tr>
-<td style="background-color: rgb(204, 204, 204); text-align: right; font-weight: bold; width: 195px;" valign="undefined">
-<div style="text-align: center;"><small><span style="font-family: Arial;">&#3588;&#3632;&#3649;&#3609;&#3609;&#3619;&#3623;&#3617;&#3585;&#3634;&#3619;&#3621;&#3632;&#3648;&#3617;&#3636;&#3604;</span></small><br>
-<small><span style="font-family: Arial;"></span></small></div>
-<div style="text-align: center;"><small><span style="font-family: Arial;"><span style="color: red;">&#3648;&#3626;&#3657;&#3609;&#3607;&#3634;&#3591;
-</span><?php echo "<font face='Arial' size='2' color='#FF0066'> $tripdir1 <br> "; echo "<font face='Arial' size='1' color='#FF0066'> Begine : $latB1 - $lonB1 <br>"; echo "<font face='Arial' size='1' color='#FF0066'> End : $latB2 - $lonB2"; ?></span></small><small><span style="font-family: Arial;"></span></small></div>
-</td>
-<td style="background-color: white; font-weight: bold; text-align: center; width: 9px;" valign="undefined"><?php if (($TimeBegin>="06:00:00") AND ($TimeEnd<="18:30:00")) { $dayfont = "&#9788"; $daycolor = "#FF4000"; $daylight = "sun.png"; } else { $dayfont = "&#9789"; $daycolor = "#FFFF00"; $daylight = "moon.png";} echo "<img src='$daylight' width='22' height='22'/>";?></td>
-<td style="background-color: white; text-align: center; width: 64px;" valign="undefined"><?php $totlescore = $sc1+$sc2+$sc3+$sc4+ $totalL2+ $slope1 + $LaneC_over +$LaneC2_over;
-if ($totlescore<=10) { $star_i = 3;}
-elseif ((10<$totlescore) AND ($totlescore<=20)) { $star_i = 2; }
-elseif ((20<$totlescore) AND ($totlescore<=30)) { $star_i = 1;;}
-elseif ($totlescore>30) { $star_i = 0;}
-for ($j=1; $j<=$star_i; $j++) { echo "<img src='bus.png' width='30' height='30'/>"; }?><br>
-</td>
-<td style="width: 36px; text-align: center; background-color: rgb(204, 204, 204); vertical-align: middle;"><?php if ($totlescore<=10) { $GYR = "light0.png";} elseif ((10<$totlescore) AND ($totlescore<=20)) { $GYR = "light1.png";} elseif ((20<$totlescore) AND ($totlescore<=30)) { $GYR = "light2.png";} elseif ($totlescore>30) { $GYR = "light3.png";} echo "<font face='Arial' size='2'> <b> $totlescore </b>"; echo "<img src='$GYR' width='20' height='20'/>";?>
-<br>
-</td>
-</tr>
+                                <tr style="font-family: Arial; font-size: small; background-color: rgb(255, 255, 201);">
+                                    <td style="width: 195px;">
+                                        <span>5.การประพฤติในทางลาดชัน</span>
+                                    </td>
+                                    <td style="width: 9px;"></td>
+                                    <td style="width: 64px;"></td>
+                                    <td style="text-align: center; width: 36px;">
+                                        <?php
+                                        /* for ($i=1; $i<=$stp_point_cnt; $i++) {
+                                            if ($delDis[$i]!=0) {$gradeH[$i] = (($AccSlope[$i] / $delDis[$i])*100);}
+                                            $gradeH[$i] = round($gradeH[$i],2);
+                                            if ((abs($gradeH[$i])>=4)) {$slope1 = $slope1+1;}
+                                        }*/
+                                        echo "$slope_dan";
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr style="font-family: Arial; font-size: small; background-color: rgb(255, 255, 201);">
+                                    <td style="width: 195px;">
+                                        <span>6. การเปลี่ยนช่องจราจร</span>
+                                    </td>
+                                    <td style="width: 9px;"></td>
+                                    <td style="width: 64px;"></td>
+                                    <td style="text-align: center; width: 36px;">
+                                        <?php
+                                        echo "$LaneC_over ($LaneC)";
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr style="font-family: Arial; font-size: small; background-color: rgb(255, 255, 201);">
+                                    <td style="width: 195px;">
+                                        <span>7. การแซง</span>
+                                    </td>
+                                    <td style="width: 9px;"></td>
+                                    <td style="width: 64px;"></td>
+                                    <td style="text-align: center; width: 36px;">
+                                        <?php
+                                        echo "$LaneC2_over";
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr>
+                                <td style="background-color: rgb(204, 204, 204); text-align: right; font-weight: bold; width: 195px;" valign="undefined">
+                                <div style="text-align: center;"><small><span style="font-family: Arial;">&#3588;&#3632;&#3649;&#3609;&#3609;&#3619;&#3623;&#3617;&#3585;&#3634;&#3619;&#3621;&#3632;&#3648;&#3617;&#3636;&#3604;</span></small><br>
+                                <small><span style="font-family: Arial;"></span></small></div>
+                                <div style="text-align: center;"><small><span style="font-family: Arial;"><span style="color: red;">&#3648;&#3626;&#3657;&#3609;&#3607;&#3634;&#3591;
+                                </span><?php echo "<font face='Arial' size='2' color='#FF0066'> $tripdir1 <br> "; echo "<font face='Arial' size='1' color='#FF0066'> Begine : $latB1 - $lonB1 <br>"; echo "<font face='Arial' size='1' color='#FF0066'> End : $latB2 - $lonB2"; ?></span></small><small><span style="font-family: Arial;"></span></small></div>
+                                </td>
+                                <td style="background-color: white; font-weight: bold; text-align: center; width: 9px;" valign="undefined"><?php if (($TimeBegin>="06:00:00") AND ($TimeEnd<="18:30:00")) { $dayfont = "&#9788"; $daycolor = "#FF4000"; $daylight = "sun.png"; } else { $dayfont = "&#9789"; $daycolor = "#FFFF00"; $daylight = "moon.png";} echo "<img src='$daylight' width='22' height='22'/>";?></td>
+                                <td style="background-color: white; text-align: center; width: 64px;" valign="undefined"><?php $totlescore = $sc1+$sc2+$sc3+$sc4+ $totalL2+ $slope1 + $LaneC_over +$LaneC2_over;
+                                if ($totlescore<=10) { $star_i = 3;}
+                                elseif ((10<$totlescore) AND ($totlescore<=20)) { $star_i = 2; }
+                                elseif ((20<$totlescore) AND ($totlescore<=30)) { $star_i = 1;;}
+                                elseif ($totlescore>30) { $star_i = 0;}
+                                for ($j=1; $j<=$star_i; $j++) { echo "<img src='bus.png' width='30' height='30'/>"; }?><br>
+                                </td>
+                                <td style="width: 36px; text-align: center; background-color: rgb(204, 204, 204); vertical-align: middle;"><?php if ($totlescore<=10) { $GYR = "light0.png";} elseif ((10<$totlescore) AND ($totlescore<=20)) { $GYR = "light1.png";} elseif ((20<$totlescore) AND ($totlescore<=30)) { $GYR = "light2.png";} elseif ($totlescore>30) { $GYR = "light3.png";} echo "<font face='Arial' size='2'> <b> $totlescore </b>"; echo "<img src='$GYR' width='20' height='20'/>";?>
+                                <br>
+                                </td>
+                                </tr>
 </tbody>
 </table>
 </td>
