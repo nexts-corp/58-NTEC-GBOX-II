@@ -365,7 +365,7 @@ error_reporting(0);
                                     </td>
                                 </tr>
                                 <tr style="font-family: Arial; font-size: small; background-color: rgb(255, 255, 201);">
-                                    <td>
+                                    <td style="width: 195px;">
                                         <span> 1.การเร่งและชะลอที่นุ่มนวล </span>
                                         <?php
                                         include ("f2_acc_function.php");
@@ -405,15 +405,40 @@ error_reporting(0);
                                         </span>
                                     </td>
                                 </tr>
-<tr>
-<td style="background-color: rgb(255, 255, 153); width: 195px;"><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: small; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 153); display: inline ! important; float: none;">&nbsp;2.&#3588;&#3623;&#3634;&#3617;&#3648;&#3619;&#3655;&#3623;&#3605;&#3634;&#3617;&#3585;&#3635;&#3627;&#3609;&#3604;&nbsp;
-&nbsp;<?php include ("f2_speed_function.php");
-$sc2 = $score2; $sc2_1 = $score2_1; $sc2_2 = $score2_2; $sc2_3 = $score2_3; $sc2_4 = $score2_4;
-?></span></td>
-<td style="background-color: rgb(255, 255, 153); width: 9px;"></td>
-<td colspan="1" rowspan="5" style="background-color: rgb(255, 255, 153); vertical-align: middle; width: 64px; text-align: right;"><?php if ($sc2<2) { $score2_i = 4; } elseif (($sc2>=2) AND ($sc2<7)) { $score2_i = 3; } elseif (($sc2>=7) AND ($sc2<13)) { $score2_i = 2; } elseif (($sc2>=13) AND ($sc2<18)) { $score2_i = 1; } elseif ($sc2>=18) { $score2_i = 0; } for ($j=1; $j<=$score1_i; $j++) { echo " <img src='star.png' width='16' height='16'/>"; }?></td>
-<td style="background-color: rgb(255, 255, 153); text-align: center; width: 36px;"><?php $speed_over = $osp1+ $osp2+$osp3 +$osp4; echo "<font face='Arial' size='2'> <b> $score2 </b>"; $count2 = $speed_over;?></td>
-</tr>
+                                <tr style="font-family: Arial; font-size: small; background-color: rgb(255, 255, 153);">
+                                    <td style="width: 195px;">
+                                        <span>2.ความเร็วตามกำหนด</span>
+                                        <?php
+                                        include ("f2_speed_function.php");
+                                        $sc2 = $score2;
+                                        $sc2_1 = $score2_1;
+                                        $sc2_2 = $score2_2;
+                                        $sc2_3 = $score2_3;
+                                        $sc2_4 = $score2_4;
+                                        ?>
+                                    </td>
+                                    <td style="width: 9px;"></td>
+                                    <td rowspan="5" style="vertical-align: middle; width: 64px; text-align: right;">
+                                        <?php
+                                        if ($sc2<2) { $score2_i = 4; }
+                                        elseif (($sc2>=2) AND ($sc2<7)) { $score2_i = 3; }
+                                        elseif (($sc2>=7) AND ($sc2<13)) { $score2_i = 2; }
+                                        elseif (($sc2>=13) AND ($sc2<18)) { $score2_i = 1; }
+                                        elseif ($sc2>=18) { $score2_i = 0; }
+
+                                        for ($j=1; $j<=$score1_i; $j++) {
+                                            echo " <img src='star.png' width='16' height='16'/>";
+                                        }
+                                        ?>
+                                    </td>
+                                    <td style="text-align: center; width: 36px;">
+                                        <?php
+                                        $speed_over = $osp1+ $osp2+$osp3 +$osp4;
+                                        echo "<font face='Arial' size='2'> <b> $score2 </b>";
+                                        $count2 = $speed_over;
+                                        ?>
+                                    </td>
+                                </tr>
 <tr>
     <td style="background-color: rgb(255, 255, 153); width: 195px; color: rgb(153, 153, 153);"><small><span style="font-family: Arial; font-size: small; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 153); display: inline ! important; float: none;">&nbsp; 2.1 &#3648;&#3585;&#3636;&#3609;
 81-88 &#3585;&#3617;./&#3594;&#3617; &nbsp;</small></font></small></td>

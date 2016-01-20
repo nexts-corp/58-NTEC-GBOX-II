@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="554ad9fb-b949-45fa-9901-c6937c08f900" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\xampp\htdocs\gbox_ph2\getdata\selectpage\00.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getdata/selectpage/f0_Style.php" afterPath="$PROJECT_DIR$/getdata/selectpage/f0_Style.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getdata/selectpage/f0_Dscore.php" afterPath="$PROJECT_DIR$/getdata/selectpage/f0_Dscore.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gbox_ph2.iws" />
@@ -73,10 +72,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="f0_Style.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="f0_Style.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/getdata/selectpage/f0_Style.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5669565">
+            <state vertical-scroll-proportion="-12.538462">
               <caret line="420" column="46" selection-start-line="420" selection-start-column="46" selection-end-line="420" selection-end-column="46" />
               <folding />
             </state>
@@ -93,12 +92,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="f0_Dscore.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="f0_Dscore.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/getdata/selectpage/f0_Dscore.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.5192308">
-              <caret line="511" column="547" selection-start-line="511" selection-start-column="526" selection-end-line="511" selection-end-column="547" />
+            <state vertical-scroll-proportion="0.72131145">
+              <caret line="440" column="32" selection-start-line="440" selection-start-column="32" selection-end-line="440" selection-end-column="32" />
               <folding>
+                <element signature="n#style#0;n#tr#2;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#2;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#2;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#1;n#tr#3;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#2;n#tr#3;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#td#3;n#tr#3;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#2;n#tr#5;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#small#0;n#td#0;n#tr#6;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -167,7 +174,6 @@
         <option value="$PROJECT_DIR$/getdata/selectpage/f2_acc_function.php" />
         <option value="$PROJECT_DIR$/getdata/selectpage/f1_IntegrateNorm.php" />
         <option value="$PROJECT_DIR$/getdata/selectpage/f2_accInt_chart.php" />
-        <option value="$PROJECT_DIR$/getdata/selectpage/f0_Dscore.php" />
         <option value="$PROJECT_DIR$/getdata/selectpage/f1_integrate.php" />
         <option value="$PROJECT_DIR$/getdata/selectpage/f0_acc_report.php" />
         <option value="$PROJECT_DIR$/getdata/selectpage/f0_speed_report.php" />
@@ -184,6 +190,7 @@
         <option value="$PROJECT_DIR$/getdata/test/f0_Style.php" />
         <option value="$PROJECT_DIR$/getdata/selectpage/00.php" />
         <option value="$PROJECT_DIR$/getdata/selectpage/f0_Style.php" />
+        <option value="$PROJECT_DIR$/getdata/selectpage/f0_Dscore.php" />
       </list>
     </option>
   </component>
@@ -393,7 +400,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1" y="1" width="1278" height="758" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24335213" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -791,17 +798,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getdata/selectpage/f0_Dscore.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.5192308">
-          <caret line="511" column="547" selection-start-line="511" selection-start-column="526" selection-end-line="511" selection-end-column="547" />
-          <folding>
-            <element signature="n#style#0;n#td#2;n#tr#5;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#small#0;n#td#0;n#tr#6;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/javascript/importGBox.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -828,9 +824,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/getdata/selectpage/f0_Style.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5669565">
+        <state vertical-scroll-proportion="-12.538462">
           <caret line="420" column="46" selection-start-line="420" selection-start-column="46" selection-end-line="420" selection-end-column="46" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getdata/selectpage/f0_Dscore.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.72131145">
+          <caret line="440" column="32" selection-start-line="440" selection-start-column="32" selection-end-line="440" selection-end-column="32" />
+          <folding>
+            <element signature="n#style#0;n#tr#2;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#2;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#2;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#2;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#0;n#tr#3;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#1;n#tr#3;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#3;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#3;n#tr#3;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#td#2;n#tr#5;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#small#0;n#td#0;n#tr#6;n#tbody#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#1;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
