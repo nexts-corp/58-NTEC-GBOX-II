@@ -418,7 +418,7 @@ error_reporting(0);
                         echo "<table width='100%' border='0' style='font-size: small;'>
                             <tr bgcolor='#3399CC'>
                                 <td></td>
-                                <td colspan=6>
+                                <td colspan=11>
                                     <span style='color: white;'>Driver $DName : Route $tripdir ($num_rows)</span>
                                 </td>
                             </tr>
