@@ -437,6 +437,10 @@ error_reporting(0);
                             </tr> ";
 
                             for ($j=1; $j<=$num_rows; $j++) {
+                                $da = explode(":", $dan_i[$j]);
+                                $dang1 = $da[0];
+                                $dang2 = $da[1];
+
                                 echo "<tr bgcolor='#FFFFFF'>
                                     <td align='center'>$j</td>
                                     <td align='center'>$date_i[$j]</td>
@@ -454,6 +458,10 @@ error_reporting(0);
 
                                 $j = $j+1;
                                 if ($j<=$num_rows) {
+                                    $da = explode(":", $dan_i[$j]);
+                                    $dang1 = $da[0];
+                                    $dang2 = $da[1];
+
                                     echo " <tr bgcolor='#F3F781'>
                                         <td align='center'>$j</td>
                                         <td align='center'>$date_i[$j]</td>
