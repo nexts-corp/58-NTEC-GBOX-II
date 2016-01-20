@@ -421,7 +421,7 @@ error_reporting(0);
 
                         } ?> </td>
                     <td>
-                        <?php echo "<table width='100%' border='0' style='background-color: #FFFFFF';>";
+                        <?php echo "<table width='100%' border='0'>";
                         echo " <tr bgcolor='#3399CC'> <td> </td>
 <td colspan=11> <font size='2' color='white'> Driver $DName : Route $tripdir ($num_rows) </td> ";
                         echo " </tr> ";
@@ -447,6 +447,8 @@ error_reporting(0);
                             $da = explode(":", $dan_i[$j]);
                             $dang1 = $da[0];
                             $dang2 = $da[1];
+
+                            echo " <tr bgcolor='white'>";
 
                             echo " <td align='center'> <font size='2' color='black'> $j </td> ";
                             echo " <td align='center'> <font size='2' color='black'> $date_i[$j] </td> ";
