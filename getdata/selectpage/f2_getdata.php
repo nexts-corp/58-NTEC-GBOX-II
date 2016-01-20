@@ -154,82 +154,63 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
     $lonB1 = DMStoDECLn($lon_begin);
     $lonB2 = DMStoDECLn($lon_end);
 
-    if (($latB1>=14.0070) AND ($latB1<=14.0230)) {
-        $tripdir = "A - B ";
-    }
-    elseif (($latB1>=14.0725) AND ($latB1<=14.0768)) {
-        $tripdir = "B - A ";
-    }
-    elseif (($latB1>=14.7496) AND ($latB1<=14.9898) AND ($latB2>=13.8120) AND ($latB2<=13.8841)) {
-        $tripdir = "NRM - BKK ";
-    }
-    elseif (($latB1>=13.8100) AND ($latB1<=13.8841) AND ($latB2>=14.7496) AND ($latB2<=14.9900)) {
-        $tripdir = "BKK - NRM";
-    }
-    elseif (($latB1>=16.4599) AND ($latB1<=17.2220) AND ($latB2>=19.8111) AND ($latB2<=19.8690) ) {
-        $tripdir = "PNL - CHR";
-    }
-    elseif (($latB1>=19.8111) AND ($latB1<=19.8690) AND ($latB2>=16.4599) AND ($latB2<=16.9620) ) {
-        $tripdir = "CHR - PNL";
-    }
-    elseif (($latB1>=13.8041) AND ($latB1<=13.8841) AND ($latB2>=16.4599) AND ($latB2<=16.8220) AND ($lonB2>=98.6824) ) {
-        $tripdir = "BKK - PNL";
-    }
-    elseif (($latB1>=16.4599) AND ($latB1<=16.9620) AND ($lonB1>=98.7890) AND ($latB2>=13.8100) AND ($latB2<=13.8841) ) {
-        $tripdir = "PNL - BKK";
-    }
-    elseif (($latB1>=13.8041) AND ($latB1<=13.8841) AND ($latB2>=16.4599) AND ($latB2<=17.2958) AND ($lonB2<=99.8660) AND ($lonB2>=99.7166) ) {
-        $tripdir = "BKK - SKT";
-    }
-    elseif (($latB2>=13.8041) AND ($latB2<=13.8841) AND ($latB1>=16.4599) AND ($latB1<=17.2958) AND ($lonB1<=99.8860) AND ($lonB1>=99.7166) ) {
-        $tripdir = "SKT - BKK";
-    }
-    elseif (($latB1<=13.8200) AND ($latB2>=18.4112) AND ($latB2<19.7364) AND ($lonB2<=100.0699) ) {
-        $tripdir = "BKK - CHM ";
-    }
-    elseif (($latB2<=13.8141) AND ($latB1>=18.7500) AND ($latB1<=18.9500) ) {
-        $tripdir = "CHM - BKK ";
-    }
-    elseif (($latB1>=19.6064) AND ($latB2<=13.9051)) {
-        $tripdir = "CHR - BKK ";
-    }
-    elseif (($latB1<=13.9051) AND ($latB2>=19.7364)) {
-        $tripdir = "BKK - CHR ";
-    }
-    elseif (($latB1<=13.8151) AND ($latB2>=16.6353 ) AND ($lonB2<=98.682422)) {
-        $tripdir = "BKK - MSD ";
-    }
-    elseif (($latB2<=13.8151) AND ($latB1>=16.6353 ) AND ($lonB1<=99.2000)) {
-        $tripdir = "MSD - BKK ";
-    }
-    elseif (($latB2>=13.7178 ) AND ($latB1>=9.1379 ) AND ($latB1<=10.0110)) {
-        $tripdir = "SRT - BKK ";
-    }
-    elseif (($latB1>=13.7178 ) AND ($latB2>=9.1379 ) AND ($latB2<=9.4194)) {
-        $tripdir = "BKK - SRT ";
-    }
-    elseif (($latB1>=13.7178 ) AND ($latB2>=10.455651 ) AND ($latB2<=10.564052)) {
-        $tripdir = "BKK - CMP ";
-    }
-    elseif (($latB1<=7.1920 ) AND ($latB1>=7.1518 ) ) {
-        $tripdir = "SKL - HYD ";
-    }
-    elseif (($latB1<=7.0290 )) {
-        $tripdir = "HYD - SKL ";
-    }
+    if (($latB1>=14.0070) AND ($latB1<=14.0230)) { $tripdir = "A - B "; }
+    elseif (($latB1>=14.0725) AND ($latB1<=14.0768)) { $tripdir = "B - A "; }
+    elseif (($latB1>=14.7496) AND ($latB1<=14.9898) AND ($latB2>=13.8120) AND ($latB2<=13.8841)) { $tripdir = "NRM - BKK "; }
+    elseif (($latB1>=13.8100) AND ($latB1<=13.8841) AND ($latB2>=14.7496) AND ($latB2<=14.9900)) { $tripdir = "BKK - NRM"; }
+    elseif (($latB1>=16.4599) AND ($latB1<=17.2220) AND ($latB2>=19.8111) AND ($latB2<=19.8690) ) { $tripdir = "PNL - CHR"; }
+    elseif (($latB1>=19.8111) AND ($latB1<=19.8690) AND ($latB2>=16.4599) AND ($latB2<=16.9620) ) { $tripdir = "CHR - PNL"; }
+    elseif (($latB1>=13.8041) AND ($latB1<=13.8841) AND ($latB2>=16.4599) AND ($latB2<=16.8220) AND ($lonB2>=98.6824) ) { $tripdir = "BKK - PNL"; }
+    elseif (($latB1>=16.4599) AND ($latB1<=16.9620) AND ($lonB1>=98.7890) AND ($latB2>=13.8100) AND ($latB2<=13.8841) ) { $tripdir = "PNL - BKK"; }
+    elseif (($latB1>=13.8041) AND ($latB1<=13.8841) AND ($latB2>=16.4599) AND ($latB2<=17.2958) AND ($lonB2<=99.8660) AND ($lonB2>=99.7166) ) { $tripdir = "BKK - SKT"; }
+    elseif (($latB2>=13.8041) AND ($latB2<=13.8841) AND ($latB1>=16.4599) AND ($latB1<=17.2958) AND ($lonB1<=99.8860) AND ($lonB1>=99.7166) ) { $tripdir = "SKT - BKK"; }
+    elseif (($latB1<=13.8200) AND ($latB2>=18.4112) AND ($latB2<19.7364) AND ($lonB2<=100.0699) ) { $tripdir = "BKK - CHM "; }
+    elseif (($latB2<=13.8141) AND ($latB1>=18.7500) AND ($latB1<=18.9500) ) { $tripdir = "CHM - BKK "; }
+    elseif (($latB1>=19.6064) AND ($latB2<=13.9051)) { $tripdir = "CHR - BKK "; }
+    elseif (($latB1<=13.9051) AND ($latB2>=19.7364)) { $tripdir = "BKK - CHR "; }
+    elseif (($latB1<=13.8151) AND ($latB2>=16.6353 ) AND ($lonB2<=98.682422)) { $tripdir = "BKK - MSD "; }
+    elseif (($latB2<=13.8151) AND ($latB1>=16.6353 ) AND ($lonB1<=99.2000)) { $tripdir = "MSD - BKK "; }
+    elseif (($latB2>=13.7178 ) AND ($latB1>=9.1379 ) AND ($latB1<=10.0110)) { $tripdir = "SRT - BKK "; }
+    elseif (($latB1>=13.7178 ) AND ($latB2>=9.1379 ) AND ($latB2<=9.4194)) { $tripdir = "BKK - SRT "; }
+    elseif (($latB1>=13.7178 ) AND ($latB2>=10.455651 ) AND ($latB2<=10.564052)) { $tripdir = "BKK - CMP "; }
+    elseif (($latB1<=7.1920 ) AND ($latB1>=7.1518 ) ) { $tripdir = "SKL - HYD "; }
+    elseif (($latB1<=7.0290 )  ) { $tripdir = "HYD - SKL "; }
 
-    elseif (($latB1<=13.74029) AND ($latB2>=13.8020)) {
-        $tripdir = "KSU1 - KSU2 ";
-    }
-    elseif (($latB1>=13.70903) AND ($latB2<=13.7501)) {
-        $tripdir = "KSU2 - KSU1 ";
-    }
+    elseif ( ($latB1<=13.74029) AND ($latB2>=13.8020) ) { $tripdir = "KSU1 - KSU2 "; }
+    elseif ( ($latB1>=13.70903) AND ($latB2<=13.7501) ) { $tripdir = "KSU2 - KSU1 "; }
 
-    else {
-        $tripdir = "UnKnow";
-    }
+    elseif ( ($latB1<=16.757628) AND ( ($latB2>=16.8900) AND ($latB2<=17.0061) ) ) { $tripdir = "PNL - SKT"; }
+    elseif ( ($latB1>=16.7441) AND ($latB2<=14.5158)  ) { $tripdir = "PNL - ATG"; }
 
-    $strSubmit = "SELECT DISTINCT * FROM `routescore` WHERE `goname` = '$tripdir' " ; /*The Last time stamp*/
+    elseif ( ($latB1>=14.4621) AND ($latB2<=14.2009)  ) { $tripdir = "ATG - NNY"; }
+
+    elseif ( ($lonB1<=101.544) AND ($lonB2>=102.0982)  ) { $tripdir = "359"; }
+    elseif ( ($latB1>=14.1749) AND ($lonB2>=101.5131)  ) { $tripdir = "NNY - SKW"; }
+
+    elseif ( ($lonB1<=101.2180) AND ($lonB2<=100.5399) AND ($latB1<=14.4153) ) { $tripdir = "NYY - ATG"; }
+
+    elseif ( ($latB1<=14.4691) AND ($latB2<=15.0642)  ) { $tripdir = "ANG - CHN"; }
+
+    elseif ( ($latB1>=18.0000) AND ($latB1<=18.5786) AND ($latB2>=18.7814)  ) { $tripdir = "LMP - CHM"; }
+
+    elseif ( ($latB1<=18.8442) AND ($latB2>=19.2970)  ) { $tripdir = "CHM - MHS"; }
+    elseif ( ($latB1>=19.3237) AND ($latB2<=18.9522)  ) { $tripdir = "MHS - CHM"; }
+
+    elseif ( ($latB1<=16.7799) AND ($latB2>=16.8148)  ) { $tripdir = "NU - PNL"; }
+
+    elseif ( ($latB1<=14.4952) AND ($latB2>=15.0478)  ) { $tripdir = "ANG - CHN"; }
+
+    else {$tripdir = "UnKnow";}
+
+    if (($tripdir == "UnKnow") OR ($tripdir == "PNL - SKT") ) {$goname0 = "HYD - SKL ";}
+    elseif ( ($tripdir == "PNL - ATG") OR ($tripdir == "ATG - NNY") OR ($tripdir == "NNY - SKW") OR ($tripdir == "359") OR
+        ($tripdir == "NYY - ATG") OR ($tripdir == "ANG - CHN") OR ($tripdir == "LMP - CHM") OR ($tripdir == "CHM - MHS")
+        OR ($tripdir == "MHS - CHM") OR ($tripdir == "NU - PNL") )
+    {$goname0 = "HYD - SKL ";}
+
+    else  {$goname0 = $tripdir;}
+
+    $strSubmit = "SELECT DISTINCT * FROM `routescore` WHERE `goname` = '$goname0' " ; /*The Last time stamp*/
 
     $objSubmit1 = mysql_query($strSubmit, $link) or die ("Error Query [".$strSubmit."]");
     $submit = mysql_fetch_array($objSubmit1);
