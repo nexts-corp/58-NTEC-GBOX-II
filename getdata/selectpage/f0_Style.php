@@ -420,7 +420,8 @@ error_reporting(0);
                             $dan_i[$i] = $danger1;
 
                         } ?> </td>
-                    <td>&nbsp; &nbsp; &nbsp;<?php echo "<table width='880' border='0'>";
+                    <td>
+                        <?php echo "<table width='100%' border='0' style='background-color: #FFFFFF';>";
                         echo " <tr bgcolor='#3399CC'> <td> </td>
 <td colspan=11> <font size='2' color='white'> Driver $DName : Route $tripdir ($num_rows) </td> ";
                         echo " </tr> ";
