@@ -35,28 +35,28 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
         $spd_unit=1.825; $acc_limit=1.5;
 
-        $sql = "SELECT * FROM data WHERE deviceid='".$deviceid."' AND time>='".$unix_time1."' AND time<='".$unix_time2."' ORDER BY time ASC";
+        $sql = "SELECT * FROM data WHERE deviceid='".$deviceid."' AND time>='".$unix_time1."' AND time<'".$unix_time2."' ORDER BY time ASC";
     }
     else if($data_dev["device_type_id"] == "2"){ //DG200
         $Datetime = date("Y-m-d", mktime(0, 0, 0, substr($date1, 5, 2), substr($date1, 8, 2), substr($date1, 0, 4)));
 
         $spd_unit=1;     $acc_limit=2;
 
-        $sql = "SELECT * FROM datadg200 WHERE deviceid='".$deviceid."' AND date='".$Datetime."' AND time>='".$time1."' AND time<='".$time2."' ORDER BY time ASC";
+        $sql = "SELECT * FROM datadg200 WHERE deviceid='".$deviceid."' AND date='".$Datetime."' AND time>='".$time1."' AND time<'".$time2."' ORDER BY time ASC";
     }
     else if($data_dev["device_type_id"] == "3"){ //DLT
         $Datetime = date("Y-m-d", mktime(0, 0, 0, substr($date1, 5, 2), substr($date1, 8, 2), substr($date1, 0, 4)));
 
         $spd_unit=1;     $acc_limit=2;
 
-        $sql = "SELECT * FROM datadlt01 WHERE deviceid='".$deviceid."' AND date='".$Datetime."' AND time>='".$time1."' AND time<='".$time2."' ORDER BY time ASC";
+        $sql = "SELECT * FROM datadlt01 WHERE deviceid='".$deviceid."' AND date='".$Datetime."' AND time>='".$time1."' AND time<'".$time2."' ORDER BY time ASC";
     }
     else if($data_dev["device_type_id"] == "4"){ //RV3D
         $Datetime = date("Y-m-d", mktime(0, 0, 0, substr($date1, 5, 2), substr($date1, 8, 2), substr($date1, 0, 4)));
 
         $spd_unit=1;     $acc_limit=2;
 
-        $sql = "SELECT * FROM datarv3d WHERE deviceid='".$deviceid."' AND date='".$Datetime."' AND time>='".$time1."' AND time<='".$time2."' ORDER BY time ASC";
+        $sql = "SELECT * FROM datarv3d WHERE deviceid='".$deviceid."' AND date='".$Datetime."' AND time>='".$time1."' AND time<'".$time2."' ORDER BY time ASC";
     }
     else{
         $spd_unit=1.825;     $acc_limit=1.5;
