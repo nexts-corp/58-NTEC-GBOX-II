@@ -736,17 +736,22 @@ error_reporting(0);
                                         ?>
                                     </td>
                                 </tr>
-</tbody>
-</table>
-</td>
-<td style="text-align: center; width: 425px; vertical-align: top; height: 542px;">
-<div style="text-align: center;">
-<table style="width: 100%; text-align: left; margin-left: auto; margin-right: 0px;" border="0" cellpadding="2" cellspacing="2">
-<tbody>
-<tr>
-<td colspan="6" rowspan="1" style="background-color: rgb(51, 204, 255);"><small style="font-family: Arial; font-weight: bold;"><small>&#3619;&#3632;&#3604;&#3633;&#3610;&#3588;&#3632;&#3649;&#3609;&#3609;&#3607;&#3637;&#3656;&#3652;&#3604;&#3657;&#3648;&#3611;&#3619;&#3637;&#3618;&#3610;&#3648;&#3607;&#3637;&#3618;&#3610;&nbsp;<span style="font-style: italic;">&#3588;&#3632;&#3649;&#3609;&#3609;&#3648;&#3593;&#3621;&#3637;&#3656;&#3618;</span> (NORM)
-&#3586;&#3629;&#3591;&#3648;&#3626;&#3657;&#3609;&#3607;&#3634;&#3591;&nbsp;</small></small><small style="font-family: Arial; font-weight: bold;"><small><?php echo "$rout_1";?></small></small></td>
-</tr>
+                            </tbody>
+                        </table>
+                    </td>
+                    <td style="background-color: white; text-align: center; width: 55%; vertical-align: top; height: 542px;">
+                        <table style="font-family: Arial; width: 100%; text-align: left; margin-left: auto; margin-right: 0px;" border="0" cellpadding="2" cellspacing="2">
+                            <tbody>
+                                <tr>
+                                    <th colspan="6" rowspan="1" style="background-color: rgb(51, 204, 255);">
+                                        ระดับคะแนนที่ได้เปรียบเทียบ
+                                        <span style="font-style: italic;"> คะแนนเฉลี่ย </span>
+                                        (NORM) ของเส้นทาง
+                                        <?php
+                                        echo "$rout_1";
+                                        ?>
+                                    </th>
+                                </tr>
 <tr>
 <td align="undefined" valign="undefined"></td>
 <td style="text-align: center; font-family: Arial;" valign="undefined"><small><small>Speed</small></small></td>
@@ -844,7 +849,7 @@ mysql_close($objConnect);
 </tr>
 </tbody>
 </table>
-</div>
+
 &nbsp;</td>
 </tr>
 </tbody>
