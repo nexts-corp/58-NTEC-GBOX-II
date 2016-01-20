@@ -378,35 +378,30 @@ error_reporting(0);
                         $objDB = mysql_select_db(DB_NAME);
 
                         $exe1 = "SELECT  `test` , `name` , `route` , `date` , `time1` , `time2` ,`splevel` , `sptype` , `acclevel` , `acctype` ,  `turnlevel` ,  `turntype` ,  `total` ,  `distance`,  `v_score` ,  `a_score` ,  `t_score`,  `danger` FROM  `drivername` WHERE  `name` LIKE  '$DName' ORDER BY  `total` ASC";
-
-                        $result1 = mysql_query($exe1) or die(mysql_error());
+                        $result1 = mysql_query($exe1)or die(mysql_error());
                         $num_rows = mysql_numrows($result1);
 
-                        for ($i = 1; $i <= $num_rows; $i++) {
+                        for ($i=1; $i<=$num_rows; $i++) {
 
-                            list($test, $name, $route, $date, $time1, $time2, $splevel, $sptype, $acclevel, $acctype, $turnlevel, $turntype, $total, $distance, $vscore, $ascore, $tscore, $danger1) = mysql_fetch_row($result1);
+                            list($test, $name , $route , $date , $time1 , $time2 , $splevel , $sptype , $acclevel ,$acctype ,$turnlevel , $turntype , $total , $distance, $vscore , $ascore , $tscore, $danger1 ) = mysql_fetch_row($result1);
 
                             $time_s = explode(":", $time1);
-                            $sec1 = ((($time_s[0]) * 3600) + (($time_s[1]) * 60) + ($time_s[2]));
+                            $sec1 = ((($time_s[0])*3600) + (($time_s[1])*60) + ($time_s[2]));
 
                             $time_s = explode(":", $time2);
-                            $sec2 = ((($time_s[0]) * 3600) + (($time_s[1]) * 60) + ($time_s[2]));
+                            $sec2 = ((($time_s[0])*3600) + (($time_s[1])*60) + ($time_s[2]));
 
                             $deltaT = $sec2 - $sec1;
-                            $hour_trip = floor($deltaT / 3600);
-                            $min_trip = ((floor($deltaT / 60)) - ($hour_trip * 60));
-                            if ($deltaT < 60) {
-                                $sec_trip = $deltaT;
-                            } elseif ((60 <= $deltaT) AND ($deltaT < 3600)) {
-                                $sec_trip = ($deltaT - ($min_trip * 60));
-                            } elseif ($deltaT >= 3600) {
-                                $sec_trip = ($deltaT - ($min_trip * 60) - ($hour_trip * 3600));
-                            }
+                            $hour_trip = floor($deltaT/3600);
+                            $min_trip = ((floor($deltaT/60)) - ($hour_trip*60));
+                            if ($deltaT<60) {$sec_trip = $deltaT;}
+                            elseif ((60<=$deltaT) AND ($deltaT<3600)) {$sec_trip = ($deltaT- ($min_trip*60));}
+                            elseif ($deltaT>=3600) {$sec_trip = ($deltaT- ($min_trip*60) - ($hour_trip*3600));}
 
                             $durat_i[$i] = "$hour_trip:$min_trip:$sec_trip";
 
 
-                            $date_i[$i] = $date;
+                            $date_i[$i] =  $date;
                             $time1_i[$i] = $time1;
                             $time2_i[$i] = $time2;
                             $v_i[$i] = $vscore;
@@ -418,75 +413,63 @@ error_reporting(0);
                             $dis_i[$i] = $distance;
 
                             $dan_i[$i] = $danger1;
-
-                        } ?> </td>
-                    <td>
-                        <?php echo "<table width='100%' border='0'>";
-                        echo " <tr bgcolor='#3399CC'> <td> </td>
-<td colspan=11> <font size='2' color='white'> Driver $DName : Route $tripdir ($num_rows) </td> ";
-                        echo " </tr> ";
-
-                        echo " <tr bgcolor='#58FA58'>
-<td align='center'> <font size='2' color='black'> index </td>
-<td align='center'> <font size='2' color='black'> date </td>
-<td align='center'> <font size='2' color='black'> time </td>
-<td align='center'> <font size='2' color='black'> route </td>
-
-<td align='center'> <font size='2' color='black'> distance </td>
-<td align='center'> <font size='2' color='black'> duration </td>
-<td align='center'> <font size='2' color='black'> speed </td>
-<td align='center'> <font size='2' color='black'> acc </td>
-<td align='center'> <font size='2' color='black'> turn </td>
-<td align='center'> <font size='2' color='black'> total </td>
-<td align='center' colspan=2> <font size='2' color='black'> suggest</td>
-
-</tr> ";
-
-                        for ($j = 1; $j <= $num_rows; $j++) {
-
-                            $da = explode(":", $dan_i[$j]);
-                            $dang1 = $da[0];
-                            $dang2 = $da[1];
-
-                            echo " <tr bgcolor='white'>";
-
-                            echo " <td align='center'> <font size='2' color='black'> $j </td> ";
-                            echo " <td align='center'> <font size='2' color='black'> $date_i[$j] </td> ";
-                            echo " <td align='center'> <font size='2' color='black'> $time1_i[$j] -  $time2_i[$j] </td> ";
-
-                            echo " <td align='center'> <font size='2' color='black'> $route_i[$j] </td> ";
-                            echo " <td align='center'> <font size='2' color='black'> $dis_i[$j] </td> ";
-                            echo " <td align='center'> <font size='2' color='black'> $durat_i[$j] </td> ";
-                            echo " <td align='center'> <font size='2' color='black'> $v_i[$j] </td> ";
-                            echo " <td align='center'> <font size='2' color='black'> $a_i[$j] </td> ";
-                            echo " <td align='center'> <font size='2' color='black'> $t_i[$j] </td> ";
-                            echo " <td align='center'> <font size='2' color='black'> $total_i[$j] </td> ";
-                            echo " <td align='center'> <font size='2' color='black'> $dang1 </td> ";
-                            echo " <td align='center'> <font size='2' color='black'> $dang2 </td> ";
-
-                            echo "</tr>";
-
-                            $j = $j + 1;
-                            if ($j <= $num_rows) {
-                                $da = explode(":", $dan_i[$j]);
-                                $dang1 = $da[0];
-                                $dang2 = $da[1];
-                                echo " <tr bgcolor='#F3F781'>";
-                                echo " <td align='center'> <font size='2' color='black'> $j </td> ";
-                                echo " <td align='center'> <font size='2' color='black'> $date_i[$j] </td> ";
-                                echo " <td align='center'> <font size='2' color='black'> $time1_i[$j] -  $time2_i[$j] </td> ";
-                                echo " <td align='center'> <font size='2' color='black'> $route_i[$j] </td> ";
-                                echo " <td align='center'> <font size='2' color='black'> $dis_i[$j] </td> ";
-                                echo " <td align='center'> <font size='2' color='black'> $durat_i[$j] </td> ";
-                                echo " <td align='center'> <font size='2' color='black'> $v_i[$j] </td> ";
-                                echo " <td align='center'> <font size='2' color='black'> $a_i[$j] </td> ";
-                                echo " <td align='center'> <font size='2' color='black'> $t_i[$j] </td> ";
-                                echo " <td align='center'> <font size='2' color='black'> $total_i[$j] </td> ";
-                                echo " <td align='center'> <font size='2' color='black'> $dang1 </td> ";
-                                echo " <td align='center'> <font size='2' color='black'> $dang2 </td> ";
-                                echo "</tr>";
-                            }
                         }
+
+                        echo "<table width='100%' border='0' style='font-size: small;'>
+                            <tr bgcolor='#3399CC'>
+                                <td></td>
+                                <td colspan=6>
+                                    <span style='color: white;'>Driver $DName : Route $tripdir ($num_rows)</span>
+                                </td>
+                            </tr>
+                            <tr bgcolor='#58FA58'>
+                                <th>index </th>
+                                <th>date </th>
+                                <th>time </th>
+                                <th>route </th>
+                                <th>distance </th>
+                                <th>duration </th>
+                                <th>speed </th>
+                                <th>acc </th>
+                                <th>turn </th>
+                                <th>total </th>
+                                <th colspan=2>suggest </th>
+                            </tr> ";
+
+                            for ($j=1; $j<=$num_rows; $j++) {
+                                echo "<tr bgcolor='#FFFFFF'>
+                                    <td align='center'>$j</td>
+                                    <td align='center'>$date_i[$j]</td>
+                                    <td align='center'>$time1_i[$j] -  $time2_i[$j]</td>
+                                    <td align='center'>$route_i[$j]</td>
+                                    <td align='center'>$dis_i[$j]</td>
+                                    <td align='center'>$durat_i[$j]</td>
+                                    <td align='center'>$v_i[$j]</td>
+                                    <td align='center'>$a_i[$j]</td>
+                                    <td align='center'>$t_i[$j]</td>
+                                    <td align='center'>$total_i[$j]</td>
+                                    <td align='center'>$dang1</td>
+                                    <td align='center'>$dang2</td>
+                                </tr>";
+
+                                $j = $j+1;
+                                if ($j<=$num_rows) {
+                                    echo " <tr bgcolor='#F3F781'>
+                                        <td align='center'>$j</td>
+                                        <td align='center'>$date_i[$j]</td>
+                                        <td align='center'>$time1_i[$j] -  $time2_i[$j]</td>
+                                        <td align='center'>$route_i[$j]</td>
+                                        <td align='center'>$dis_i[$j]</td>
+                                        <td align='center'>$durat_i[$j]</td>
+                                        <td align='center'>$v_i[$j]</td>
+                                        <td align='center'>$a_i[$j]</td>
+                                        <td align='center'>$t_i[$j]</td>
+                                        <td align='center'>$total_i[$j]</td>
+                                        <td align='center'>$dang1</td>
+                                        <td align='center'>$dang2</td>
+                                    </tr>";
+                                }
+                            }
                         echo "</table>";
                         ?>
                     </td>
