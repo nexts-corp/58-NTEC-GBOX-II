@@ -487,31 +487,60 @@ error_reporting(0);
                                         ?>
                                     </td>
                                 </tr>
-<tr>
-<td style="width: 195px;" align="undefined" valign="undefined"><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: small; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 201); display: inline ! important; float: none;">&nbsp;3.&#3585;&#3634;&#3619;&#3648;&#3621;&#3637;&#3657;&#3618;&#3623;&#3629;&#3618;&#3656;&#3634;&#3591;&#3609;&#3640;&#3656;&#3617;&#3609;&#3623;&#3621;
-&nbsp;<?php include ("f2_turn_function.php");
-$sc3 = $total2;
-$sc4 = $total3;
-$count7_1 = $total2;
-$count7_2 = $total3;?></span></td>
-<td style="width: 9px;" align="undefined" valign="undefined"></td>
-<td colspan="1" rowspan="3" style="vertical-align: middle; width: 64px; text-align: right;"><?php $scT=$sc3+$sc4; if ($scT<2) { $score1_i = 3; } elseif (($scT>=2) AND ($scT<3)) { $score1_i = 2; } elseif (($scT>=3) AND ($scT<4)) { $score1_i = 1; } elseif (($scT>=4) AND ($scT<5)) { $score1_i = 0; } elseif ($scT>=5) { $score1_i = 0; } for ($j=1; $j<=$score1_i; $j++) { echo " <img src='star.png' width='16' height='16'/>"; }?></td>
-<td style="width: 36px; text-align: center;" valign="undefined"><small><?php $totalL = $total2+$total3;
-echo "<font face='Arial' size='2'> <b> $totalL </b>";
-?></small></td>
-</tr>
-<tr>
-<td style="color: rgb(153, 153, 153);" align="undefined" valign="undefined">&nbsp;<span style="font-family: Arial; font-size: small; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 201); display: inline ! important; float: none;">
-3.1 &#3585;&#3634;&#3619;&#3648;&#3621;&#3637;&#3657;&#3618;&#3623;&#3629;&#3618;&#3656;&#3634;&#3591;&#3609;&#3640;&#3656;&#3617;&#3609;&#3623;&#3621;&nbsp;</span></td>
-<td align="undefined" valign="undefined"></td>
-<td style="text-align: center;" valign="undefined"><?php echo "<font face='Arial' size='2'> $sc3 ";?></td>
-</tr>
-<tr>
-<td style="width: 195px; color: rgb(153, 153, 153);" align="undefined" valign="undefined"><span style="font-family: Arial; font-size: small; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 201); display: inline ! important; float: none;">&nbsp;
-3.2 &#3585;&#3634;&#3619;&#3585;&#3621;&#3633;&#3610;&#3619;&#3606;&#3629;&#3618;&#3656;&#3634;&#3591;&#3611;&#3621;&#3629;&#3604;&#3616;&#3633;&#3618;&nbsp;</span></td>
-<td style="width: 9px;" align="undefined" valign="undefined"></td>
-<td style="width: 36px; text-align: center;" valign="undefined"><?php echo "<font face='Arial' size='2'> $sc4 ";?></td>
-</tr>
+                                <tr style="font-family: Arial; font-size: small; background-color: rgb(255, 255, 201);">
+                                    <td style="width: 195px;">
+                                        <span>3.การเลี้ยวอย่างนุ่มนวล</span>
+                                        <?php
+                                        include ("f2_turn_function.php");
+                                        $sc3 = $total2;
+                                        $sc4 = $total3;
+                                        $count7_1 = $total2;
+                                        $count7_2 = $total3;
+                                        ?>
+                                    </td>
+                                    <td style="width: 9px;"></td>
+                                    <td rowspan="3" style="vertical-align: middle; width: 64px; text-align: right;">
+                                        <?php
+                                        $scT=$sc3+$sc4;
+                                        if ($scT<2) { $score1_i = 3; }
+                                        elseif (($scT>=2) AND ($scT<3)) { $score1_i = 2; }
+                                        elseif (($scT>=3) AND ($scT<4)) { $score1_i = 1; }
+                                        elseif (($scT>=4) AND ($scT<5)) { $score1_i = 0; }
+                                        elseif ($scT>=5) { $score1_i = 0; }
+                                        for ($j=1; $j<=$score1_i; $j++) {
+                                            echo " <img src='star.png' width='16' height='16'/>";
+                                        }
+                                        ?>
+                                    </td>
+                                    <td style="width: 36px; text-align: center;">
+                                        <?php
+                                        $totalL = $total2+$total3;
+                                        echo "<b> $totalL </b>";
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr style="font-family: Arial; font-size: small; background-color: rgb(255, 255, 201); color: rgb(153, 153, 153);">
+                                    <td style="width: 195px;">
+                                        <span style="margin-left: 10px;">3.1 การเลี้ยวอย่างนุ่มนวล</span>
+                                    </td>
+                                    <td style="width: 9px;"></td>
+                                    <td style="text-align: center; width: 36px;">
+                                        <?php
+                                        echo "$sc3";
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr style="font-family: Arial; font-size: small; background-color: rgb(255, 255, 201); color: rgb(153, 153, 153);">
+                                    <td style="width: 195px;">
+                                        <span style="margin-left: 10px;">3.2 การกลับรถอย่างปลอดภัย </span>
+                                    </td>
+                                    <td style="width: 9px;"></td>
+                                    <td style="width: 36px; text-align: center;">
+                                        <?php
+                                        echo "$sc4";
+                                        ?>
+                                    </td>
+                                </tr>
 <tr>
 <td style="background-color: rgb(255, 255, 153); width: 195px;" align="undefined" valign="undefined"><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: small; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 153); display: inline ! important; float: none;">&nbsp;4.&#3585;&#3634;&#3619;&#3611;&#3619;&#3632;&#3614;&#3620;&#3605;&#3636;&#3651;&#3609;&#3648;&#3586;&#3605;&#3607;&#3637;&#3656;&#3585;&#3635;&#3627;&#3609;&#3604;<?php include ("f2_zone_function.php"); ?></span></td>
 <td style="background-color: rgb(255, 255, 153); width: 9px;" align="undefined" valign="undefined"></td>
