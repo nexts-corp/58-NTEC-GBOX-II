@@ -287,6 +287,7 @@ for ($i = 1; $i <= $sl3_cnt; $i++) {
 
     }
 
+    print $slope_dan;
 }
 
 
