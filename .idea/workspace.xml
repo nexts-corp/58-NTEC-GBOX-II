@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="554ad9fb-b949-45fa-9901-c6937c08f900" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getdata/selectpage/f0_Style.php" afterPath="$PROJECT_DIR$/getdata/selectpage/f0_Style.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/getdata/selectpage/f2_getdata.php" afterPath="$PROJECT_DIR$/getdata/selectpage/f2_getdata.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="gbox_ph2.iws" />
@@ -90,14 +90,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="f0_Style.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="f0_Style.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/getdata/selectpage/f0_Style.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.89799637">
-              <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+            <state vertical-scroll-proportion="-11.365385">
+              <caret line="98" column="105" selection-start-line="98" selection-start-column="97" selection-end-line="98" selection-end-column="105" />
               <folding>
                 <element signature="n#style#0;n#span#1;n#span#0;n#td#1;n#tr#1;n#tbody#0;n#table#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="f2_getdata.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/getdata/selectpage/f2_getdata.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.67395264">
+              <caret line="232" column="21" selection-start-line="232" selection-start-column="21" selection-end-line="232" selection-end-column="21" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -160,7 +170,6 @@
         <option value="$PROJECT_DIR$/getdata/selectpage/f2_graph_type_zone.php" />
         <option value="$PROJECT_DIR$/getdata/selectpage/f2_graph_type_turn.php" />
         <option value="$PROJECT_DIR$/getdata/selectpage/f2_graph_type_acc.php" />
-        <option value="$PROJECT_DIR$/getdata/selectpage/f2_getdata.php" />
         <option value="$PROJECT_DIR$/getdata/selectpage/f2_acc_function.php" />
         <option value="$PROJECT_DIR$/getdata/selectpage/f1_IntegrateNorm.php" />
         <option value="$PROJECT_DIR$/getdata/selectpage/f2_accInt_chart.php" />
@@ -178,6 +187,7 @@
         <option value="$PROJECT_DIR$/getdata/importGBox.php" />
         <option value="$PROJECT_DIR$/getdata/selectpage/f2_style_function.php" />
         <option value="$PROJECT_DIR$/getdata/selectpage/f0_Style.php" />
+        <option value="$PROJECT_DIR$/getdata/selectpage/f2_getdata.php" />
       </list>
     </option>
   </component>
@@ -389,7 +399,7 @@
     <frame x="1" y="1" width="1278" height="758" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24335213" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24335213" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919255" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -662,14 +672,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getdata/selectpage/f2_getdata.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="129" column="0" selection-start-line="129" selection-start-column="0" selection-end-line="129" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/getdata/selectpage/f0_speed_report.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -819,11 +821,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/getdata/selectpage/f0_Style.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.89799637">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        <state vertical-scroll-proportion="-11.365385">
+          <caret line="98" column="105" selection-start-line="98" selection-start-column="97" selection-end-line="98" selection-end-column="105" />
           <folding>
             <element signature="n#style#0;n#span#1;n#span#0;n#td#1;n#tr#1;n#tbody#0;n#table#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getdata/selectpage/f2_getdata.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67395264">
+          <caret line="232" column="21" selection-start-line="232" selection-start-column="21" selection-end-line="232" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
