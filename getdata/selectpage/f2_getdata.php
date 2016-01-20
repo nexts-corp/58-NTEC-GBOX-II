@@ -230,7 +230,6 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
     }
 
     $strSubmit = "SELECT DISTINCT * FROM `routescore` WHERE `goname` = '$tripdir' " ; /*The Last time stamp*/
-    print $strSubmit;
 
     $objSubmit1 = mysql_query($strSubmit, $link) or die ("Error Query [".$strSubmit."]");
     $submit = mysql_fetch_array($objSubmit1);

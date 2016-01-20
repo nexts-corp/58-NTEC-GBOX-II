@@ -100,7 +100,7 @@ error_reporting(0);
                             $objSubmit1 = mysql_query($strSubmit) or die ("Error Query [".$strSubmit."]");
                             $submit = mysql_fetch_array($objSubmit1);
 
-                            //print $strSubmit;
+                            print $strSubmit;
                             $DName = $submit["name"];
                             $tripdir = $submit["route"];
                             //}
