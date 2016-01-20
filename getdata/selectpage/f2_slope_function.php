@@ -253,6 +253,7 @@ for ($i = 0; $i < $num_rows; $i++) {
     }        /* End if 1 */
 }             /* End for */
 
+$slope_dan = 0;
 for ($i = 1; $i <= $sl3_cnt; $i++) {
     $dis1[$i] = round($distance_sl3[$i], 2);
     $alt1[$i] = round($altitude_sl3[$i], 2);
@@ -286,8 +287,6 @@ for ($i = 1; $i <= $sl3_cnt; $i++) {
         $slope_dan = $slope_dan + 1;
 
     }
-
-    print $slope_dan;
 }
 
 
