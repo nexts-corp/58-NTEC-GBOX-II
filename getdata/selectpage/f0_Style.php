@@ -61,8 +61,6 @@ error_reporting(0);
                         $time1 = $_GET["time1"];
                         $time2 = $_GET["time2"];
 
-
-
                         include ("f2_getdata.php");
 
                         $Time1 = $TimeBegin;
