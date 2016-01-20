@@ -541,48 +541,98 @@ error_reporting(0);
                                         ?>
                                     </td>
                                 </tr>
-<tr>
-<td style="background-color: rgb(255, 255, 153); width: 195px;" align="undefined" valign="undefined"><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: small; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 153); display: inline ! important; float: none;">&nbsp;4.&#3585;&#3634;&#3619;&#3611;&#3619;&#3632;&#3614;&#3620;&#3605;&#3636;&#3651;&#3609;&#3648;&#3586;&#3605;&#3607;&#3637;&#3656;&#3585;&#3635;&#3627;&#3609;&#3604;<?php include ("f2_zone_function.php"); ?></span></td>
-<td style="background-color: rgb(255, 255, 153); width: 9px;" align="undefined" valign="undefined"></td>
-<td colspan="1" rowspan="6" style="vertical-align: middle; width: 64px; text-align: right; background-color: rgb(255, 255, 153);"><?php if ($scz<2) { $score8_i = 4; } elseif (($scz>=2) AND ($scz<7)) { $score8_i = 3; }
-elseif (($scz>=7) AND ($scz<13)) { $score8_i = 2; } elseif (($scz>=13) AND ($scz<18)) { $score8_i = 1; } elseif ($scz>=18) { $score8_i = 0; } for ($j=1; $j<=$score8_i; $j++) { echo "<img src='star.png' width='16' height='16'/>"; } ?></td>
-<td style="background-color: rgb(255, 255, 153); text-align: center; width: 36px;" valign="undefined"><small><?php $totalL2 = ($spd_zone_cnt + $cross_cnt3 + $stop_cnt2 + $tstop_cnt2 + $nstop_cnt2)/10;
-echo "<font face='Arial' size='2'> <b> $totalL2 </b>";?></small></td>
-</tr>
-<tr>
-<td style="background-color: rgb(255, 255, 153); color: rgb(153, 153, 153);">&nbsp;
-<span style="font-family: Arial; font-size: small; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 153); display: inline ! important; float: none;">&nbsp;4.1
-&#3585;&#3634;&#3619;&#3651;&#3594;&#3657;&#3588;&#3623;&#3634;&#3617;&#3648;&#3619;&#3655;&#3623;&#3607;&#3637;&#3656;&#3648;&#3627;&#3617;&#3634;&#3632;&#3626;&#3617;&nbsp;</span></td>
-<td style="background-color: rgb(255, 255, 153); color: rgb(153, 153, 153);"></td>
-<td style="background-color: rgb(255, 255, 153); text-align: center; color: rgb(153, 153, 153);"><?php echo "<font face='Arial' size='2'> <b> $spd_zone_cnt </b>";
-$count8 = $spd_zone_cnt;
-$sc5 = $spd_zone_cnt;?></td>
-</tr>
-<tr>
-<td style="background-color: rgb(255, 255, 153); width: 195px; color: rgb(153, 153, 153);" align="undefined" valign="undefined"><span style="font-family: Arial; font-size: small; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 153); display: inline ! important; float: none;">&nbsp;
-&nbsp;4.2 &#3614;&#3619;&#3657;&#3629;&#3617;&#3607;&#3637;&#3656;&#3592;&#3632;&#3627;&#3618;&#3640;&#3604;&#3607;&#3637;&#3656;&#3607;&#3634;&#3591;&#3649;&#3618;&#3585;</span></td>
-<td style="background-color: rgb(255, 255, 153); width: 9px; color: rgb(153, 153, 153);" align="undefined" valign="undefined"></td>
-<td style="background-color: rgb(255, 255, 153); text-align: center; width: 36px; color: rgb(153, 153, 153);" valign="undefined"><?php echo "<font face='Arial' size='2'> <b> $cross_cnt3 </b>";
-$count9 = $cross_cnt3;
-$sc6 = $cross_cnt3;?></td>
-</tr>
-<tr>
-<td style="background-color: rgb(255, 255, 153); width: 195px; color: rgb(153, 153, 153);" align="undefined" valign="undefined"><span style="font-family: Arial; font-size: small; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 153); display: inline ! important; float: none;">&nbsp;
-&nbsp;4.3 &#3627;&#3618;&#3640;&#3604;&#3619;&#3606;&#3607;&#3637;&#3656;&#3652;&#3615;&#3626;&#3633;&#3597;&#3597;&#3634;&#3603;</span></td>
-<td style="background-color: rgb(255, 255, 153); width: 9px; color: rgb(153, 153, 153);" align="undefined" valign="undefined"></td>
-<td style="background-color: rgb(255, 255, 153); text-align: center; width: 36px; color: rgb(153, 153, 153);" valign="undefined"><?php echo "<font face='Arial' size='2'> <b> $stop_cnt2 </b>"; $count10 = $stop_cnt2; $sc7 = $stop_cnt2;?></td>
-</tr>
-<tr>
-<td colspan="2" rowspan="1" style="background-color: rgb(255, 255, 153); width: 170px; color: rgb(153, 153, 153);"><span style="font-family: Arial; font-size: small; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 153); display: inline ! important; float: none;">&nbsp;
-&nbsp;4.4 &#3592;&#3629;&#3604;&#3629;&#3618;&#3656;&#3634;&#3591;&#3611;&#3621;&#3629;&#3604;&#3616;&#3633;&#3618;&#3651;&#3585;&#3621;&#3657;&#3607;&#3634;&#3591;&#3619;&#3606;&#3652;&#3615;</span></td>
-<td style="background-color: rgb(255, 255, 153); text-align: center; width: 36px; color: rgb(153, 153, 153);" valign="undefined"><?php echo "<font face='Arial' size='2'> <b> $tstop_cnt2 </b>"; $count11 = $tstop_cnt2; $sc9 = $tstop_cnt2; ?></td>
-</tr>
-<tr>
-<td style="background-color: rgb(255, 255, 153); width: 195px; color: rgb(153, 153, 153);" align="undefined" valign="undefined"><span style="font-family: Arial; font-size: small; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; background-color: rgb(255, 255, 153); display: inline ! important; float: none;">&nbsp;&nbsp;
-4.5 &#3585;&#3634;&#3619;&#3592;&#3629;&#3604;&#3619;&#3606;&#3651;&#3609;&#3607;&#3637;&#3656;&#3627;&#3657;&#3634;&#3617;&#3592;&#3629;&#3604;</span></td>
-<td style="background-color: rgb(255, 255, 153); width: 9px; color: rgb(153, 153, 153);" align="undefined" valign="undefined"></td>
-<td style="background-color: rgb(255, 255, 153); text-align: center; width: 36px; color: rgb(153, 153, 153);" valign="undefined"><?php echo "<font face='Arial' size='2'> <b> $nstop_cnt2 </b>"; $count12 = $nstop_cnt2; $sc8 = $nstop_cnt2; $scz = $sc5+$sc6+$sc7+$sc8+$sc9;?></td>
-</tr>
+                                <tr style="font-family: Arial; font-size: small; background-color: rgb(255, 255, 153);">
+                                    <td style="width: 195px;">
+                                        <span> 4.การประพฤติในเขตที่กำหนด</span>
+                                        <?php
+                                        include ("f2_zone_function.php");
+                                        ?>
+                                    </td>
+                                    <td style="width: 9px;"></td>
+                                    <td rowspan="6" style="vertical-align: middle; width: 64px; text-align: right;">
+                                        <?php
+                                        if ($scz<2) { $score8_i = 4; }
+                                        elseif (($scz>=2) AND ($scz<7)) { $score8_i = 3; }
+                                        elseif (($scz>=7) AND ($scz<13)) { $score8_i = 2; }
+                                        elseif (($scz>=13) AND ($scz<18)) { $score8_i = 1; }
+                                        elseif ($scz>=18) { $score8_i = 0; }
+                                        for ($j=1; $j<=$score8_i; $j++) {
+                                            echo "<img src='star.png' width='16' height='16'/>";
+                                        }
+                                        ?>
+                                    </td>
+                                    <td style="text-align: center; width: 36px;">
+                                        <?php
+                                        $totalL2 = ($spd_zone_cnt + $cross_cnt3 + $stop_cnt2 + $tstop_cnt2 + $nstop_cnt2)/10;
+                                        echo "<b> $totalL2 </b>";
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr style="font-family: Arial; font-size: small; background-color: rgb(255, 255, 153); color: rgb(153, 153, 153);">
+                                    <td style="width: 195px;">
+                                        <span style="margin-left: 10px;">4.1 การใช้ความเร็วที่เหมาะสม</span>
+                                    </td>
+                                    <td style="width: 9px;"></td>
+                                    <td style="width: 36px;">
+                                        <?php
+                                        echo "<b> $spd_zone_cnt </b>";
+                                        $count8 = $spd_zone_cnt;
+                                        $sc5 = $spd_zone_cnt;
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr style="font-family: Arial; font-size: small; background-color: rgb(255, 255, 153); color: rgb(153, 153, 153);">
+                                    <td style="width: 195px;">
+                                        <span style="margin-left: 10px;">4.2 พร้อมที่จะหยุดที่ทางแยก</span>
+                                    </td>
+                                    <td style="width: 9px;"></td>
+                                    <td style="text-align: center; width: 36px;">
+                                        <?php
+                                        echo "<b> $cross_cnt3 </b>";
+                                        $count9 = $cross_cnt3;
+                                        $sc6 = $cross_cnt3;
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr style="font-family: Arial; font-size: small; background-color: rgb(255, 255, 153); color: rgb(153, 153, 153);">
+                                    <td style="width: 195px;">
+                                        <span style="margin-left: 10px;">4.3 หยุดรถที่ไฟสัญญาณ</span>
+                                    </td>
+                                    <td style="width: 9px;"></td>
+                                    <td style="text-align: center; width: 36px;">
+                                        <?php
+                                        echo "<b> $stop_cnt2 </b>";
+                                        $count10 = $stop_cnt2;
+                                        $sc7 = $stop_cnt2;
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr style="font-family: Arial; font-size: small; background-color: rgb(255, 255, 153); color: rgb(153, 153, 153);">
+                                    <td style="width: 195px;">
+                                        <span style="margin-left: 10px;">4.4 จอดอย่างปลอดภัยใกล้ทางรถไฟ</span>
+                                    </td>
+                                    <td style="text-align: center; width: 36px;">
+                                        <?php
+                                        echo "<b> $tstop_cnt2 </b>";
+                                        $count11 = $tstop_cnt2;
+                                        $sc9 = $tstop_cnt2;
+                                        ?>
+                                    </td>
+                                </tr>
+                                <tr style="font-family: Arial; font-size: small; background-color: rgb(255, 255, 153); color: rgb(153, 153, 153);">
+                                    <td style="width: 195px;">
+                                        <span style="margin-left: 10px;">4.5 การจอดรถในที่ห้ามจอด</span>
+                                    </td>
+                                    <td style="width: 9px;"></td>
+                                    <td style="text-align: center; width: 36px;">
+                                        <?php
+                                        echo "<b> $nstop_cnt2 </b>";
+                                        $count12 = $nstop_cnt2;
+                                        $sc8 = $nstop_cnt2;
+                                        $scz = $sc5+$sc6+$sc7+$sc8+$sc9;
+                                        ?>
+                                    </td>
+                                </tr>
 <tr>
 <td style="background-color: rgb(255, 255, 204);"><span style="color: rgb(0, 0, 0); font-family: Arial; font-size: small; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; display: inline ! important; float: none;">5.&#3585;&#3634;&#3619;&#3611;&#3619;&#3632;&#3614;&#3620;&#3605;&#3636;&#3651;&#3609;&#3607;&#3634;&#3591;&#3621;&#3634;&#3604;&#3594;&#3633;&#3609;&nbsp;<?php //include ("f2_slope_function.php"); ?></span></td>
 <td align="undefined" valign="undefined"></td>
