@@ -1,11 +1,11 @@
 <?
 
-$link=mysql_connect("53476f055e81994c02000008-nectec.clouddd.in.th","adminlYkzegJ","MaLQvrNyPEpn");
-mysql_select_db("thairoadsafety",$link);
+$link=mysqli_connect("53476f055e81994c02000008-nectec.clouddd.in.th","adminlYkzegJ","MaLQvrNyPEpn");
+mysqli_select_db("thairoadsafety",$link);
 
 // Check connection
-if (mysql_errno()) {
-  echo "Failed to connect to MySQL: " . mysql_error();
+if (mysqli_errno()) {
+  echo "Failed to connect to MySQL: " . mysqli_error();
 }
  
  if ($_GET['data'] <> null){
@@ -46,8 +46,8 @@ if (mysql_errno()) {
 
                     $sql="INSERT INTO route_data (deviceid,sessionid,time,date,active,lat,longf,speed,alt,adc1,adc2,direction) VALUES ('$deviceid','$sessionid','$time','$date','$arr_next[3]','$lat','$long',$arr_next[8],'$arr_next[10]','$adc1','$adc2',$arr_next[11]);";
                     //echo $sql;
-                    if (!mysql_query($sql)) {
-                        die('Error: ' . mysql_error($sql));
+                    if (!mysqli_query($sql)) {
+                        die('Error: ' . mysqli_error($sql));
                     }
 
                 }
@@ -62,22 +62,22 @@ if (mysql_errno()) {
                 if ($num_checkdata == 0){
 
                     $sql_last = "SELECT * FROM route_data WHERE deviceid='$deviceid' AND sessionid='$sessionid' ORDER BY date,time DESC";
-                    $res_last = mysql_query($sql_last);
-                    $data_last = mysql_fetch_array($res_last);
+                    $res_last = mysqli_query($sql_last);
+                    $data_last = mysqli_fetch_array($res_last);
                     if($data_last['sessionid'] == "" || ($data_last['adc1'] == "0.00" && $data_last['adc2'] == "0.00")){
 
                         $sql="INSERT INTO route_data (deviceid,sessionid,time,date,active,lat,longf,speed,alt,adc1,adc2,direction) VALUES ('$deviceid','$sessionid','$time','$date','$arr_next[3]','$lat','$long',$arr_next[8],'$arr_next[10]','$adc1','$adc2',$arr_next[11]);";
                         //echo $sql;
-                        if (!mysql_query($sql)) {
-                            die('Error: ' . mysql_error($sql));
+                        if (!mysqli_query($sql)) {
+                            die('Error: ' . mysqli_error($sql));
                         }
                     }
                     else{
                         $update1 = $data_last['adc1'].";".$adc1;
                         $update2 = $data_last['adc2'].";".$adc2;
                         $sql = "UPDATE route_data SET adc1='$update1', adc2='$update2' WHERE deviceid='".$data_last['deviceid']."' AND sessionid='".$data_last['sessionid']."' AND date='".$data_last['date']."' AND time='".$data_last['time']."'";
-                        if (!mysql_query($sql)) {
-                            die('Error: ' . mysql_error($sql));
+                        if (!mysqli_query($sql)) {
+                            die('Error: ' . mysqli_error($sql));
                         }
                     }
 
@@ -108,8 +108,8 @@ if (mysql_errno()) {
 				
 				$sql="INSERT INTO route_data (deviceid,sessionid,time,date,active,lat,longf,speed,alt,adc1,adc2,direction) VALUES ('$deviceid','$sessionid','$time','$date','$arr_next[1]','$lat','$long',$arr_next[6],'$arr_next[8]','$adc1','$adc2',$arr_next[9]);";
 			//echo $sql;
-			if (!mysql_query($sql)) {
-			  die('Error: ' . mysql_error($sql));
+			if (!mysqli_query($sql)) {
+			  die('Error: ' . mysqli_error($sql));
 			  }
 			}
 			
@@ -206,8 +206,8 @@ function generateRandomString($length = 6) {
  
 function checkdevice($deviceid){
 	$sqlchk="select deviceid from device where deviceid='".$deviceid . "';";
-	$result = mysql_query($sqlchk);
-	$num_rows = mysql_num_rows($result);
+	$result = mysqli_query($sqlchk);
+	$num_rows = mysqli_num_rows($result);
 	return $num_rows;
 }
 
@@ -215,13 +215,13 @@ function checkdata($deviceid,$sessionid,$date,$time){
     
 	$sqlchkdat="select * from route_data where deviceid='".$deviceid . "'";
 	$sqlchkdat.="and sessionid='". $sessionid."' and time='".$time . "' and  date='". $date ."';";
-	$result = mysql_query($sqlchkdat);
-	$num_rows_checkdata = mysql_num_rows($result);	
+	$result = mysqli_query($sqlchkdat);
+	$num_rows_checkdata = mysqli_num_rows($result);	
 	return $num_rows_checkdata;
 }
  
  
-mysql_close($link); 
+mysqli_close($link); 
  
  
  /*  

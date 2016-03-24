@@ -219,9 +219,9 @@ if ($spdType[$i]==1) {$spdotyp = "Lane Changing";}
 elseif ($spdType[$i]==2) {$spdotyp = "Curve";}
 elseif ($spdType[$i]==0) {$spdotyp = "Straight";}
 else {$spdotyp = "Other";}
-$objConnect = mysql_connect("localhost","tatanad","tata789") or die("Error Connect to Database"); $strSQL = "INSERT INTO `speedscore` (`test`,`timestp`,`date`,`overindex`,`spdp1`,`spdp2`,`overtype`,`overtime`)
+$objConnect = mysqli_connect("localhost","tatanad","tata789") or die("Error Connect to Database"); $strSQL = "INSERT INTO `speedscore` (`test`,`timestp`,`date`,`overindex`,`spdp1`,`spdp2`,`overtype`,`overtime`)
 VALUES ( '$selectT', NOW( ), '$spddate', '$t','$spdp1','$spdp2','$spdotyp','$spdotime');;";
-$objQuery = mysql_query($strSQL);
+$objQuery = mysqli_query($strSQL);
 }
 for ($t=1; $t<=$dowsy_cnt; $t++) {
 $spdp1 = $dowsy_point1[$t];
@@ -230,7 +230,7 @@ $spdotyp = $unControl[$t];
 $spdotime = $dowsy_time[$t];
 $strSQL = "INSERT INTO `speedscore` (`test`,`timestp`,`date`,`overindex`,`spdp1`,`spdp2`,`overtype`,`overtime`)
 VALUES ( '$selectT', NOW( ), '$spddate', '$t','$spdp1','$spdp2','$spdotyp','$spdotime');;";
-$objQuery = mysql_query($strSQL);
+$objQuery = mysqli_query($strSQL);
 }
 */?></span></td>
 <td style="background-color: rgb(255, 255, 153); width: 9px;"></td>
@@ -466,18 +466,18 @@ $score_pack1 = array($sc1,$sc2,$sc2_1,$sc2_2,$sc2_3,$sc2_4,$sc3,$sc4,$sc5,$sc6,$
 $score_pk1 = implode(":" , $score_pack1);
 $score_pack2 = array($count1,$count2,$count3,$count4,$count5,$count6,$count7_1,$count7_2,$count8,$count9,$count10,$count11,$count12);
 $score_pk2 = implode(":" , $score_pack2);
-/* $db = mysql_connect("53476f055e81994c02000008-nectec.clouddd.in.th:38096","adminlYkzegJ","MaLQvrNyPEpn"); */
+/* $db = mysqli_connect("53476f055e81994c02000008-nectec.clouddd.in.th:38096","adminlYkzegJ","MaLQvrNyPEpn"); */
 
-$objConnect = mysql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
-$objDB = mysql_select_db(DB_NAME);
+$objConnect = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
+$objDB = mysqli_select_db(DB_NAME);
 
 $delsql = " DELETE FROM `selectscore` WHERE (`device` = '$id') AND (`date`= '$DateBegin') AND (`time1`= '$Time1'); ";
-$objQuery = mysql_query($delsql);
+$objQuery = mysqli_query($delsql);
 
 $strSQL = "INSERT INTO `selectscore` (`timestmp`,`index`,`device`,`date`,`time1`,`time2`,`pack1`,`pack2`,`tripdir`,`daylight`,`speedavg`,`distanceavg`,`timeavg` )
 VALUES ( NOW( ), '3', '$id','$DateBegin','$Time1','$Time2','$score_pk1','$score_pk2','$tripdir1','$daylight','$speed_avg3','$dis_sum_km','$deltaT');;";
-$objQuery = mysql_query($strSQL);
-mysql_close($objConnect);
+$objQuery = mysqli_query($strSQL);
+mysqli_close($objConnect);
 ?> </td>
 </tr>
 </tbody>

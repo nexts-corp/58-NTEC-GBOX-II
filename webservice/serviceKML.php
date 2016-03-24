@@ -11,9 +11,9 @@ $stop_arr = explode("-", $stop);
 $start_time = mktime(0, 0, 0, $start_arr[1], $start_arr[0], $start_arr[2]) - date("Z");
 $stop_time = mktime(0, 0, 0, $stop_arr[1], $stop_arr[0]+1, $stop_arr[2]) - date("Z");
 
-$link = mysql_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
-mysql_select_db(DB_NAME,$link);
-mysql_query("SET NAMES 'utf8'");
+$link = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
+mysqli_select_db(DB_NAME,$link);
+mysqli_query("SET NAMES 'utf8'");
 
 // Print the head of the document
 $kml  = '<?xml version="1.0" encoding="UTF-8"?>'."\n";
@@ -23,12 +23,12 @@ $kml .= '<Document>'."\n";
 // Now iterate over all placemarks (rows)
 // Query the database data
 $sql_dev = "SELECT * FROM device WHERE device_serial='".$serial."'";
-$res_dev = mysql_query($sql_dev, $link);
-$data_dev = mysql_fetch_array($res_dev);
+$res_dev = mysqli_query($sql_dev, $link);
+$data_dev = mysqli_fetch_array($res_dev);
 
 $sql = "SELECT * FROM data WHERE deviceid='".$data_dev['id']."' AND time >= '".$start_time."' AND time < '".$stop_time."' ORDER BY time ASC";
-$res = mysql_query($sql, $link);
-while ($data = mysql_fetch_array($res)) {
+$res = mysqli_query($sql, $link);
+while ($data = mysqli_fetch_array($res)) {
     $time = date('d-m-Y H:i:s', $data['time'] + date("Z"));
     //print '<alt>'.$data['alt'].'</alt>'."<br>";
     $kml .= '<Placemark>'."\n";
@@ -49,7 +49,7 @@ while ($data = mysql_fetch_array($res)) {
 $kml .= '</Document>'."\n";
 $kml .= '</kml>'."\n";
 
-mysql_close($link);
+mysqli_close($link);
 
 header('Content-type: application/vnd.google-earth.kml+xml');
 header('Content-disposition: attachment; filename="adc_'.$serial.'_'.$start.'_'.$stop.'.kml"');

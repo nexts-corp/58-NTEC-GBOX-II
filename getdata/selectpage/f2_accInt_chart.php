@@ -44,17 +44,17 @@ require(dirname(__FILE__)."/../../config.php");
 
    if ($selectT=="") {$selectT="Test18";}
 
-   $db = mysql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD);
-   $objDB = mysql_select_db(DB_NAME); /*Start Frame at Open selectable Always*/
-   mysql_query("SET NAMES 'tis620'");
+   $db = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD);
+   $objDB = mysqli_select_db(DB_NAME); /*Start Frame at Open selectable Always*/
+   mysqli_query("SET NAMES 'tis620'");
 
    $exe1 = "SELECT `number`,`name`,`device`,`route`,`acclimit`,`speedunit`,`date`,`time1`,`time2`,`numscore`,`x1`,`x2`
             FROM `selecttest` WHERE `name`='$selectT' ORDER BY `date` ASC ";
-   $result = mysql_query($exe1)or die(mysql_error());
-   $num_rows = mysql_numrows($result);
+   $result = mysqli_query($exe1)or die(mysqli_error());
+   $num_rows = mysqli_numrows($result);
 
    for ($i=0; $i<$num_rows; $i++) {
-     list($number,$name,$device,$route,$acclimit,$speedunit,$date,$time1,$time2,$numscore,$x1,$x2) = mysql_fetch_row($result);
+     list($number,$name,$device,$route,$acclimit,$speedunit,$date,$time1,$time2,$numscore,$x1,$x2) = mysqli_fetch_row($result);
      $dateT[$i] = $date;
      $time1T[$i] = $time1;
      $time2T[$i] = $time2;
@@ -62,7 +62,7 @@ require(dirname(__FILE__)."/../../config.php");
      $nums_score = $num_rows-1;
 
     $sql = " TRUNCATE TABLE  `intacc` ";
-    $result = mysql_query($sql);
+    $result = mysqli_query($sql);
 
    $k=0;
 
@@ -75,10 +75,10 @@ $exe1 = "SELECT  `spdavg` ,`spdmax` ,`accmax` ,`accmin` ,`distance` ,`forcet` ,`
 
          WHERE `test`='$selectT' AND `date`='$dateT[$i]' AND `time1`='$time1T[$i]'  ORDER BY  `score` DESC  ";
 
-$result = mysql_query($exe1)or die(mysql_error());
-$num_rows = mysql_numrows($result);
+$result = mysqli_query($exe1)or die(mysqli_error());
+$num_rows = mysqli_numrows($result);
 
-list($spdavg0 ,$spdmax0 ,$accmax0 ,$accmin0 ,$distance0 ,$forcet0 ,$release0 ,$overtake0 ,$closeto0 ,$stop0 ,$type00,$typeT0 ,$scoreT0) = mysql_fetch_row($result);
+list($spdavg0 ,$spdmax0 ,$accmax0 ,$accmin0 ,$distance0 ,$forcet0 ,$release0 ,$overtake0 ,$closeto0 ,$stop0 ,$type00,$typeT0 ,$scoreT0) = mysqli_fetch_row($result);
 
     $strSQL = " INSERT INTO  `intacc` (  `index` ,  `test` ,  `date` ,  `time1` ,  `time2` ,  `spdavg` ,  `spdmax` ,  `accmax` ,  `accmin` ,  `distance` ,  `forcet` ,  `release` ,  `overtake` ,  `closeto` ,  `stop` ,  `type0`,  `type` ,  `score` )
 VALUES (
@@ -86,7 +86,7 @@ VALUES (
       '$overtake0',  '$closeto0',  '$stop0',  '$type00' ,  '$typeT0',  '$scoreT0'
 );
 ";
-    $objQuery = mysql_query($strSQL);
+    $objQuery = mysqli_query($strSQL);
 
 }
 
@@ -95,12 +95,12 @@ VALUES (
 
 $exe1 = "SELECT `index`,`test`,`date`,`time1`,`time2`,`spdavg`,`spdmax`,`accmax`,`accmin`,`distance`,`forcet`,`release`,`overtake`,`closeto` ,  `stop` ,`type0`
          FROM `intacc` ORDER BY `score` ";
-$result = mysql_query($exe1)or die(mysql_error());
-$num_score = mysql_numrows($result);
+$result = mysqli_query($exe1)or die(mysqli_error());
+$num_score = mysqli_numrows($result);
 
  for ($j=0; $j<=$num_score; $j++) {
 
- list($index0,$test0,$date0,$time10,$time20,$spdavg0,$spdmax0,$accmax0,$accmin0,$distance0,$forcet0,$release0,$overtake0,$closeto0,$stop0,$type00) = mysql_fetch_row($result);
+ list($index0,$test0,$date0,$time10,$time20,$spdavg0,$spdmax0,$accmax0,$accmin0,$distance0,$forcet0,$release0,$overtake0,$closeto0,$stop0,$type00) = mysqli_fetch_row($result);
 
 $arr = explode(':',$release0);
 $rel1[$j] = $rel1[$j] + $arr[0] + $arr[1] + $arr[2];

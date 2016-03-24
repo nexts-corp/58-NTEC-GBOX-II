@@ -1436,19 +1436,19 @@ $totalv = $Ototal;
 $otype = "$pts1:$pts2:$pts3:$pts4";
 $otypeH = "$pts1H:$pts2H:$pts3H";
 $utype = "$dowsy_cnt:$spd_zone_cnt:$stop_bus_cnt";
-$objConnect = mysql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
-$objDB = mysql_select_db(DB_NAME);
+$objConnect = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
+$objDB = mysqli_select_db(DB_NAME);
 $delsql = " DELETE FROM `speedtype` WHERE `index`='$selectT' AND `date`='$datev1' AND `time1`='$Time1' ; ";
-$objQuery = mysql_query($delsql);
+$objQuery = mysqli_query($delsql);
 $strSQL = "INSERT INTO `speedtype` (`timestp` ,`index` ,`date`,`time1` ,`time2`,`vmax`,`vavg` ,`zone`,`level`,`duration` ,`distance` ,`day`,`otype`,`utype`,`ototal`,`otypeH` ) VALUES ( NOW( ), '$selectT', '$datev1','$Time1','$Time2','$spd_max_cen','$speed_avgn','$zone_v','$level_v','$tSum','$sum_d','$daylight','$otype','$utype','$totalv','$otypeH');; ";
-$objQuery = mysql_query($strSQL);
-mysql_close($objConnect);
+$objQuery = mysqli_query($strSQL);
+mysqli_close($objConnect);
 ?></td>
 <td style="width: 559px;" align="undefined" valign="undefined">&nbsp;<?php 
-$objConnect = mysql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
-$objDB = mysql_select_db(DB_NAME);
+$objConnect = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
+$objDB = mysqli_select_db(DB_NAME);
 $delsql = " DELETE FROM `speedscore` WHERE (`test` = '$selectT') AND (`date`= '$spddate') AND (`time1`= '$TimeBegin'); ";
-$objQuery = mysql_query($delsql);
+$objQuery = mysqli_query($delsql);
 for ($t=1; $t<=$ove; $t++) {
 $spdp1 = $spd_pint1[$t];
 $spdp2 = $spd_pint2[$t];
@@ -1467,7 +1467,7 @@ elseif ($spdType[$t]==5) {$spdotyp = "Curve H ";}
 elseif ($spdType[$t]==6) {$spdotyp = "Straight H";}
 else {$spdotyp = "Other";}
 $strSQL = "INSERT INTO `speedscore` (`test`,`timestp`,`date`,`time1`,`time2`,`overindex`,`spdp1`,`spdp2`,`lat1`,`lon1`,`lat2`,`lon2`,`overtype`,`overtime`,`rout`)
-VALUES ( '$selectT', NOW( ), '$spddate', '$TimeBegin', '$TimeEnd', '$t','$spdp1','$spdp2','$lat1','$lon1','$lat2','$lon2','$spdotyp','$spdotime','$tripdir');;"; $objQuery = mysql_query($strSQL);
+VALUES ( '$selectT', NOW( ), '$spddate', '$TimeBegin', '$TimeEnd', '$t','$spdp1','$spdp2','$lat1','$lon1','$lat2','$lon2','$spdotyp','$spdotime','$tripdir');;"; $objQuery = mysqli_query($strSQL);
 }
 ?></td>
 </tr>

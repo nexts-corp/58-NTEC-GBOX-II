@@ -15,9 +15,9 @@ $sessionId = '';
 $counter_added = 0;
 $reqsession_respond = '';
 
-$link = mysql_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
-mysql_select_db(DB_NAME,$link);
-mysql_query("SET NAMES 'utf8'");
+$link = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
+mysqli_select_db(DB_NAME,$link);
+mysqli_query("SET NAMES 'utf8'");
 
 $rows = 0;
 if(count($data_arr) > 0){
@@ -38,8 +38,8 @@ if(count($data_arr) > 0){
                 //print $deviceSerial." ".$sessionId."\r\n";
             }
             $sql_dev = "SELECT * FROM device WHERE device_serial='".$deviceSerial."'";
-            $res_dev = mysql_query($sql_dev, $link);
-            $data_dev = mysql_fetch_array($res_dev);
+            $res_dev = mysqli_query($sql_dev, $link);
+            $data_dev = mysqli_fetch_array($res_dev);
             if(!empty($data_dev['id'])){
                 $deviceId = $data_dev['id'];
 
@@ -52,8 +52,8 @@ if(count($data_arr) > 0){
 
                 if($i == 0 || $i == count($data_arr) - 1){
                     $sql_ck = "SELECT COUNT(*) AS numrow FROM data WHERE deviceid='".$deviceId."' AND time='".$unixtime."'";
-                    $res_ck = mysql_query($sql_ck, $link);
-                    $data_ck = mysql_fetch_array($res_ck);
+                    $res_ck = mysqli_query($sql_ck, $link);
+                    $data_ck = mysqli_fetch_array($res_ck);
                     $rows = $data_ck['numrow'];
                 }
                 //print $rows;
@@ -61,8 +61,8 @@ if(count($data_arr) > 0){
                     if (!empty($sessionId)) {
                         if ($sessionId=='REQSID') {
                             $sql_repeat = "SELECT COUNT(*) AS numrow FROM data WHERE deviceid='".$deviceId."' AND time='".$unixtime."'";
-                            $res_repeat = mysql_query($sql_repeat, $link);
-                            $data_repeat = mysql_fetch_array($res_repeat);
+                            $res_repeat = mysqli_query($sql_repeat, $link);
+                            $data_repeat = mysqli_fetch_array($res_repeat);
                                 // check data repeater
                             if($data_repeat['numrow'] == 0){
                                 $retry_counter = 0;
@@ -92,13 +92,13 @@ if(count($data_arr) > 0){
 
                                     $sessionId_found = 0;
                                     $sql = "SELECT COUNT(sessionid) AS row FROM session WHERE sessionid='".$sessionId."'";
-                                    $res = mysql_query($sql, $link);
-                                    if($data = mysql_fetch_array($res)){
+                                    $res = mysqli_query($sql, $link);
+                                    if($data = mysqli_fetch_array($res)){
                                         $sessionId_found = $data['row'];
 
                                         if($sessionId_found == 0){
                                             $sql_ses = "INSERT INTO session(deviceid, sessionid) VALUES('".$deviceId."', '".$sessionId."')";
-                                            $res_ses = mysql_query($sql_ses, $link);
+                                            $res_ses = mysqli_query($sql_ses, $link);
                                         }
                                     }
                                     $retry_counter++;
@@ -122,9 +122,9 @@ if(count($data_arr) > 0){
                         if($adc == "OFF"){
                             $query = "INSERT INTO data(deviceid, sessionid, time, active, latitude, longitude, speed, altitude, direction, adc1, adc2)"
                                 ." VALUES ('".$deviceId."', '".$sessionId."', '".$unixtime."', '".$active."', '".$lat.$latDir."', '".$long.$longDir."', '".$speed."', '".$alt."', '".$direction."', 'OFF', 'OFF');";
-                            if ($result = mysql_query($query, $link)) {
-                                $counter_added += mysql_affected_rows($link);
-                                mysql_free_result($result);
+                            if ($result = mysqli_query($query, $link)) {
+                                $counter_added += mysqli_affected_rows($link);
+                                mysqli_free_result($result);
                             }
                             //print $query."\r\n";
                         }
@@ -140,23 +140,23 @@ if(count($data_arr) > 0){
                             $adc1 = implode(";", $adc1_arr);
                             $adc2 = implode(";", $adc2_arr);
                             $sql_ck = "SELECT * FROM data WHERE deviceid='".$deviceId."' AND sessionid='".$sessionId."' ORDER BY time DESC";
-                            $res_ck = mysql_query($sql_ck, $link);
-                            $data_ck = mysql_fetch_array($res_ck);
+                            $res_ck = mysqli_query($sql_ck, $link);
+                            $data_ck = mysqli_fetch_array($res_ck);
                             if($data_ck['sessionid'] == "" || ($data_ck['adc1'] == "OFF" && $data_ck['adc2'] == "OFF")){
                                 $query = "INSERT INTO data(deviceid, sessionid, time, active, latitude, longitude, speed, altitude, direction, adc1, adc2)"
                                     ." VALUES ('".$deviceId."', '".$sessionId."', '".$unixtime."', '".$active."', '".$lat.$latDir."', '".$long.$longDir."', '".$speed."', '".$alt."', '".$direction."', '".$adc1."', '".$adc2."')";
-                                if ($result = mysql_query($query, $link)) {
-                                    $counter_added += mysql_affected_rows($link);
-                                    mysql_free_result($result);
+                                if ($result = mysqli_query($query, $link)) {
+                                    $counter_added += mysqli_affected_rows($link);
+                                    mysqli_free_result($result);
                                 }
                             }
                             else{
                                 $update1 = $data_ck['adc1'].";".$adc1;
                                 $update2 = $data_ck['adc2'].";".$adc2;
                                 $query = "UPDATE data SET adc1='".$update1."', adc2='".$update2."' WHERE deviceid='".$data_ck['deviceid']."' AND sessionid='".$data_ck['sessionid']."' AND time='".$data_ck['time']."'";
-                                if ($result = mysql_query($query, $link)) {
-                                    $counter_added += mysql_affected_rows($link);
-                                    mysql_free_result($result);
+                                if ($result = mysqli_query($query, $link)) {
+                                    $counter_added += mysqli_affected_rows($link);
+                                    mysqli_free_result($result);
                                 }
                                 //print $query;
                             }
@@ -187,5 +187,5 @@ else{
     }
 }
 
-mysql_close($link);
+mysqli_close($link);
 ?>

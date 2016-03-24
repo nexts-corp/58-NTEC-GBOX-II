@@ -5,9 +5,9 @@ $action = GetFromBrowser("action", "");
 
 $device_id = GetFromBrowser("device_id", "");
 
-$link = mysql_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
-mysql_select_db(DB_NAME, $link);
-mysql_query("SET NAMES 'utf8'");
+$link = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
+mysqli_select_db(DB_NAME, $link);
+mysqli_query("SET NAMES 'utf8'");
 
 $value = array("data" => array());
 
@@ -17,13 +17,13 @@ if($action == "get_DLT"){
     }
     elseif($_COOKIE["gbox"]["role"] == SUPERUSER){
         $sql_user = "SELECT * FROM user WHERE username='".$_COOKIE["gbox"]["username"]."'";
-        $res_user = mysql_query($sql_user, $link);
-        $data_user = mysql_fetch_array($res_user);
+        $res_user = mysqli_query($sql_user, $link);
+        $data_user = mysqli_fetch_array($res_user);
 
         $sql = "SELECT device.* FROM device INNER JOIN device_user ON device.id=device_user.deviceid WHERE device_user.userid='".$data_user["id"]."' AND device.device_type_id='3'";
     }
-    $res = mysql_query($sql, $link);
-    while($data = mysql_fetch_array($res)){
+    $res = mysqli_query($sql, $link);
+    while($data = mysqli_fetch_array($res)){
         $sub = array(
             "device_id" => $data["id"],
             "device_desc" => $data["device_desc"]
@@ -48,12 +48,12 @@ if($action == "import_DLT"){
 
             //print $objArr[0]." ".$objArr[1]." ".$objArr[2]." ".$objArr[3]." ".$objArr[4]." ".$objArr[5]."<br>"; // Date, Time, Longitude, Latitude, Altitude, Speed
             $sql_ck = "SELECT COUNT(*) AS num_row FROM datadlt01 WHERE deviceid='".$device_id."' AND date=STR_TO_DATE('".$date."', '%Y/%m/%d') AND time='".$time."'";
-            $res_ck = mysql_query($sql_ck, $link);
-            $data_ck = mysql_fetch_array($res_ck);
+            $res_ck = mysqli_query($sql_ck, $link);
+            $data_ck = mysqli_fetch_array($res_ck);
 
             if($data_ck["num_row"] == 0){
                 $sql = "INSERT INTO datadlt01(deviceid, date, time, latitude, longitude, altitude, speed, direction, adc1, adc2) VALUES('".$device_id."', STR_TO_DATE('".$date."', '%Y/%m/%d'), '".$time."', '".$lat."', '".$lng."', '".$alt."', '".$speed."', '".$direction."', '0', '0')";
-                $res = mysql_query($sql, $link);
+                $res = mysqli_query($sql, $link);
             }
         }
         $i++;
@@ -76,7 +76,7 @@ if($action == "import_DLT"){
     fclose($objCSV);
 }
 
-mysql_close($link);
+mysqli_close($link);
 
 $json = json_encode($value);
 

@@ -14,19 +14,19 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
     $time1 = $_GET["time1"];
     $time2 = $_GET["time2"];
 
-    $link = mysql_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
-    mysql_select_db(DB_NAME,$link);
-    mysql_query("SET NAMES 'utf8'");
+    $link = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
+    mysqli_select_db(DB_NAME,$link);
+    mysqli_query("SET NAMES 'utf8'");
 
     $sql_user = "SELECT * FROM user WHERE username='".$_COOKIE["gbox"]["username"]."'";
-    $res_user = mysql_query($sql_user, $link);
-    $data_user = mysql_fetch_array($res_user);
+    $res_user = mysqli_query($sql_user, $link);
+    $data_user = mysqli_fetch_array($res_user);
 
     $selectT = $data_user["firstname"]." ".$data_user["lastname"];
     
     $sql_dev = "SELECT * FROM device WHERE id='".$_GET["deviceid"]."'";
-    $res_dev = mysql_query($sql_dev, $link);
-    $data_dev = mysql_fetch_array($res_dev);
+    $res_dev = mysqli_query($sql_dev, $link);
+    $data_dev = mysqli_fetch_array($res_dev);
 
     $deviceName = $data_dev["device_desc"];
     if($data_dev["device_type_id"] == "1"){ //GBox
@@ -62,11 +62,11 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
         $spd_unit=1.825;     $acc_limit=1.5;
     }
 
-    $res = mysql_query($sql, $link);
+    $res = mysqli_query($sql, $link);
     $i = 0;
     $speed_max=0;
     $dis_sum = 0;
-    while($data = mysql_fetch_array($res)){
+    while($data = mysqli_fetch_array($res)){
         $i++;
 
         if($data_dev["device_type_id"] == "1"){
@@ -212,8 +212,8 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
     $strSubmit = "SELECT DISTINCT * FROM `routescore` WHERE `goname` = '$goname0' " ; /*The Last time stamp*/
 
-    $objSubmit1 = mysql_query($strSubmit, $link) or die ("Error Query [".$strSubmit."]");
-    $submit = mysql_fetch_array($objSubmit1);
+    $objSubmit1 = mysqli_query($strSubmit, $link) or die ("Error Query [".$strSubmit."]");
+    $submit = mysqli_fetch_array($objSubmit1);
 
     $nums_i = $submit["numscore"];
     $score_SA = $submit["scoresa"];

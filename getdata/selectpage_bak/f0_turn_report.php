@@ -492,24 +492,24 @@ echo "</table>"; ?><br>
  $typeU = "$ut";
  $totalT = $curve_over;
 
-$objConnect = mysql_connect(DB_HOST,DB_USERNAME,DB_PASSWORD) or die("Error Connect to Database");
-$objDB = mysql_select_db(DB_NAME);
+$objConnect = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD) or die("Error Connect to Database");
+$objDB = mysqli_select_db(DB_NAME);
 
 //$sql ="use selectable";
 $strSQL = "INSERT INTO  `turnscore` (  `timestp` , `index` , `date` , `time1` , `time2` , `vavg` , `ap`,  `an` , `duration` , `typeRT`, `typeLT`, `typeC`, `typeU`, `totalscore` ) 
 VALUES (NOW( ) ,  '$selectT',  '$Date7',  '$TimeBegin',  '$TimeEnd',  '$speedSum',  '$accSumP',  '$accSumN',  '$duraSum',  '$typeR',  '$typeL',  '$typeC',  '$typeU' ,  '$totalT'); ";
 
-$objQuery = mysql_query($strSQL);
+$objQuery = mysqli_query($strSQL);
 
 
 
 ?></td><td><?php /*
-$objConnect = mysql_connect("localhost","tatanad","tata789") or die("Error Connect to Database");
-$objDB = mysql_select_db("dangerous");
+$objConnect = mysqli_connect("localhost","tatanad","tata789") or die("Error Connect to Database");
+$objDB = mysqli_select_db("dangerous");
 $sql ="use dangerous"; 
 
 $sql_del = " DELETE FROM  `turnselect` WHERE `index`='$selectT' AND  `date`= '$Date7'; ";
-mysql_query($sql_del) or die(mysql_error());
+mysqli_query($sql_del) or die(mysqli_error());
 
 for ($i=1; $i<=$stp_point_cnt; $i++) {
 
@@ -525,11 +525,11 @@ $strSQL = "INSERT INTO  `turnselect` (`timestp` ,`index` ,`date` ,     `point1` 
                   VALUES (NOW( ) , '$selectT', '$Date7', '$point[0]','$point[1]',  '$SpeedMax[$i]',  '$g_over[$i]',  '$i',  '$du',  '$latB1j' ,   '$lonB1j',  '$latB2j',  '$lonB2j'); ";
 
 
-$objQuery = mysql_query($strSQL);
+$objQuery = mysqli_query($strSQL);
 
 }
 
-mysql_close($objConnect);
+mysqli_close($objConnect);
 */?></td><td></td><td></td><td></td></tr></tbody></table></td></tr><tr><td></td></tr>
 </tbody>
 </table>

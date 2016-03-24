@@ -12,16 +12,16 @@ $telephone = GetFromBrowser("telephone", "");
 $password_old = GetFromBrowser("password_old", "");
 $password_new = GetFromBrowser("password_new", "");
 
-$link = mysql_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
-mysql_select_db(DB_NAME, $link);
-mysql_query("SET NAMES 'utf8'");
+$link = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
+mysqli_select_db(DB_NAME, $link);
+mysqli_query("SET NAMES 'utf8'");
 
 $value = array("data" => array());
 
 if($action == "show_profile"){
     $sql = "SELECT * FROM user WHERE username='".$_COOKIE["gbox"]["username"]."'";
-    $res = mysql_query($sql, $link);
-    while($data = mysql_fetch_array($res)){
+    $res = mysqli_query($sql, $link);
+    while($data = mysqli_fetch_array($res)){
         $sub = array(
             "firstname" => $data["firstname"],
             "lastname" => $data["lastname"],
@@ -36,7 +36,7 @@ if($action == "show_profile"){
 
 if($action == "save_profile"){
     $sql = "UPDATE user SET firstname='".$firstname."', lastname='".$lastname."', email='".$email."', address='".$address."', telephone='".$telephone."' WHERE username='".$_COOKIE["gbox"]["username"]."'";
-    if($res = mysql_query($sql, $link)){
+    if($res = mysqli_query($sql, $link)){
         setcookie("gbox[name]", $firstname." ".$lastname, time() + (10 * 365 * 24 * 60 * 60), "/"); // 10 year
         $sub = array(
             "status" => "success"
@@ -45,7 +45,7 @@ if($action == "save_profile"){
     else{
         $sub = array(
             "status" => "fail",
-            "message" => mysql_error()
+            "message" => mysqli_error()
         );
     }
 
@@ -54,10 +54,10 @@ if($action == "save_profile"){
 
 if($action == "change_password"){
     $sql = "SELECT * FROM user WHERE username='".$_COOKIE["gbox"]["username"]."' AND password='".md5($password_old.MOD_PASSWORD)."'";
-    $res = mysql_query($sql, $link);
-    if($data = mysql_fetch_array($res)){
+    $res = mysqli_query($sql, $link);
+    if($data = mysqli_fetch_array($res)){
         $sql2 = "UPDATE user SET password='".md5($password_new.MOD_PASSWORD)."' WHERE username='".$_COOKIE["gbox"]["username"]."'";
-        if($res2 = mysql_query($sql2, $link)){
+        if($res2 = mysqli_query($sql2, $link)){
             $sub = array(
                 "status" => "success"
             );
@@ -65,7 +65,7 @@ if($action == "change_password"){
         else{
             $sub = array(
                 "status" => "fail",
-                "message" => mysql_error()
+                "message" => mysqli_error()
             );
         }
     }
@@ -80,7 +80,7 @@ if($action == "change_password"){
     array_push($value["data"], $sub);
 }
 
-mysql_close($link);
+mysqli_close($link);
 
 $json = json_encode($value);
 

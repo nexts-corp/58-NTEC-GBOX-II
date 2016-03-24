@@ -13,12 +13,12 @@
     $score_max = 0;
     $speed_max1 = 0;
  
-    $db = mysql_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
-    $objDB = mysql_select_db(DB_NAME);  /*Start Frame at Open selectable Always*/
-    mysql_query("SET NAMES 'tis620'");
+    $db = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
+    $objDB = mysqli_select_db(DB_NAME);  /*Start Frame at Open selectable Always*/
+    mysqli_query("SET NAMES 'tis620'");
 
     $sql = " TRUNCATE TABLE  `totalscore` ";
-    $objQuery = mysql_query($sql);
+    $objQuery = mysqli_query($sql);
 
     /* === Read for All Test in Select test ==================*/
 
@@ -27,11 +27,11 @@
 
     $exe1 = "SELECT `number`,`name`,`device`,`route`,`acclimit`,`speedunit`,`date`,`time1`,`time2`,`numscore`,`x1`,`x2`
             FROM `selecttest` WHERE `number`='$number' ORDER BY `date` ASC ";
-    $result = mysql_query($exe1)or die(mysql_error());
-    $num_rows = mysql_numrows($result);
+    $result = mysqli_query($exe1)or die(mysqli_error());
+    $num_rows = mysqli_numrows($result);
 
     for ($i=0; $i<$num_rows; $i++) {
-        list($number,$name,$device,$route,$acclimit,$speedunit,$date,$time1,$time2,$numscore,$x1,$x2) = mysql_fetch_row($result);
+        list($number,$name,$device,$route,$acclimit,$speedunit,$date,$time1,$time2,$numscore,$x1,$x2) = mysqli_fetch_row($result);
         $dateT[$i] = $date;
         $time1T[$i] = $time1;
         $time2T[$i] = $time2;
@@ -49,10 +49,10 @@
 
         $exe1 = "SELECT timestmp,date,pack1,tripdir,daylight,speedavg,distanceavg,timeavg FROM `selectscore` WHERE `date`='$dateT[$i]'
                 AND `time1`='$time1T[$i]'  ORDER BY  `timestmp` DESC  ";
-        $result = mysql_query($exe1)or die(mysql_error());
-        $num_rows = mysql_numrows($result);
+        $result = mysqli_query($exe1)or die(mysqli_error());
+        $num_rows = mysqli_numrows($result);
 
-        list($stmp0,$date0,$pack10,$tripdir0,$daylight0,$speedavg0,$distanceavg0,$timeavg0) = mysql_fetch_row($result);
+        list($stmp0,$date0,$pack10,$tripdir0,$daylight0,$speedavg0,$distanceavg0,$timeavg0) = mysqli_fetch_row($result);
 
         $time_stamp = explode(" " ,$stmp0);
         $timestp[$i] =  $time_stamp[0];
@@ -78,7 +78,7 @@
 
         $strSQL = "INSERT INTO  `totalscore` (`test`,`indei`,`tsmp` ,`date` ,  `pack` ,  `total`,  `tripdir`,  `daylight`,`speedavg`,  `distanceavg`,`timeavg`,`spdscore`)
                    VALUES  ('$selectT','$i' , NOW( ),'$date0', '$pack10',  '$total[$i]',  '$tripdir0',  '$daylight0' ,$speedavg0,$distanceavg0,$timeavg0,$speed_score );";
-        $objQuery = mysql_query($strSQL);
+        $objQuery = mysqli_query($strSQL);
     }
 
     /*====================== Read Data Score for Source ============================== */
@@ -102,7 +102,7 @@
 
     $exe1 = "SELECT indei,tsmp ,date ,pack,total,tripdir,daylight,`speedavg`,`distanceavg`,`timeavg`
             FROM `totalscore` ORDER BY  `$sort` ASC LIMIT 0 ,44   ";
-    $result = mysql_query($exe1)or die(mysql_error());
+    $result = mysqli_query($exe1)or die(mysqli_error());
    
     $v_avg = 0;
     $d_avg = 0;
@@ -120,7 +120,7 @@
     $z5 = 0;           /* Nostop score*/
 
     for ($i=0; $i<=$num_score; $i++) {
-        list($in0,$tsmp0,$date0,$pack10,$total,$tripdir0,$daylight0,$speedavg1,$distanceavg1,$timeavg1) = mysql_fetch_row($result);
+        list($in0,$tsmp0,$date0,$pack10,$total,$tripdir0,$daylight0,$speedavg1,$distanceavg1,$timeavg1) = mysqli_fetch_row($result);
 
         $tsmp[$i] = $tsmp0;
         $datefg[$i] = $date0;
@@ -220,12 +220,12 @@
 
     /* ========================================================== */
 
-    $db = mysql_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
-    mysql_query("SET NAMES 'tis620'");
-    $objDB = mysql_select_db(DB_NAME); /*Start Frame at Open selectable Always*/
+    $db = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
+    mysqli_query("SET NAMES 'tis620'");
+    $objDB = mysqli_select_db(DB_NAME); /*Start Frame at Open selectable Always*/
 
     $sql = " DELETE FROM  `routescore` WHERE  `name` = '$route' AND   `test`  = '$selectT' LIMIT 10 ; ";
-    mysql_query($sql);
+    mysqli_query($sql);
 
     $tripgo = $rout[1];
 
@@ -372,7 +372,7 @@
                     ,`scoresa`,`scoremax`,`speedmax`,`accmax`,`turnmax`,`zonemax`)
                 VALUES ('$route',  '$selectT', '$n', '$total100s1','$dist1','$tim1','$vd1','$vs11','$vs21','$vs31','$vs41','$accSC1','$turnSC1','$turnUSC1','$zz11',  '$zz12','$zz13','$zz14','$zz15','$tripgo','$gogo'
                     ,'$score_SA','$score_max','$speed_max','$acc_max','$turn_max','$zone_max');";
-    $objQuery = mysql_query($strSQL);
+    $objQuery = mysqli_query($strSQL);
 
     /* -------------------------------------------- */
 
@@ -381,7 +381,7 @@
                     ,`scoresa`,`scoremax`,`speedmax`,`accmax`,`turnmax`,`zonemax`)
                 VALUES ('$route',  '$selectT', '$n2', '$total100s2','$dist2','$tim2','$vd2','$vs12','$vs22','$vs32','$vs42','$accSC2','$turnSC2','$turnUSC2','$zz21','$zz22','$zz23','$zz24','$zz25','$tripbk','$bback'
                     ,'$score_SA2','$score_max2','$speed_max2','$acc_max2','$turn_max2','$zone_max2' );";
-    $objQuery = mysql_query($strSQL);
+    $objQuery = mysqli_query($strSQL);
     ?>
 </body>
 </html>

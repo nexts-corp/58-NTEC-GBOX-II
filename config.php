@@ -2,8 +2,8 @@
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'minigbox');
 //define('DB_USERNAME', 'postgres');
-define('DB_USERNAME', 'mysqluser');
-define('DB_PASSWORD', 'intelenicsdb');
+define('DB_USERNAME', 'root');
+define('DB_PASSWORD', 'dd1234');
 
 define('GPSINTERVAL_DEFAULT', '1');
 
@@ -12,9 +12,9 @@ define("SUPERUSER", "Superuser");
 define("USER", "User");
 define("MOD_PASSWORD", "minigbox");
 
-$link = mysql_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
-$select = mysql_select_db(DB_NAME, $link);
-mysql_query("SET NAMES 'utf8'");
+$link = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
+$select = mysqli_select_db(DB_NAME, $link);
+mysqli_query("SET NAMES 'utf8'");
 
 
 function GetFromBrowser($value_name,$old_value='',$convert=true) {

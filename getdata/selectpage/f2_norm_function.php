@@ -44,13 +44,13 @@
     $RouteT[23] = "Test20";  $routedir[23] = "KSU1 - KSU2";
     $RouteT[24] = "Test21";  $routedir[24] = "KSU2 - KSU1";
   
-    $db = mysql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
-    $objDB = mysql_select_db(DB_NAME);
+    $db = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
+    $objDB = mysqli_select_db(DB_NAME);
 
     for ($i=1; $i<=24; $i++) {
         $strSubmit = "SELECT DISTINCT * FROM `routescore` WHERE `test` = '$RouteT[$i]' AND `goname` = '$routedir[$i]' " ; /*The Last time stamp*/
-        $objSubmit1 = mysql_query($strSubmit) or die ("Error Query [".$strSubmit."]");
-        $submit = mysql_fetch_array($objSubmit1);
+        $objSubmit1 = mysqli_query($strSubmit) or die ("Error Query [".$strSubmit."]");
+        $submit = mysqli_fetch_array($objSubmit1);
 
         $nums[$i] = $submit["numscore"];
 

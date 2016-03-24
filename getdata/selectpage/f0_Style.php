@@ -92,14 +92,14 @@ error_reporting(0);
                             //$selectT = "Test21";
                             //if ($selectT=="Test21") {
 
-                            $link = mysql_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
-                            mysql_select_db(DB_NAME,$link);
-                            mysql_query("SET NAMES 'utf8'");
-                            mysql_query("SET NAMES 'utf8'");
+                            $link = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
+                            mysqli_select_db(DB_NAME,$link);
+                            mysqli_query("SET NAMES 'utf8'");
+                            mysqli_query("SET NAMES 'utf8'");
 
                             $strSubmit = "SELECT DISTINCT * FROM  `selecttest` WHERE  `route` = '$tripdir' AND  `date`='$Date1' AND  `time1` =  '$Time1' " ; /*The Last time stamp*/
-                            $objSubmit1 = mysql_query($strSubmit) or die ("Error Query [".$strSubmit."]");
-                            $submit = mysql_fetch_array($objSubmit1);
+                            $objSubmit1 = mysqli_query($strSubmit) or die ("Error Query [".$strSubmit."]");
+                            $submit = mysqli_fetch_array($objSubmit1);
 
                             $DName = $submit["name"];
                             $tripdir = $submit["route"];
@@ -374,16 +374,16 @@ error_reporting(0);
                 <tr>
                     <td>
                         <?php
-                        $db = mysql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
-                        $objDB = mysql_select_db(DB_NAME);
+                        $db = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
+                        $objDB = mysqli_select_db(DB_NAME);
 
                         $exe1 = "SELECT  `test` , `name` , `route` , `date` , `time1` , `time2` ,`splevel` , `sptype` , `acclevel` , `acctype` ,  `turnlevel` ,  `turntype` ,  `total` ,  `distance`,  `v_score` ,  `a_score` ,  `t_score`,  `danger` FROM  `drivername` WHERE  `name` LIKE  '$DName' ORDER BY  `total` ASC";
-                        $result1 = mysql_query($exe1)or die(mysql_error());
-                        $num_rows = mysql_numrows($result1);
+                        $result1 = mysqli_query($exe1)or die(mysqli_error());
+                        $num_rows = mysqli_numrows($result1);
 
                         for ($i=1; $i<=$num_rows; $i++) {
 
-                            list($test, $name , $route , $date , $time1 , $time2 , $splevel , $sptype , $acclevel ,$acctype ,$turnlevel , $turntype , $total , $distance, $vscore , $ascore , $tscore, $danger1 ) = mysql_fetch_row($result1);
+                            list($test, $name , $route , $date , $time1 , $time2 , $splevel , $sptype , $acclevel ,$acctype ,$turnlevel , $turntype , $total , $distance, $vscore , $ascore , $tscore, $danger1 ) = mysqli_fetch_row($result1);
 
                             $time_s = explode(":", $time1);
                             $sec1 = ((($time_s[0])*3600) + (($time_s[1])*60) + ($time_s[2]));

@@ -181,15 +181,15 @@ elseif (($over_index>=600) AND ($over_index<700)) {
 /* Read and Draw Dangerous Zone #################################################*/
 
 /*    $myDB2 = "dangerous";
-    mysql_select_db($myDB2, $db);
+    mysqli_select_db($myDB2, $db);
     $exe2 = "SELECT latitude,longitude,colorD,colorDF,type FROM `2555`";
-    $result2 = mysql_query($exe2)or die(mysql_error());
-    $dan_rows = mysql_numrows($result2);
+    $result2 = mysqli_query($exe2)or die(mysqli_error());
+    $dan_rows = mysqli_numrows($result2);
 
   $latD = array (  );   $lonD = array (  );  $colorD = array ( );  $colorDF = array ( );
   $i = 0;
 
-while(list($Dlat,$Dlon,$Dcolor,$DFcolor,$Dtype) = mysql_fetch_row($result2)){
+while(list($Dlat,$Dlon,$Dcolor,$DFcolor,$Dtype) = mysqli_fetch_row($result2)){
 
      $latD[$i] = $Dlat;
      $lonD[$i] = $Dlon;

@@ -1075,18 +1075,18 @@ error_reporting(0);
                                         $score_pk1 = implode(":", $score_pack1);
                                         $score_pack2 = array($count1, $count2, $count3, $count4, $count5, $count6, $count7_1, $count7_2, $count8, $count9, $count10, $count11, $count12);
                                         $score_pk2 = implode(":", $score_pack2);
-                                        /* $db = mysql_connect("53476f055e81994c02000008-nectec.clouddd.in.th:38096","adminlYkzegJ","MaLQvrNyPEpn"); */
+                                        /* $db = mysqli_connect("53476f055e81994c02000008-nectec.clouddd.in.th:38096","adminlYkzegJ","MaLQvrNyPEpn"); */
 
-                                        $objConnect = mysql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
-                                        $objDB = mysql_select_db(DB_NAME);
+                                        $objConnect = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
+                                        $objDB = mysqli_select_db(DB_NAME);
 
                                         $delsql = " DELETE FROM `selectscore` WHERE (`device` = '$id') AND (`date`= '$DateBegin') AND (`time1`= '$Time1'); ";
-                                        $objQuery = mysql_query($delsql);
+                                        $objQuery = mysqli_query($delsql);
 
                                         $strSQL = "INSERT INTO `selectscore` (`timestmp`,`index`,`device`,`date`,`time1`,`time2`,`pack1`,`pack2`,`tripdir`,`daylight`,`speedavg`,`distanceavg`,`timeavg` )
                                         VALUES ( NOW( ), '3', '$id','$DateBegin','$Time1','$Time2','$score_pk1','$score_pk2','$tripdir1','$daylight','$speed_avg3','$dis_sum_km','$deltaT');;";
-                                        $objQuery = mysql_query($strSQL);
-                                        mysql_close($objConnect);
+                                        $objQuery = mysqli_query($strSQL);
+                                        mysqli_close($objConnect);
                                         ?>
                                     </td>
                                 </tr>

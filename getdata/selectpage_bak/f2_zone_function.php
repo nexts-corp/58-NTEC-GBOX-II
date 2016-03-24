@@ -23,19 +23,19 @@
         
 /* Read Dangerous Zone #############################################################*/
 
-/*    $db = mysql_connect("localhost","tatanad","tata789");
-/*$db = mysql_connect("53476f055e81994c02000008-nectec.clouddd.in.th:38096","adminlYkzegJ","MaLQvrNyPEpn");  */
+/*    $db = mysqli_connect("localhost","tatanad","tata789");
+/*$db = mysqli_connect("53476f055e81994c02000008-nectec.clouddd.in.th:38096","adminlYkzegJ","MaLQvrNyPEpn");  */
 /*    $myDB2 =  "thairoadsafety";
-    mysql_select_db($myDB2, $db);
+    mysqli_select_db($myDB2, $db);
     $exe2 = "SELECT latitude,longitude,colorD,colorDF,type FROM `dangerous`";
-    $result2 = mysql_query($exe2)or die(mysql_error());
-    $dan_rows = mysql_numrows($result2);
+    $result2 = mysqli_query($exe2)or die(mysqli_error());
+    $dan_rows = mysqli_numrows($result2);
 
     $latD = array (  );   $lonD = array (  );
     $latOffset = 0.0015; $lonOffset = 0.0017;
 
     $i = 0;
-  while(list($Dlat,$Dlon,$colorD,$colorDF,$Dtype) = mysql_fetch_row($result2)){
+  while(list($Dlat,$Dlon,$colorD,$colorDF,$Dtype) = mysqli_fetch_row($result2)){
      $latD[$i] = $Dlat;
      $lonD[$i] = $Dlon;
      $Dtype2[$i] = $Dtype;
@@ -436,7 +436,7 @@
 }   /* close while/for of Read Point*/
 
 $cross_num = $nzero_cnt;
-   mysql_close($db);
+   mysqli_close($db);
 
   ?>
 

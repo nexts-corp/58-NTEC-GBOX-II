@@ -527,11 +527,11 @@ error_reporting(0);
                     </td>
                     <td>
                         <?php
-                        $objConnect = mysql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
-                        $objDB = mysql_select_db(DB_NAME);
+                        $objConnect = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
+                        $objDB = mysqli_select_db(DB_NAME);
 
                         $delsql = " DELETE FROM `zonescore` WHERE (`test` = '$selectT') AND (`date`= '$Date1') ; ";
-                        $objQuery = mysql_query($delsql);
+                        $objQuery = mysqli_query($delsql);
 
                         for ($t=1; $t<=$zoneP; $t++) {
 
@@ -544,7 +544,7 @@ error_reporting(0);
                         '$selectT', NOW( ),'$Date1', '$crossT1[$t]', '$crossT2[$t]','$zi','$durat[$t]','$crossSPD[$t]', '$latz1[$t]', '$lonz1[$t]',  '$latz2[$t]', '$lonz2[$t]', '$zone_type[$t]',  '$sumalt1[$t]',  '0',  '$sumdir1[$t]',  '$crossDis[$t]'
                         ); ";
 
-                        $objQuery = mysql_query($strSQL);
+                        $objQuery = mysqli_query($strSQL);
                         }?></td>
                         </tr>
                         <tr>
@@ -645,8 +645,8 @@ error_reporting(0);
                     </td>
                     <td>
                         <?php
-                        $objConnect = mysql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
-                        $objDB = mysql_select_db(DB_NAME);
+                        $objConnect = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
+                        $objDB = mysqli_select_db(DB_NAME);
 
                         for ($t=1; $t<=$stp_point_cnt; $t++) {
 
@@ -669,7 +669,7 @@ error_reporting(0);
                         '$selectT', NOW( ),'$Date1', '$TE1_turn[$t]', '$TE2_turn[$t]','$ti','$durat[$t]','$SpeedMax[$t]', '$latBE1[$t]', '$lonBE1[$t]',  '$latBE2[$t]', '$lonBE2[$t]', '$type_Turn[$t]',  '$AccSlope[$t]',  '$g_overR[$t]',  '$deltaDS[$t]',  '$delDis[$t]'
                         ); ";
 
-                        $objQuery = mysql_query($strSQL);
+                        $objQuery = mysqli_query($strSQL);
                         }
                         ?>
                     </td>
@@ -678,19 +678,19 @@ error_reporting(0);
                     <td></td>
                     <td>
                         <?php
-                        $objConnect = mysql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
-                        $objDB = mysql_select_db(DB_NAME);
+                        $objConnect = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
+                        $objDB = mysqli_select_db(DB_NAME);
 
                         $delsql = " DELETE FROM `zonetype` WHERE `test`='$selectT' AND `date`='$Date1' AND `time1`='$TimeBegin' ; ";
-                        $objQuery = mysql_query($delsql);
+                        $objQuery = mysqli_query($delsql);
 
                         $strSQL = "INSERT INTO  `zonetype` (  `test` ,  `timestp` ,  `date` ,  `time1` ,  `time2` ,  `cross` ,  `stop` ,  `nstop` ,  `train` ,  `curve` ,  `lanechange` ,  `overtake` ,  `slope` )
 
                         VALUES (
                         '$selectT', NOW( ) ,  '$Date1',  '$TimeBegin',  '$TimeEnd',  '$cross_cnt3',  '$stop_cnt',  '$nstop_cnt2','$tstop_cnt2',    '$curve_over',  '$LaneC_over',  '$LaneC2_over',  '$slope1');
                         ";
-                        $objQuery = mysql_query($strSQL);
-                        mysql_close($objConnect);?>
+                        $objQuery = mysqli_query($strSQL);
+                        mysqli_close($objConnect);?>
                     </td>
                 </tr>
             </tbody>
