@@ -12,6 +12,32 @@ define("SUPERUSER", "Superuser");
 define("USER", "User");
 define("MOD_PASSWORD", "minigbox");
 
+$DB_LINK;
+
+function mysql_connect($dbhost,$dbusrname,$dbpassword){
+ $DB_LINK= mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);  
+ 
+ return $DB_LINK;
+}
+function mysql_select_db($db,$link){
+    return true;
+}
+
+function mysql_query($sql){
+    return mysqli_query($DB_LINK,$sql);
+}
+
+function mysql_fetch_array($res){
+    return mysqli_fetch_array($res);
+}
+
+function mysql_close(){
+    mysqli_close($DB_LINK);
+}
+
+
+
+
 $link = mysql_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
 $select = mysql_select_db(DB_NAME, $link);
 mysql_query("SET NAMES 'utf8'");
