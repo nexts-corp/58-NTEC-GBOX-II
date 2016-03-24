@@ -859,19 +859,19 @@ error_reporting(0);
                                         <span>
                                             <a style="color: white;" href="f0_routRisk.php" target="_blank">
                                                 <?php
-                                                $objConnect = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
-                                                $objDB = mysqli_select_db(DB_NAME);
+                                                $objConnect = mysql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
+                                                $objDB = mysql_select_db(DB_NAME);
 
                                                 for ($t=1; $t<=$acc_num_1; $t++) {
-                                                    $strSQL = "INSERT INTO `accscore` (`test`,`date`,`index`,`accmax`,`speedmax`,`theta` ,`pnt1` ,`pnt2` ,`lat1` ,`lon1` ,`lat2` ,`lon2` , `distance` , `dura` , `force` , `type`) VALUES ( '$selectT', '$dateacc', '$t', '$accP_max[$t]', '$acc_vmax[$t]', '$intdelMax1[$t]' ,'$point0[$t]','$point4[$t]', '$latABe[$t]','$lonABe[$t]' ,'$latAEn[$t]','$lonAEn[$t]','$dis_use[$t]','$time_use[$t]','$forceP[$t]','$StrType[$t]');;"; $objQuery = mysqli_query($strSQL);
+                                                    $strSQL = "INSERT INTO `accscore` (`test`,`date`,`index`,`accmax`,`speedmax`,`theta` ,`pnt1` ,`pnt2` ,`lat1` ,`lon1` ,`lat2` ,`lon2` , `distance` , `dura` , `force` , `type`) VALUES ( '$selectT', '$dateacc', '$t', '$accP_max[$t]', '$acc_vmax[$t]', '$intdelMax1[$t]' ,'$point0[$t]','$point4[$t]', '$latABe[$t]','$lonABe[$t]' ,'$latAEn[$t]','$lonAEn[$t]','$dis_use[$t]','$time_use[$t]','$forceP[$t]','$StrType[$t]');;"; $objQuery = mysql_query($strSQL);
                                                 }
 
-                                                $objDB = mysqli_select_db(DB_NAME);
+                                                $objDB = mysql_select_db(DB_NAME);
 
                                                 $delsql = " DELETE FROM `acctype` WHERE CONVERT( `test` USING utf8 ) = '$selectT' AND (`date`= '$Date1') AND (`time1`= '$Time1'); ";
-                                                $objQuery = mysqli_query($delsql);
+                                                $objQuery = mysql_query($delsql);
 
-                                                $strSQL = "INSERT INTO `acctype` ( `timestp` , `test` , `date` , `time1` , `time2` , `spdavg` , `spdmax` , `accmax` , `accmin` , `distance` , `forcet` , `release` , `overtake` , `closeto` , `stop` , `type0`, `type` , `score` ) VALUES ( NOW( ) , '$selectT', '$dateacc', '$Time1' , '$Time2','$speed_avg' ,'$speed_maxy','$accPmax','$accPmin','$dis_sum_km' ,'$forceT','$typeNum1', '$typeNum2', '$typeNum3', '$typeNum4', '$typeNum0', '$typeT', '$scoreT');;"; $objQuery = mysqli_query($strSQL);
+                                                $strSQL = "INSERT INTO `acctype` ( `timestp` , `test` , `date` , `time1` , `time2` , `spdavg` , `spdmax` , `accmax` , `accmin` , `distance` , `forcet` , `release` , `overtake` , `closeto` , `stop` , `type0`, `type` , `score` ) VALUES ( NOW( ) , '$selectT', '$dateacc', '$Time1' , '$Time2','$speed_avg' ,'$speed_maxy','$accPmax','$accPmin','$dis_sum_km' ,'$forceT','$typeNum1', '$typeNum2', '$typeNum3', '$typeNum4', '$typeNum0', '$typeT', '$scoreT');;"; $objQuery = mysql_query($strSQL);
                                                 ?>
                                             </a>
                                         </span>

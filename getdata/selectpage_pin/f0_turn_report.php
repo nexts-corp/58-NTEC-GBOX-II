@@ -420,23 +420,23 @@ $typeC = "$cr:$cl:$sca:$scb";
 $typeU = "$ut";
 $totalT = $curve_over;
 
-$objConnect = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
-$objDB = mysqli_select_db(DB_NAME);
+$objConnect = mysql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
+$objDB = mysql_select_db(DB_NAME);
 
 $delsql = " DELETE FROM `turntype` WHERE CONVERT( `test` USING utf8 ) = '$selectT' AND (`date`= '$Date1') AND (`time1`= '$Time1'); ";
-$objQuery = mysqli_query($delsql);
+$objQuery = mysql_query($delsql);
 
 $sql ="use thairoadsafety"; 
 $strSQL = "INSERT INTO `turntype` ( `timestp` , `index` , `date` , `time1` , `time2` , `vavg` , `ap`, `an` , `duration` , `typeRT`, `typeLT`, `typeC`, `typeU`, `totalscore` ) VALUES (NOW( ) , '$selectT', '$DateT', '$TimeBegin', '$TimeEnd', '$speedSum', '$accSumP', '$accSumN', '$duraSum', '$typeR', '$typeL', '$typeC', '$typeU' , '$totalT'); ";
 
-$objQuery = mysqli_query($strSQL);
+$objQuery = mysql_query($strSQL);
 ?></td>
 <td><?php
-    $objConnect = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
-    $objDB = mysqli_select_db(DB_NAME);
+    $objConnect = mysql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
+    $objDB = mysql_select_db(DB_NAME);
 
 $sql_del = " DELETE FROM `turnscore` WHERE `index`='$selectT' AND `date`= '$DateT'; ";
-mysqli_query($sql_del) or die(mysqli_error());
+mysql_query($sql_del) or die(mysql_error());
 
 
 for ($i=1; $i<=$stp_point_cnt; $i++) {
@@ -449,9 +449,9 @@ $lonB2j = round($lonBE2[$i],6);
 
 
 $strSQL = "INSERT INTO `turnscore` (`timestp` ,`index` ,`date` , `point1` ,`point2` , `vavg` ,`ap` ,`an` ,`duration` ,`lat1` ,`lon1` ,`lat2` ,`lon2`,`type` ) VALUES (NOW( ) , '$selectT', '$DateT', '$point[0]','$point[1]', '$SpeedMax[$i]', '$g_over[$i]', '$i', '$du', '$latB1j' , '$lonB1j', '$latB2j', '$lonB2j', '$type_Turn[$i]' ); ";
-$objQuery = mysqli_query($strSQL);
+$objQuery = mysql_query($strSQL);
 }
-mysqli_close($objConnect);
+mysql_close($objConnect);
 ?></td>
 <td></td>
 <td></td>

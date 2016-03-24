@@ -12,9 +12,9 @@ define("SUPERUSER", "Superuser");
 define("USER", "User");
 define("MOD_PASSWORD", "minigbox");
 
-$link = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
-$select = mysqli_select_db(DB_NAME, $link);
-mysqli_query("SET NAMES 'utf8'");
+$link = mysql_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
+$select = mysql_select_db(DB_NAME, $link);
+mysql_query("SET NAMES 'utf8'");
 
 
 function GetFromBrowser($value_name,$old_value='',$convert=true) {

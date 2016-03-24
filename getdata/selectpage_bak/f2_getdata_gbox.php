@@ -11,13 +11,13 @@ $date1 = $_GET["date1"];
 $time1 = $_GET["time1"];
 $time2 = $_GET["time2"];
 
-$link = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
-mysqli_select_db(DB_NAME,$link);
-mysqli_query("SET NAMES 'utf8'");
+$link = mysql_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
+mysql_select_db(DB_NAME,$link);
+mysql_query("SET NAMES 'utf8'");
 
 $sql_user = "SELECT * FROM user WHERE username='".$_COOKIE["gbox"]["username"]."'";
-$res_user = mysqli_query($sql_user, $link);
-$data_user = mysqli_fetch_array($res_user);
+$res_user = mysql_query($sql_user, $link);
+$data_user = mysql_fetch_array($res_user);
 
 $selectT = $data_user["firstname"]." ".$data_user["lastname"];
 //$id = $deviceid;
@@ -26,8 +26,8 @@ $time1 = date('H:i:s', mktime(substr($time1, 0, 2), substr($time1, 3, 2), 0, sub
 $time2 = date('H:i:s', mktime(substr($time2, 0, 2), substr($time2, 3, 2), 0, substr($date1, 3, 2), substr($date1, 0, 2), substr($date1, 6, 4)));
 
 $sql_dev = "SELECT * FROM device WHERE id='".$_GET["deviceid"]."'";
-$res_dev = mysqli_query($sql_dev, $link);
-$data_dev = mysqli_fetch_array($res_dev);
+$res_dev = mysql_query($sql_dev, $link);
+$data_dev = mysql_fetch_array($res_dev);
 
 if($data_dev["device_type_id"] == "1"){ //GBox
     $unix_time1 = mktime(substr($time1, 0, 2), substr($time1, 3, 2), 0, substr($date1, 3, 2), substr($date1, 0, 2), substr($date1, 6, 4)) - date("Z");
@@ -51,10 +51,10 @@ else if($data_dev["device_type_id"] == "4"){ //RV3D
     $sql = "SELECT * FROM datarv3d WHERE deviceid='".$deviceid."' AND date='".$Datetime."' AND time>='".$time1."' AND time<='".$time2."' ORDER BY time ASC";
 }
 //print $sql;
-$res = mysqli_query($sql, $link);
+$res = mysql_query($sql, $link);
 $i = 0;
 $speed_max=0;
-while($data = mysqli_fetch_array($res)){
+while($data = mysql_fetch_array($res)){
     if($data_dev["device_type_id"] == "1") $time = date('H:i:s', $data['time'] + date("Z"));
     else $time = $data["time"];
 
@@ -80,7 +80,7 @@ while($data = mysqli_fetch_array($res)){
     $i++;
 }
 $num_rows = $i;
-mysqli_close($link);
+mysql_close($link);
 
 ?>
 </BODY>

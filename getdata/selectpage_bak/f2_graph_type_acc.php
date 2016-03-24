@@ -9,18 +9,18 @@
 
         <?php
     require(dirname(__FILE__)."/../../config.php");
-    $db = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
-    $objDB = mysqli_select_db(DB_NAME);
+    $db = mysql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
+    $objDB = mysql_select_db(DB_NAME);
 
     $sql_user = "SELECT * FROM user WHERE username='".$_COOKIE["gbox"]["username"]."'";
-    $res_user = mysqli_query($sql_user, $db);
-    $data_user = mysqli_fetch_array($res_user);
+    $res_user = mysql_query($sql_user, $db);
+    $data_user = mysql_fetch_array($res_user);
 
     $selectT = $data_user["firstname"]." ".$data_user["lastname"];
 
     $sql_dev = "SELECT * FROM device WHERE id='".$_GET["deviceid"]."'";
-    $res_dev = mysqli_query($sql_dev, $link);
-    $data_dev = mysqli_fetch_array($res_dev);
+    $res_dev = mysql_query($sql_dev, $link);
+    $data_dev = mysql_fetch_array($res_dev);
 
     $deviceName = $data_dev["device_desc"];
 
@@ -30,10 +30,10 @@
     $Time2 = $_GET["time2"];
 
 
-    $objDB = mysqli_select_db(DB_NAME);
+    $objDB = mysql_select_db(DB_NAME);
     $strSubmit = " SELECT * FROM  `acctype` WHERE  `date` =  '$Date1' AND  `time1` =  '$Time1'  " ; /*The Last time stamp*/
-    $objSubmit1 = mysqli_query($strSubmit, $db) or die ("Error Query [".$strSubmit."]");
-    $submit = mysqli_fetch_array($objSubmit1);
+    $objSubmit1 = mysql_query($strSubmit, $db) or die ("Error Query [".$strSubmit."]");
+    $submit = mysql_fetch_array($objSubmit1);
 
     $k1 = $submit["release"];
     $k2 = explode(":",$k1);

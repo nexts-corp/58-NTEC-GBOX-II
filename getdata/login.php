@@ -7,21 +7,21 @@ $username = GetFromBrowser("username", "");
 $password = GetFromBrowser("password", "");
 $email = GetFromBrowser("email", "");
 
-$link = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
-mysqli_select_db(DB_NAME,$link);
-mysqli_query("SET NAMES 'utf8'");
+$link = mysql_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
+mysql_select_db(DB_NAME,$link);
+mysql_query("SET NAMES 'utf8'");
 
 $value = array("data" => array());
 if($action == "login"){
     $password = md5($password.MOD_PASSWORD);
 
     $sql = "SELECT * FROM user WHERE username='".$username."' AND password='".$password."'";
-    $res = mysqli_query($sql, $link);
-    $data = mysqli_fetch_array($res);
+    $res = mysql_query($sql, $link);
+    $data = mysql_fetch_array($res);
 
     $sql_role = "SELECT * FROM lk_role WHERE id='".$data['role_id']."'";
-    $res_role = mysqli_query($sql_role, $link);
-    $data_role = mysqli_fetch_array($res_role);
+    $res_role = mysql_query($sql_role, $link);
+    $data_role = mysql_fetch_array($res_role);
 
     if(isset($data["username"])){
         setcookie("gbox[username]", $data["username"], time() + (10 * 365 * 24 * 60 * 60), "/"); // 10 year
@@ -43,13 +43,13 @@ if($action == "login"){
 
 if($action == "send_password"){
     $sql = "SELECT * FROM user WHERE username='".$username."' AND email='".$email."'";
-    $res = mysqli_query($sql, $link);
-    $data = mysqli_fetch_array($res);
+    $res = mysql_query($sql, $link);
+    $data = mysql_fetch_array($res);
 
     if($data["username"] != ""){
         $password_rand = substr(str_shuffle('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789') , 0 , 6);
         $sql2 = "UPDATE user SET password='".md5($password_rand.MOD_PASSWORD)."' WHERE username='".$data["username"]."'";
-        $res2 = mysqli_query($sql2, $link);
+        $res2 = mysql_query($sql2, $link);
 
         $headers  = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-type: text/html; charset=utf-8" . "\r\n";
@@ -108,7 +108,7 @@ if($action == "logout"){
     }
 }
 
-mysqli_close($link);
+mysql_close($link);
 
 $json = json_encode($value);
 

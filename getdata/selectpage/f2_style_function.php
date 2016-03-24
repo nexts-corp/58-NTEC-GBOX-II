@@ -371,12 +371,12 @@ switch ($vtmaxi) {
     case 4 : $tnp = "อันตรายมาก"; break;
 }
 
-/*  $db = mysqli_connect("localhost","tatanad","tata789") or die("Error Connect to Database");
-  $objDB = mysqli_select_db("thairoadsafety");
+/*  $db = mysql_connect("localhost","tatanad","tata789") or die("Error Connect to Database");
+  $objDB = mysql_select_db("thairoadsafety");
 
   $strSQL = "DELETE FROM  `drivername` WHERE  `name` = '$DName' AND  `route`  =  '$tripdir' AND  `date` =  '$Date1'
              AND  `time1` =  '$TimeBegin'  ;  ";
-  $objQuery = mysqli_query($strSQL);
+  $objQuery = mysql_query($strSQL);
   
   $strSQL = "INSERT INTO `drivername` (`test` ,`name` ,`route` ,`date` ,`time1` ,`time2` ,`splevel` ,`sptype` ,`acclevel` ,`acctype` ,
                                        `turnlevel` ,`turntype` ,`total`,`distance`,`v_score` ,`a_score`,`t_score` )
@@ -384,7 +384,7 @@ switch ($vtmaxi) {
              VALUES ('$testn', '$DName', '$tripdir','$Date1','$TimeBegin','$TimeEnd','$sp_level','$sp_type','$acc_level','$acc_type',
                         '$turn_level','$turn_type','$total_100','$dis_sum_km','$speed_100','$acc_100','$turn_100' );";
 
-  $objQuery = mysqli_query($strSQL);
+  $objQuery = mysql_query($strSQL);
 */
 if ($total_max100<>0) { $total_scr = round((($total_100/$total_max100) *100),2); }
 if ($speed_max100<>0) { $speed_scr = round((($speed_100/$speed_max100) *100),2); }
@@ -469,13 +469,13 @@ elseif ( ($speed_scr > $turn_scr) AND ($speed_scr > $acc_scr) ) {
 
 }
 
-$db = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
-$objDB = mysqli_select_db(DB_NAME);
-mysqli_query("SET NAMES 'utf8'");
+$db = mysql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD) or die("Error Connect to Database");
+$objDB = mysql_select_db(DB_NAME);
+mysql_query("SET NAMES 'utf8'");
 
 $strSQL = "DELETE FROM  `drivername` WHERE  `name` = '$DName' AND  `route`  =  '$tripdir' AND  `date` =  '$Date1'
              AND  `time1` =  '$TimeBegin'  ;  ";
-$objQuery = mysqli_query($strSQL);
+$objQuery = mysql_query($strSQL);
 
 $strSQL = "INSERT INTO `drivername` (`test` ,`name` ,`route` ,`date` ,`time1` ,`time2` ,`splevel` ,`sptype` ,`acclevel` ,`acctype` ,
                                        `turnlevel` ,`turntype` ,`total`,`distance`,`v_score` ,`a_score`,`t_score`,`danger` )
@@ -483,7 +483,7 @@ $strSQL = "INSERT INTO `drivername` (`test` ,`name` ,`route` ,`date` ,`time1` ,`
              VALUES ('$testn', '$DName', '$tripdir','$Date1','$TimeBegin','$TimeEnd','$sp_level','$sp_type','$acc_level','$acc_type',
                         '$turn_level','$turn_type','$total_100','$dis_sum_km','$speed_100','$acc_100','$turn_100','$danger' );";
 
-$objQuery = mysqli_query($strSQL);
+$objQuery = mysql_query($strSQL);
 
 
 ?>

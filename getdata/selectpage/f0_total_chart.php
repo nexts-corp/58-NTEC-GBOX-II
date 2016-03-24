@@ -33,13 +33,13 @@
         <?php
         error_reporting(E_ERROR);
         require(dirname(__FILE__)."/../../config.php");
-        $db = mysqli_connect(DB_HOST, DB_USERNAME, DB_PASSWORD);
-        $objDB = mysqli_select_db(DB_NAME);  /*Start Frame at Open selectable Always*/
-        mysqli_query("SET NAMES 'tis620'");
+        $db = mysql_connect(DB_HOST, DB_USERNAME, DB_PASSWORD);
+        $objDB = mysql_select_db(DB_NAME);  /*Start Frame at Open selectable Always*/
+        mysql_query("SET NAMES 'tis620'");
 
         $exe = "SELECT indei,tsmp ,date,pack,total,tripdir,daylight,`speedavg`,`distanceavg`,`timeavg` FROM `totalscore` ORDER BY  `total`";
-        $result = mysqli_query($exe)or die(mysqli_error());
-        $num_score = mysqli_numrows($result);
+        $result = mysql_query($exe)or die(mysql_error());
+        $num_score = mysql_numrows($result);
 
         $date1="2013-09-17";
         $total1 = 9999;
@@ -47,7 +47,7 @@
         $total_sum = 0; $dis_sum = 0; $time_sum = 0; $speed_sum = 0;
         for ($i=0; $i<$num_score; $i++) {
 
-            list($in0,$tsmp0,$date0,$pack10,$total,$tripdir0,$daylight0,$speedavg1,$distanceavg1,$timeavg1) = mysqli_fetch_row($result);
+            list($in0,$tsmp0,$date0,$pack10,$total,$tripdir0,$daylight0,$speedavg1,$distanceavg1,$timeavg1) = mysql_fetch_row($result);
 
             $P = explode(":",$pack10);
             $P88 = ($P[8])/10;

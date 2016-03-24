@@ -20,11 +20,11 @@ else if($action == "select_super"){
 
     $sql = " SELECT id,CONCAT(firstname,' ',lastname) as fullName,telephone,address,device_id ";
     $sql .= " FROM `user` as us left join device_user du on du.user_id = us.id where role_id = 2 ";
-    $result = mysqli_query($sql);
+    $result = mysql_query($sql);
     $i = 0;
 
 
-    while($rows = mysqli_fetch_array($result)){
+    while($rows = mysql_fetch_array($result)){
 
         $new_array[$i++] = array(
             'id' => $rows['id'],
@@ -43,12 +43,12 @@ else if($action == "select_user"){
     $sql = " SELECT id,CONCAT(firstname,' ',lastname) as fullName,telephone,address,superuser as sup, ";
     $sql .= " (select CONCAT(firstname,' ',lastname) from `user` where id = sup) as superName,device_id ";
     $sql .= "  FROM `user` as us left join device_user du on du.user_id = us.id where role_id = 1 ";
-    $result = mysqli_query($sql);
+    $result = mysql_query($sql);
 
     $i = 0;
 
 
-    while($rows = mysqli_fetch_array($result)){
+    while($rows = mysql_fetch_array($result)){
 
         $new_array[$i++] = array(
             'id' => $rows['id'],
@@ -68,11 +68,11 @@ else if($action == "select_user"){
 else if($action == "add_user"){
     $sql = " INSERT INTO device_user(device_id,user_id,date_created) ";
     $sql .= " VALUES ('".$_POST['device']."','".$_POST['superID']."',NOW()) ";
-    $result = mysqli_query($sql);
+    $result = mysql_query($sql);
 }
 else if($action == "delete_user"){
     $sql = " DELETE FROM device_user WHERE device_id = '".$_POST['device']."' and user_id = '".$_POST['superID']."' ";
-    $result = mysqli_query($sql);
+    $result = mysql_query($sql);
 }
 
 
@@ -106,9 +106,9 @@ function manageRole(){
                     $sql = " SELECT id,device_desc,device_car,car_type_id as carId, ";
                     $sql .= " (SELECT car_type from lk_car_type where id = carId) as carType ";
                     $sql .= " FROM device ";
-                    $result = mysqli_query($sql);
+                    $result = mysql_query($sql);
 
-                    while($rows = mysqli_fetch_array($result)){
+                    while($rows = mysql_fetch_array($result)){
                         if(!$first){
                             $first = true;
                             ?>

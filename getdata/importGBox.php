@@ -5,9 +5,9 @@ $action = GetFromBrowser("action", "");
 
 $device_id = GetFromBrowser("device_id", "");
 
-$link = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
-mysqli_select_db(DB_NAME, $link);
-mysqli_query("SET NAMES 'utf8'");
+$link = mysql_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
+mysql_select_db(DB_NAME, $link);
+mysql_query("SET NAMES 'utf8'");
 
 $value = array("data" => array());
 
@@ -17,14 +17,14 @@ if($action == "get_GBox"){
     }
     elseif($_COOKIE["gbox"]["role"] == SUPERUSER){
         $sql_user = "SELECT * FROM user WHERE username='".$_COOKIE["gbox"]["username"]."'";
-        $res_user = mysqli_query($sql_user, $link);
-        $data_user = mysqli_fetch_array($res_user);
+        $res_user = mysql_query($sql_user, $link);
+        $data_user = mysql_fetch_array($res_user);
 
         $sql = "SELECT device.* FROM device INNER JOIN device_user ON device.id=device_user.deviceid WHERE device_user.userid='".$data_user["id"]."' AND device.device_type_id='1'";
     }
 
-    $res = mysqli_query($sql, $link);
-    while($data = mysqli_fetch_array($res)){
+    $res = mysql_query($sql, $link);
+    while($data = mysql_fetch_array($res)){
         $sub = array(
             "device_id" => $data["id"],
             "device_desc" => $data["device_desc"]
@@ -42,8 +42,8 @@ if($action == "import_GBox"){
             $deviceSerial = $objArr[0];
 
             $sql_dev = "SELECT * FROM device WHERE device_serial='".$deviceSerial."'";
-            $res_dev = mysqli_query($sql_dev, $link);
-            $data_dev = mysqli_fetch_array($res_dev);
+            $res_dev = mysql_query($sql_dev, $link);
+            $data_dev = mysql_fetch_array($res_dev);
 
             $deviceId = $data_dev['id'];
             $date = $objArr[1];
@@ -76,15 +76,15 @@ if($action == "import_GBox"){
 
 
             /*$sql_ck = "SELECT COUNT(*) AS numrow FROM data WHERE deviceid='".$deviceId."' AND time='".$unixtime."'";
-            $res_ck = mysqli_query($sql_ck, $link);
-            $data_ck = mysqli_fetch_array($res_ck);
+            $res_ck = mysql_query($sql_ck, $link);
+            $data_ck = mysql_fetch_array($res_ck);
             $rows = $data_ck['numrow'];
 
             //print $rows;
             if($rows == 0){*/
             $query = "INSERT INTO data(deviceid, sessionid, time, latitude, longitude, speed, altitude, direction, adc1, adc2)"
                 ." VALUES ('".$deviceId."', '".$sessionId."', '".$unixtime."', '".$lat.$latDir."', '".$long.$longDir."', '".$speed."', '".$alt."', '".$direction."', $adc1, $adc2);";
-            $result = mysqli_query($query, $link);
+            $result = mysql_query($query, $link);
             $i++;
         }
 
@@ -108,12 +108,12 @@ if($action == "import_GBox"){
     fclose($objCSV);
 }
 
-mysqli_close($link);
+mysql_close($link);
 
 function getSession($deviceId){
-    $link = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
-    mysqli_select_db(DB_NAME, $link);
-    mysqli_query("SET NAMES 'utf8'");
+    $link = mysql_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
+    mysql_select_db(DB_NAME, $link);
+    mysql_query("SET NAMES 'utf8'");
 
     $retry_counter = 0;
     $sessionId_found = 1;
@@ -142,13 +142,13 @@ function getSession($deviceId){
 
         $sessionId_found = 0;
         $sql = "SELECT COUNT(sessionid) AS row FROM session WHERE sessionid='".$sessionId."'";
-        $res = mysqli_query($sql, $link);
-        if($data = mysqli_fetch_array($res)){
+        $res = mysql_query($sql, $link);
+        if($data = mysql_fetch_array($res)){
             $sessionId_found = $data['row'];
 
             if($sessionId_found == 0){
                 $sql_ses = "INSERT INTO session(deviceid, sessionid) VALUES('".$deviceId."', '".$sessionId."')";
-                $res_ses = mysqli_query($sql_ses, $link);
+                $res_ses = mysql_query($sql_ses, $link);
             }
         }
         $retry_counter++;

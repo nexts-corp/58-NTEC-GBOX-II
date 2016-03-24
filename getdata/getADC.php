@@ -5,9 +5,9 @@ $action = GetFromBrowser("action", "");
 $start = GetFromBrowser("start", "");
 $id = GetFromBrowser("id", "");
 
-$link = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
-mysqli_select_db(DB_NAME,$link);
-mysqli_query("SET NAMES 'utf8'");
+$link = mysql_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
+mysql_select_db(DB_NAME,$link);
+mysql_query("SET NAMES 'utf8'");
 
 $value = array("data" => array());
 
@@ -17,13 +17,13 @@ if($action == "countpage"){
     }
     else{
         $sql_dev = "SELECT * FROM device WHERE device_serial='".$id."'";
-        $res_dev = mysqli_query($sql_dev, $link);
-        $data_dev =  mysqli_fetch_array($res_dev);
+        $res_dev = mysql_query($sql_dev, $link);
+        $data_dev =  mysql_fetch_array($res_dev);
 
         $sql = "SELECT COUNT(*) AS page FROM data WHERE deviceid='".$data_dev["id"]."'";
     }
-    $res = mysqli_query($sql, $link);
-    $data = mysqli_fetch_array($res);
+    $res = mysql_query($sql, $link);
+    $data = mysql_fetch_array($res);
 
     $page = 0;
     $page = $data["page"] / 100;
@@ -48,18 +48,18 @@ if($action == "showdata"){
     }
     else{
         $sql_dev = "SELECT * FROM device WHERE device_serial='".$id."'";
-        $res_dev = mysqli_query($sql_dev, $link);
-        $data_dev =  mysqli_fetch_array($res_dev);
+        $res_dev = mysql_query($sql_dev, $link);
+        $data_dev =  mysql_fetch_array($res_dev);
 
         $sql = "SELECT *, DATE_FORMAT(timeserver,'%d-%m-%Y %H:%i:%s') AS timeformat FROM data WHERE deviceid='".$data_dev["id"]."' ORDER BY time DESC LIMIT 100 OFFSET ".$start;
     }
-    $res = mysqli_query($sql, $link);
-    while($data = mysqli_fetch_array($res)){
+    $res = mysql_query($sql, $link);
+    while($data = mysql_fetch_array($res)){
         $time = date('d-m-Y H:i:s', $data['time'] + date("Z"));
 
         $sql_dev = "SELECT * FROM device WHERE id='".$data['deviceid']."'";
-        $res_dev = mysqli_query($sql_dev, $link);
-        $data_dev = mysqli_fetch_array($res_dev);
+        $res_dev = mysql_query($sql_dev, $link);
+        $data_dev = mysql_fetch_array($res_dev);
 
         if($data['adc1'] == null) $data['adc1'] = "";
         if($data['adc2'] == null || $data['adc2'] == "") $data['adc2'] = "";
@@ -82,7 +82,7 @@ if($action == "showdata"){
     }
     $json = json_encode($value);
 }
-mysqli_close($link);
+mysql_close($link);
 
 header('Content-Type: application/json');
 echo $json;

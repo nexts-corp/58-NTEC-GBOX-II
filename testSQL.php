@@ -1,17 +1,17 @@
 <?php
-$link = mysqli_connect("localhost","mysqluser","intelenicsdb");
+$link = mysql_connect("localhost","mysqluser","intelenicsdb");
 if($link){
     print "OK";
 }
 else{
     print "Not OK!!!!!!!!!!";
 }
-mysqli_select_db("minigbox",$link);
-mysqli_query("SET NAMES 'utf8'");
+mysql_select_db("minigbox",$link);
+mysql_query("SET NAMES 'utf8'");
 
 $sql = "SELECT * FROM data WHERE deviceid='11' AND time='1417409276'";
-$res = mysqli_query($sql);
-$data = mysqli_fetch_array($res);
+$res = mysql_query($sql);
+$data = mysql_fetch_array($res);
 
 
 print_r($data);

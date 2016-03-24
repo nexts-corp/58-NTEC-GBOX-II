@@ -63,14 +63,14 @@ function initialize() {
 		map.addControl(new GLargeMapControl());
 
 <?php  /* Read Data to Marker icon #####################################################*/
-    $db = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
-    //$objDB = mysqli_select_db("tanadgps");
+    $db = mysql_connect(DB_HOST,DB_USERNAME,DB_PASSWORD);
+    //$objDB = mysql_select_db("tanadgps");
 
-    mysqli_select_db(DB_NAME, $db);
+    mysql_select_db(DB_NAME, $db);
 
     /*$execute = "SELECT id FROM device WHERE device_serial='".$_GET['serial']."'";
-    $result = mysqli_query($execute)or die(mysqli_error());
-    $data = mysqli_fetch_array($result);
+    $result = mysql_query($execute)or die(mysql_error());
+    $data = mysql_fetch_array($result);
 */
     $fleet = $_GET["id"];
     $start_arr = explode(":", $_GET["time1"]);
@@ -79,8 +79,8 @@ function initialize() {
     $day_arr = explode("-", $_GET["day1"]);
 
     $sql_dev = "SELECT * FROM device WHERE id='".$_GET["id"]."'";
-    $res_dev = mysqli_query($sql_dev, $db);
-    $data_dev = mysqli_fetch_array($res_dev);
+    $res_dev = mysql_query($sql_dev, $db);
+    $data_dev = mysql_fetch_array($res_dev);
 
     if($data_dev["device_type_id"] == "1"){ //GBox
         $Time1 = mktime($start_arr[0], $start_arr[1], 0, $day_arr[1], $day_arr[2], $day_arr[0]) - date("Z");
@@ -109,8 +109,8 @@ function initialize() {
 
         $exe1 = "SELECT time,latitude,longitude,speed,direction FROM `datarv3d` WHERE `deviceid` = '$fleet' AND `date` = '$Date' AND `time` >= '$Time1' AND `time` <= '$Time2' ORDER BY  `time` ASC";
     }
-    $result1 = mysqli_query($exe1)or die(mysqli_error());
-    $num_rows = mysqli_numrows($result1);
+    $result1 = mysql_query($exe1)or die(mysql_error());
+    $num_rows = mysql_numrows($result1);
 
     $time_sec1 = explode(":", $Time1);
     $sec1 = ((($time_sec1[0])*3600) + (($time_sec1[1])*60) + ($time_sec1[2]));
@@ -122,10 +122,10 @@ function initialize() {
 
    if ($num_rows!=0) {
 
-   /*while(list($time,$lat,$long,$speed,$direction) = mysqli_fetch_row($result1)){  */
+   /*while(list($time,$lat,$long,$speed,$direction) = mysql_fetch_row($result1)){  */
    for ($i=0; $i<=$num_rows; $i++) {
 
-    list($time,$lat,$long,$speed,$DirAlt) = mysqli_fetch_row($result1);
+    list($time,$lat,$long,$speed,$DirAlt) = mysql_fetch_row($result1);
 
      $lat1 = DMStoDECLn($lat);
      $lon1 = DMStoDECLn($long);
