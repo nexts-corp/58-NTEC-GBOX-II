@@ -57,18 +57,18 @@ function GetFromBrowser($value_name, $old_value = '', $convert = true) {
     if (!isset($form_ary[$value_name]))
         return $old_value;
     $output_str = $form_ary[$value_name];
-    $output_str = ereg_replace("\+", "_PLUSSIGN_", $output_str);
+    $output_str = preg_replace("\+", "_PLUSSIGN_", $output_str);
     if ($convert == true) {
 //		$output_str = ereg_replace("'", "&#0039;", $output_str);
 //		$output_str = ereg_replace('"', "&#0034;", $output_str);
-        $output_str = ereg_replace("<", "&lt;", $output_str);
-        $output_str = ereg_replace(">", "&gt;", $output_str);
-        $output_str = ereg_replace("&lt;&lt;", "<", $output_str);
-        $output_str = ereg_replace("&gt;&gt;", ">", $output_str);
-        $output_str = ereg_replace("\n", "<BR>", $output_str);
+        $output_str = preg_replace("<", "&lt;", $output_str);
+        $output_str = preg_replace(">", "&gt;", $output_str);
+        $output_str = preg_replace("&lt;&lt;", "<", $output_str);
+        $output_str = preg_replace("&gt;&gt;", ">", $output_str);
+        $output_str = preg_replace("\n", "<BR>", $output_str);
         $output_str = urldecode($output_str);
     }
-    $output_str = ereg_replace("_PLUSSIGN_", "+", $output_str);
+    $output_str = preg_replace("_PLUSSIGN_", "+", $output_str);
     return $output_str;
 }
 
